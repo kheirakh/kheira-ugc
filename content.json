@@ -41,19 +41,13 @@
     "titre": "Portfolio",
     "categories": [
       {
-        "nom": "Lifestyle",
+        "nom": "Papeterie",
         "videos": [
           {
-            "titre": "Morning coffee",
-            "marque": "Nom de la marque",
+            "titre": "Vidéo aestehtic",
+            "marque": "Quran mon amour",
             "video": "assets/videos/lifestyle-coffee.mp4",
             "image": "assets/images/posters/lifestyle-coffee.jpg"
-          },
-          {
-            "titre": "Moment spirituel",
-            "marque": "Nom de la marque",
-            "video": "assets/videos/lifestyle-salat.mp4",
-            "image": "assets/images/posters/lifestyle-salat.jpg"
           }
         ]
       },
@@ -73,20 +67,7 @@
             "image": "assets/images/posters/bijoux-dores.jpg"
           }
         ]
-      },
-      {
-        "nom": "Enfants",
-        "videos": [
-          {
-            "titre": "Unboxing enfant",
-            "marque": "Nom de la marque",
-            "video": "assets/videos/enfant-unboxing.mp4",
-            "image": "assets/images/posters/enfant-unboxing.jpg"
-          }
-        ]
-      },
-      {},
-      {}
+      }
     ]
   },
   "photographie": {
