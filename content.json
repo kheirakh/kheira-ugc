@@ -76,21 +76,6 @@
         ]
       },
       {
-        "nom": "Food",
-        "videos": [
-          {
-            "marque": "Matchai",
-            "video": "assets/videos/matchai.mp4",
-            "image": "assets/images/covers/matchai.jpg"
-          },
-          {
-            "marque": "Ritz Carlton Rabat",
-            "video": "assets/videos/ritz-carlton.mp4",
-            "image": "assets/images/covers/ritz-carlton.jpg"
-          }
-        ]
-      },
-      {
         "nom": "Education & Religion",
         "videos": [
           {
@@ -102,6 +87,21 @@
             "marque": "Urban Rugs Co",
             "video": "assets/videos/urban-rug.mp4",
             "image": "assets/images/covers/urban-rug.jpg"
+          }
+        ]
+      },
+      {
+        "nom": "Food",
+        "videos": [
+          {
+            "marque": "Matchai",
+            "video": "assets/videos/matchai.mp4",
+            "image": "assets/images/covers/matchai.jpg"
+          },
+          {
+            "marque": "Ritz Carlton Rabat",
+            "video": "assets/videos/ritz-carlton.mp4",
+            "image": "assets/images/covers/ritz-carlton.jpg"
           }
         ]
       }
