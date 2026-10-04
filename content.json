@@ -79,7 +79,13 @@
         "nom": "Food",
         "videos": [
           {
-            "marque": "Matchai"
+            "marque": "Matchai",
+            "video": "assets/videos/matchai.mp4",
+            "image": "assets/matchai.png"
+          },
+          {
+            "marque": "Ritz Carlton Rabat",
+            "image": "assets/ritz.png"
           }
         ]
       }
