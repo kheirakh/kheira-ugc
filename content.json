@@ -26,16 +26,14 @@
     "petit_titre": "Partenariats",
     "titre": "Les marques avec qui j'ai travaillé",
     "liste": [
-      "Skincare",
-      "Mode modeste & éthique – femme et enfants (filles & garçons)",
-      "Papeterie (journaux, planners, carnets…)",
-      "Développement personnel éthique",
-      "Éducation digitale & entrepreneuriat",
-      "Produits digitaux & applications",
-      "Outils d’organisation",
-      "Bien-être (encens, bougies, nutrition, compléments, tisanes…)",
-      "Art islamique, calligraphie & poterie",
-      "Décoration d’intérieur"
+      "Skincare & Cosmétique",
+      "Mode & BIjoux ",
+      "Développement personnel ",
+      "Entrepreneuriat & Organisation",
+      "Papeterie & Journaling",
+      "Décoration ",
+      "Livres & Educations",
+      "Food & More"
     ]
   },
   "portfolio": {
@@ -45,21 +43,46 @@
       {
         "nom": "Lifestyle",
         "videos": [
-          { "titre": "Morning coffee", "marque": "Nom de la marque", "video": "assets/videos/lifestyle-coffee.mp4", "image": "assets/images/posters/lifestyle-coffee.jpg" },
-          { "titre": "Moment spirituel", "marque": "Nom de la marque", "video": "assets/videos/lifestyle-salat.mp4", "image": "assets/images/posters/lifestyle-salat.jpg" }
+          {
+            "titre": "Morning coffee",
+            "marque": "Nom de la marque",
+            "video": "assets/videos/lifestyle-coffee.mp4",
+            "image": "assets/images/posters/lifestyle-coffee.jpg"
+          },
+          {
+            "titre": "Moment spirituel",
+            "marque": "Nom de la marque",
+            "video": "assets/videos/lifestyle-salat.mp4",
+            "image": "assets/images/posters/lifestyle-salat.jpg"
+          }
         ]
       },
       {
         "nom": "Mode & bijoux",
         "videos": [
-          { "titre": "Outfit modeste", "marque": "Nom de la marque", "video": "assets/videos/mode-outfit.mp4", "image": "assets/images/posters/mode-outfit.jpg" },
-          { "titre": "Bijoux dorés", "marque": "Nom de la marque", "video": "assets/videos/bijoux-dores.mp4", "image": "assets/images/posters/bijoux-dores.jpg" }
+          {
+            "titre": "Outfit modeste",
+            "marque": "Nom de la marque",
+            "video": "assets/videos/mode-outfit.mp4",
+            "image": "assets/images/posters/mode-outfit.jpg"
+          },
+          {
+            "titre": "Bijoux dorés",
+            "marque": "Nom de la marque",
+            "video": "assets/videos/bijoux-dores.mp4",
+            "image": "assets/images/posters/bijoux-dores.jpg"
+          }
         ]
       },
       {
         "nom": "Enfants",
         "videos": [
-          { "titre": "Unboxing enfant", "marque": "Nom de la marque", "video": "assets/videos/enfant-unboxing.mp4", "image": "assets/images/posters/enfant-unboxing.jpg" }
+          {
+            "titre": "Unboxing enfant",
+            "marque": "Nom de la marque",
+            "video": "assets/videos/enfant-unboxing.mp4",
+            "image": "assets/images/posters/enfant-unboxing.jpg"
+          }
         ]
       }
     ]
