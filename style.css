@@ -24,7 +24,7 @@
   /* Titres : Sloop Script via ton kit Adobe Fonts. Great Vibes s'affiche tant que le kit n'est pas branché */
   --script:"sloop-script-one", "Sloop Script One", "Sloop Script", "Great Vibes", cursive;
   /* Grands titres (Kheira, Hello les marques, Portfolio…) : Altesse via ton kit Adobe Fonts */
-  --titres:"altesse-std-64pt", "altesse-std-24pt", "sloop-script-one", "Great Vibes", cursive;
+  --titres:"altesse-std-64pt", "altesse-std-24pt";
   --radius:22px;
   --gutter:clamp(16px,4vw,48px);
 }
