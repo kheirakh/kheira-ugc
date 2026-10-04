@@ -1,0 +1,83 @@
+media:
+  input: assets
+  output: assets
+  extensions: [jpg, jpeg, png, webp, mp4, mov]
+
+content:
+  - name: site
+    label: Mon site
+    type: file
+    path: content.json
+    format: json
+    fields:
+      - name: accueil
+        label: Accueil
+        type: object
+        fields:
+          - { name: photo, label: Grande photo, type: image }
+          - { name: titre, label: Titre (ton nom), type: string }
+          - { name: sous_titre, label: Sous-titre, type: string }
+          - { name: accroche, label: Phrase d'accroche (masquée sur mobile), type: text }
+      - name: liens
+        label: Mes liens
+        type: object
+        fields:
+          - { name: email, label: Email, type: string }
+          - { name: instagram, label: Pseudo Instagram (sans @), type: string }
+          - { name: tiktok, label: Pseudo TikTok (sans @), type: string }
+      - name: apropos
+        label: À propos
+        type: object
+        fields:
+          - { name: photo, label: Photo, type: image }
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: paragraphes, label: Paragraphes, type: text, list: true }
+          - { name: signature, label: Signature, type: string }
+      - name: univers
+        label: Univers / marques
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: liste, label: Bulles, type: string, list: true }
+      - name: portfolio
+        label: Portfolio vidéo
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: categories
+            label: Catégories (onglets)
+            type: object
+            list: true
+            fields:
+              - { name: nom, label: Nom de l'onglet, type: string }
+              - name: videos
+                label: Vidéos
+                type: object
+                list: true
+                fields:
+                  - { name: titre, label: Titre, type: string }
+                  - { name: marque, label: Marque, type: string }
+                  - { name: video, label: "Fichier vidéo (mp4 de moins de 25 Mo)", type: file }
+                  - { name: image, label: Image de couverture (facultatif), type: image }
+      - name: photographie
+        label: Photographie
+        type: object
+        fields:
+          - { name: titre, label: Titre, type: string }
+          - { name: photos, label: Photos (9 conseillé), type: image, list: true }
+      - name: photos_ugc
+        label: Photos UGC
+        type: object
+        fields:
+          - { name: titre, label: Titre, type: string }
+          - { name: photos, label: Photos, type: image, list: true }
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - { name: photo, label: Portrait, type: image }
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }

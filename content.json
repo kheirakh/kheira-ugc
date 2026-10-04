@@ -1,0 +1,95 @@
+{
+  "accueil": {
+    "photo": "assets/images/site/hero.jpg",
+    "titre": "Kheira",
+    "sous_titre": "UGC Portfolio",
+    "accroche": "Des histoires visuelles qui subliment l'image des marques. Beauté, skincare, cheveux et lifestyle."
+  },
+  "liens": {
+    "email": "helloookheira@gmail.com",
+    "instagram": "kheira.kh__",
+    "tiktok": "kheira.kh__"
+  },
+  "apropos": {
+    "photo": "assets/images/site/about.jpg",
+    "petit_titre": "À propos",
+    "titre": "Hello les marques !",
+    "paragraphes": [
+      "Ton produit mérite un contenu beau, naturel et qui arrête le scroll. Pas une pub trop mise en scène que tout le monde zappe. Je crée de l'UGC chaleureux et soigné qui donne vraiment envie de regarder.",
+      "Je suis créatrice UGC basée à Rabat, spécialisée beauté, skincare, soin des cheveux et lifestyle. Graphiste de formation, je pense chaque plan comme une image de marque.",
+      "Mon univers visuel : chaleureux, féminin et élégant. Tons chocolat, taupe, beige et crème, lumière naturelle, détails produit soignés et décors lifestyle épurés.",
+      "J'installe ton produit dans une vraie scène de vie : b-roll travaillé, packshots nets, application naturelle, montage dynamique. Un contenu fidèle à ton image, qui reste réel et crédible."
+    ],
+    "signature": "Kheira"
+  },
+  "univers": {
+    "petit_titre": "Partenariats",
+    "titre": "Les marques avec qui j'ai travaillé",
+    "liste": [
+      "Skincare",
+      "Mode modeste & éthique – femme et enfants (filles & garçons)",
+      "Papeterie (journaux, planners, carnets…)",
+      "Développement personnel éthique",
+      "Éducation digitale & entrepreneuriat",
+      "Produits digitaux & applications",
+      "Outils d’organisation",
+      "Bien-être (encens, bougies, nutrition, compléments, tisanes…)",
+      "Art islamique, calligraphie & poterie",
+      "Décoration d’intérieur"
+    ]
+  },
+  "portfolio": {
+    "petit_titre": "Sélection",
+    "titre": "Portfolio",
+    "categories": [
+      {
+        "nom": "Lifestyle",
+        "videos": [
+          { "titre": "Morning coffee", "marque": "Nom de la marque", "video": "assets/videos/lifestyle-coffee.mp4", "image": "assets/images/posters/lifestyle-coffee.jpg" },
+          { "titre": "Moment spirituel", "marque": "Nom de la marque", "video": "assets/videos/lifestyle-salat.mp4", "image": "assets/images/posters/lifestyle-salat.jpg" }
+        ]
+      },
+      {
+        "nom": "Mode & bijoux",
+        "videos": [
+          { "titre": "Outfit modeste", "marque": "Nom de la marque", "video": "assets/videos/mode-outfit.mp4", "image": "assets/images/posters/mode-outfit.jpg" },
+          { "titre": "Bijoux dorés", "marque": "Nom de la marque", "video": "assets/videos/bijoux-dores.mp4", "image": "assets/images/posters/bijoux-dores.jpg" }
+        ]
+      },
+      {
+        "nom": "Enfants",
+        "videos": [
+          { "titre": "Unboxing enfant", "marque": "Nom de la marque", "video": "assets/videos/enfant-unboxing.mp4", "image": "assets/images/posters/enfant-unboxing.jpg" }
+        ]
+      }
+    ]
+  },
+  "photographie": {
+    "titre": "Photographie",
+    "photos": [
+      "assets/images/photos/photo-01.jpg",
+      "assets/images/photos/photo-02.jpg",
+      "assets/images/photos/photo-03.jpg",
+      "assets/images/photos/photo-04.jpg",
+      "assets/images/photos/photo-05.jpg",
+      "assets/images/photos/photo-06.jpg",
+      "assets/images/photos/photo-07.jpg",
+      "assets/images/photos/photo-08.jpg",
+      "assets/images/photos/photo-09.jpg"
+    ]
+  },
+  "photos_ugc": {
+    "titre": "Photos UGC",
+    "photos": [
+      "assets/images/photos/photo-10.jpg",
+      "assets/images/photos/photo-11.jpg",
+      "assets/images/photos/photo-12.jpg",
+      "assets/images/photos/photo-13.jpg"
+    ]
+  },
+  "contact": {
+    "photo": "assets/images/site/contact.jpg",
+    "petit_titre": "Get in touch",
+    "titre": "Créons du contenu que ton audience a vraiment envie de regarder."
+  }
+}
