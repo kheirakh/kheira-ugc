@@ -120,10 +120,12 @@ svg{width:18px;height:18px}
 .signature{font-family:var(--script);font-size:56px;line-height:1;margin-top:10px;color:var(--brown)}
 
 /* ========= MARQUES ========= */
-.brands__card{text-align:center;max-width:980px;margin:0 auto}
+.brands .wrap{max-width:none}
+.brands__card{text-align:center;margin:0 auto}
 .brands__card .title{margin:4px 0 32px}
-.brandlist{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-.brandlist li{display:flex;align-items:center;justify-content:center;min-height:52px;padding:12px 24px;border-radius:999px;background:var(--beige);color:var(--ink);border:1px solid rgba(107,82,68,.25);box-shadow:0 3px 0 rgba(107,82,68,.12);font-size:16px;font-weight:400;text-align:center;line-height:1.4}
+/* Bulles : une seule ligne sur ordinateur (la taille s'adapte à l'écran) */
+.brandlist{display:flex;flex-wrap:nowrap;justify-content:center;gap:clamp(6px,.6vw,12px)}
+.brandlist li{display:flex;align-items:center;justify-content:center;flex:0 1 auto;min-width:0;padding:.85em 1.25em;border-radius:999px;background:var(--beige);color:var(--ink);border:1px solid rgba(107,82,68,.25);box-shadow:0 3px 0 rgba(107,82,68,.12);font-size:clamp(11px,.92vw,16px);font-weight:400;text-align:center;line-height:1.3;white-space:nowrap}
 
 /* ========= PORTFOLIO ========= */
 .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:34px}
@@ -210,8 +212,7 @@ svg{width:18px;height:18px}
   .vcard{flex-basis:calc((100% - 18px)/2)}
   .carousel{gap:12px}
   .vcard{flex-basis:calc((100% - 12px)/2)}
-  .brandlist{gap:10px}
-  .brandlist li{font-size:15px;padding:11px 20px}
+
   .vcard h3{font-size:11px}.vcard p{font-size:9.5px}
   .play{width:40px;height:40px;margin-left:-20px;bottom:12px}
   .play::after{left:15px;top:12px;border-left-width:12px;border-top-width:8px;border-bottom-width:8px}
@@ -221,4 +222,15 @@ svg{width:18px;height:18px}
   .contact__links a{font-size:18px}
   .photos--grid9 .pgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .photos--grid9 .pgrid figure{border-radius:10px}
+}
+
+/* ========= BULLES (MARQUES) : TABLETTE & MOBILE ========= */
+@media (max-width:1100px){
+  .brandlist{flex-wrap:wrap;gap:10px}
+  .brandlist li{font-size:14px;padding:12px 20px}
+}
+@media (max-width:760px){
+  .brandlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .brandlist li{white-space:normal;font-size:14px;line-height:1.3;padding:12px 14px;min-height:58px;border-radius:999px}
+  .brandlist li:last-child:nth-child(odd){grid-column:1 / -1;justify-self:center;width:calc(50% - 5px)}
 }
