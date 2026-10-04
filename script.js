@@ -184,5 +184,6 @@
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (c) { try { render(c); } catch (e) { console.error('content.json :', e); } })
     .catch(function (e) { console.warn('content.json non chargé, contenu par défaut affiché.', e); })
+    .then(function () { document.documentElement.classList.remove('is-loading'); })
     .then(init);
 })();
