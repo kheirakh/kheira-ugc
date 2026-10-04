@@ -44,10 +44,16 @@
         "nom": "Papeterie",
         "videos": [
           {
-            "titre": "Vidéo aesthetic pour Quran mon amour",
+            "titre": "Vidéo aesthetic ",
             "marque": "Quran mon amour",
             "video": "assets/videos/lifestyle-coffee.mp4",
             "image": "assets/Capture d’écran 2026-10-04 à 20.46.50.png"
+          },
+          {
+            "titre": "Vidéo aesthetic ",
+            "marque": "Maison du planner",
+            "video": "assets/maison du planner.mp4",
+            "image": "assets/Capture d’écran 2026-10-04 à 20.52.33.png"
           }
         ]
       },
