@@ -1,6 +1,6 @@
 {
   "accueil": {
-    "photo": "assets/Capture d’écran 2026-10-04 à 19.49.20.png",
+    "photo": "assets/images/site/hero.jpg",
     "titre": "kheira",
     "sous_titre": "UGC Portfolio",
     "accroche": "Des histoires visuelles qui subliment l'image des marques. Beauté, mode, lifestyle, business et tout ce qui fait le quotidien."
@@ -11,7 +11,7 @@
     "tiktok": "kheira.kh__"
   },
   "apropos": {
-    "photo": "assets/IMG_8882.jpeg",
+    "photo": "assets/images/site/about.jpg",
     "petit_titre": "À propos",
     "titre": "Hello les marques !",
     "paragraphes": [
@@ -45,18 +45,18 @@
         "videos": [
           {
             "marque": "Quran mon amour",
-            "video": "assets/quaran mon amour.mp4",
-            "image": "assets/Capture d’écran 2026-10-04 à 20.46.50.png"
+            "video": "assets/videos/quran-mon-amour.mp4",
+            "image": "assets/images/covers/quran-mon-amour.jpg"
           },
           {
             "marque": "Maison du planner",
-            "video": "assets/maison du planner.mp4",
-            "image": "assets/Capture d’écran 2026-10-04 à 20.52.33.png"
+            "video": "assets/videos/maison-du-planner.mp4",
+            "image": "assets/images/covers/maison-du-planner.jpg"
           },
           {
             "marque": "Librairie",
-            "video": "assets/librairie.mp4",
-            "image": "assets/Capture d’écran 2026-10-04 à 20.56.49.png"
+            "video": "assets/videos/librairie.mp4",
+            "image": "assets/images/covers/librairie.jpg"
           }
         ]
       },
@@ -65,13 +65,13 @@
         "videos": [
           {
             "marque": "Malaqi Couture",
-            "video": "assets/videos/mode-outfit.mp4",
-            "image": "assets/images/posters/mode-outfit.jpg"
+            "video": "assets/videos/malaqi-couture.mp4",
+            "image": "assets/images/covers/malaqi-couture.jpg"
           },
           {
             "marque": "Maison Irya",
-            "video": "assets/maison irya.mp4",
-            "image": "assets/Capture d’écran 2026-10-04 à 20.59.00.png"
+            "video": "assets/videos/maison-irya.mp4",
+            "image": "assets/images/covers/maison-irya.jpg"
           }
         ]
       },
@@ -81,11 +81,11 @@
           {
             "marque": "Matchai",
             "video": "assets/videos/matchai.mp4",
-            "image": "assets/matchai.png"
+            "image": "assets/images/covers/matchai.jpg"
           },
           {
             "marque": "Ritz Carlton Rabat",
-            "image": "assets/ritz.png"
+            "image": "assets/images/covers/ritz-carlton.jpg"
           }
         ]
       }
@@ -94,24 +94,24 @@
   "photographie": {
     "titre": "Photographie",
     "photos": [
-      "assets/images/photos/photo-01.jpg",
-      "assets/images/photos/photo-02.jpg",
-      "assets/images/photos/photo-03.jpg",
-      "assets/images/photos/photo-04.jpg",
-      "assets/images/photos/photo-05.jpg",
-      "assets/images/photos/photo-06.jpg",
-      "assets/images/photos/photo-07.jpg",
-      "assets/images/photos/photo-08.jpg",
-      "assets/images/photos/photo-09.jpg"
+      "assets/images/photos/photographie-01.jpg",
+      "assets/images/photos/photographie-02.jpg",
+      "assets/images/photos/photographie-03.jpg",
+      "assets/images/photos/photographie-04.jpg",
+      "assets/images/photos/photographie-05.jpg",
+      "assets/images/photos/photographie-06.jpg",
+      "assets/images/photos/photographie-07.jpg",
+      "assets/images/photos/photographie-08.jpg",
+      "assets/images/photos/photographie-09.jpg"
     ]
   },
   "photos_ugc": {
     "titre": "Photos UGC",
     "photos": [
-      "assets/images/photos/photo-10.jpg",
-      "assets/images/photos/photo-11.jpg",
-      "assets/images/photos/photo-12.jpg",
-      "assets/images/photos/photo-13.jpg"
+      "assets/images/photos/ugc-01.jpg",
+      "assets/images/photos/ugc-02.jpg",
+      "assets/images/photos/ugc-03.jpg",
+      "assets/images/photos/ugc-04.jpg"
     ]
   },
   "contact": {
