@@ -64,15 +64,22 @@
         "nom": "Mode & bijoux",
         "videos": [
           {
-            "marque": "Malaqi couture",
+            "marque": "Malaqi Couture",
             "video": "assets/videos/mode-outfit.mp4",
             "image": "assets/images/posters/mode-outfit.jpg"
           },
           {
-            "titre": "Bijoux dorés",
-            "marque": "Nom de la marque",
-            "video": "assets/videos/bijoux-dores.mp4",
-            "image": "assets/images/posters/bijoux-dores.jpg"
+            "marque": "Maison Irya",
+            "video": "assets/maison irya.mp4",
+            "image": "assets/Capture d’écran 2026-10-04 à 20.59.00.png"
+          }
+        ]
+      },
+      {
+        "nom": "Food",
+        "videos": [
+          {
+            "marque": "Matchai"
           }
         ]
       }
