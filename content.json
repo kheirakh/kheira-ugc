@@ -46,7 +46,7 @@
           {
             "titre": "Vidéo aesthetic ",
             "marque": "Quran mon amour",
-            "video": "assets/videos/lifestyle-coffee.mp4",
+            "video": "assets/quaran mon amour.mp4",
             "image": "assets/Capture d’écran 2026-10-04 à 20.46.50.png"
           },
           {
@@ -54,6 +54,11 @@
             "marque": "Maison du planner",
             "video": "assets/maison du planner.mp4",
             "image": "assets/Capture d’écran 2026-10-04 à 20.52.33.png"
+          },
+          {
+            "titre": "Vidéo aesthetic ",
+            "marque": "Librairie",
+            "video": "assets/maison du planner.mp4"
           }
         ]
       },
