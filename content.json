@@ -99,7 +99,9 @@
             "image": "assets/images/photos/photographie-09.jpg"
           },
           {
-            "marque": "Urban Rugs Co"
+            "marque": "Urban Rugs Co",
+            "video": "assets/videos/urban-rugs-co.mp4",
+            "image": "assets/images/covers/urban-rugs-co.jpg"
           }
         ]
       }
