@@ -123,9 +123,9 @@ svg{width:18px;height:18px}
 .brands .wrap{max-width:none}
 .brands__card{text-align:center;margin:0 auto}
 .brands__card .title{margin:4px 0 32px}
-/* Bulles : taille du texte = font-size ci-dessous (18px ordi, 16px mobile) */
+/* Bulles : taille du texte = font-size ci-dessous (17px ordi, 16px mobile) */
 .brandlist{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.brandlist li{display:flex;align-items:center;justify-content:center;flex:0 1 auto;min-width:0;padding:.75em .95em;border-radius:999px;background:var(--beige);color:var(--ink);border:1px solid rgba(107,82,68,.25);box-shadow:0 3px 0 rgba(107,82,68,.12);font-size:18px;font-weight:400;text-align:center;line-height:1.3;white-space:nowrap}
+.brandlist li{display:flex;align-items:center;justify-content:center;flex:0 1 auto;min-width:0;padding:.75em .95em;border-radius:999px;background:var(--beige);color:var(--ink);border:1px solid rgba(107,82,68,.25);box-shadow:0 3px 0 rgba(107,82,68,.12);font-size:17px;font-weight:400;text-align:center;line-height:1.3;white-space:nowrap}
 
 /* ========= PORTFOLIO ========= */
 .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:34px}
@@ -227,7 +227,7 @@ svg{width:18px;height:18px}
 /* ========= BULLES (MARQUES) : TABLETTE & MOBILE ========= */
 @media (max-width:1100px){
   .brandlist{flex-wrap:wrap;gap:10px}
-  .brandlist li{font-size:18px;padding:12px 20px}
+  .brandlist li{font-size:17px;padding:12px 20px}
 }
 @media (max-width:760px){
   .brandlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
