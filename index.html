@@ -13,7 +13,10 @@
 <!-- ADOBE FONTS : kit "Portfolio UGC" (Sloop Script). Ajoute Futura PT au même projet sur fonts.adobe.com, pas besoin de toucher ce code -->
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
+<!-- Cache les textes le temps de lire content.json (évite de voir l'ancienne version 1 seconde) -->
+<style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks{visibility:hidden}</style>
+<script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
 </head>
 <body>
 
@@ -179,6 +182,6 @@
   <p class="footer__pill">© <span id="year"></span> <span data-txt="accueil.titre">Kheira</span> · Tous droits réservés</p>
 </footer>
 
-<script src="script.js?v=2"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
