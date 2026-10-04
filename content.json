@@ -91,12 +91,15 @@
         ]
       },
       {
-        "nom": "Education",
+        "nom": "Education & Religion",
         "videos": [
           {
             "marque": "Alif Story",
             "video": "assets/videos/alif.mp4",
             "image": "assets/images/photos/photographie-09.jpg"
+          },
+          {
+            "marque": "Urban Rugs Co"
           }
         ]
       }
