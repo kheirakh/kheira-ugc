@@ -32,7 +32,7 @@
       "Business & Organisation",
       "Papeterie & Journaling",
       "Décoration ",
-      "Livres & Educations",
+      "Livres & Education",
       "Food & More"
     ]
   },
@@ -85,8 +85,18 @@
           },
           {
             "marque": "Ritz Carlton Rabat",
-            "image": "assets/images/covers/ritz-carlton.jpg",
-            "video": "assets/videos/ritz-carlton.mp4"
+            "video": "assets/videos/ritz-carlton.mp4",
+            "image": "assets/images/covers/ritz-carlton.jpg"
+          }
+        ]
+      },
+      {
+        "nom": "Education",
+        "videos": [
+          {
+            "marque": "Alif Story",
+            "video": "assets/videos/alif.mp4",
+            "image": "assets/images/photos/photographie-09.jpg"
           }
         ]
       }
