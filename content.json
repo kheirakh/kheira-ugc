@@ -85,7 +85,8 @@
           },
           {
             "marque": "Ritz Carlton Rabat",
-            "image": "assets/images/covers/ritz-carlton.jpg"
+            "image": "assets/images/covers/ritz-carlton.jpg",
+            "video": "assets/videos/ritz-carlton.mp4"
           }
         ]
       }
