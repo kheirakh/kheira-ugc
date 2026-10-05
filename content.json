@@ -158,7 +158,8 @@
         "image": "assets/images/photos/photographie-01.jpg"
       },
       {
-        "image": "assets/images/photos/photographie-04.jpg"
+        "image": "assets/images/photos/photographie-04.jpg",
+        "marque": "Soos Atelier"
       },
       {
         "image": "assets/images/photos/photographie-05.jpg"
@@ -218,7 +219,6 @@
     "intro": "Pour garantir un rendu professionnel, esthétique et soigné, je travaille avec du matériel haut de gamme, adapté au contenu lifestyle, produit, storytelling et Ugc. Chaque outil est choisi pour un résultat précis : un reel en extérieur, un unboxing ou une vidéo filmée à la main, stable et bien éclairée.",
     "groupes": [
       {
-        "titre": "",
         "items": [
           "Canon G7X Mark III — vidéos lumineuses, nettes et fluides en vlog et face cam",
           "DJI Osmo Pocket 3 — plans stabilisés, mouvements fluides, format discret",
