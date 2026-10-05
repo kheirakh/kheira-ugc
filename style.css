@@ -258,10 +258,9 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
   .hero__card{min-height:calc(100svh - 80px)}
   .hero__name{font-size:var(--taille-kheira-mobile)}
   .hero__sub{font-size:19px}
-  .hero__lead{font-size:var(--taille-texte);margin:10px auto 20px}
+  .hero__lead{font-size:15px;line-height:1.5;margin:8px auto 18px;max-width:320px}
   .pills{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .pills .pill:first-child{grid-column:1 / -1}
-  .hero__lead{display:none}
   .pill{justify-content:flex-start;font-size:16px}
   .bg{padding:72px 16px}
   .about__grid{grid-template-columns:1fr}

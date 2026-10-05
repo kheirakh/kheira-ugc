@@ -17,7 +17,7 @@ content:
           - { name: photo, label: Grande photo, type: image }
           - { name: titre, label: Titre (ton nom), type: string }
           - { name: sous_titre, label: Sous-titre, type: string }
-          - { name: accroche, label: Phrase d'accroche (masquée sur mobile), type: text }
+          - { name: accroche, label: Phrase d'accroche, type: text }
       - name: liens
         label: Mes liens
         type: object
