@@ -102,6 +102,11 @@
             "marque": "Ritz Carlton Rabat",
             "video": "assets/videos/ritz-carlton.mp4",
             "image": "assets/images/covers/ritz-carlton.jpg"
+          },
+          {
+            "marque": "Frédéric Cassel",
+            "video": "assets/videos/frederic-cassel.mp4",
+            "image": "assets/images/covers/frederic-cassel.jpg"
           }
         ]
       }
@@ -110,6 +115,10 @@
   "photographie": {
     "titre": "Photographie",
     "photos": [
+      {
+        "image": "assets/images/photos/photographie-faraasha-porte.jpg",
+        "marque": "Faraasha Collection"
+      },
       {
         "image": "assets/images/photos/photographie-nahar-coque-cafe.jpg",
         "marque": "Nahar"
