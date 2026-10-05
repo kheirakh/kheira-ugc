@@ -74,7 +74,7 @@ content:
             fields:
               - { name: image, label: Photo, type: image }
               - { name: marque, label: Nom de la marque, type: string }
-              - { name: cadrage, label: "Point focal : colle ici le code copié sur kheirakh.com/cadrage (ex. 50% 20%)", type: string }
+              - { name: cadrage, label: "Point focal (se règle en cliquant sur la photo : kheirakh.com/cadrage)", type: string }
       - name: photos_ugc
         label: Photos UGC
         type: object
@@ -87,7 +87,7 @@ content:
             fields:
               - { name: image, label: Photo, type: image }
               - { name: marque, label: Nom de la marque, type: string }
-              - { name: cadrage, label: "Point focal : colle ici le code copié sur kheirakh.com/cadrage (ex. 50% 20%)", type: string }
+              - { name: cadrage, label: "Point focal (se règle en cliquant sur la photo : kheirakh.com/cadrage)", type: string }
       - name: materiel
         label: Mon matériel de création
         type: object
