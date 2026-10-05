@@ -67,7 +67,13 @@ content:
         type: object
         fields:
           - { name: titre, label: Titre, type: string }
-          - { name: photos, label: Photos (9 conseillé), type: image, list: true }
+          - name: photos
+            label: Photos (le nom de la marque s'affiche au survol)
+            type: object
+            list: true
+            fields:
+              - { name: image, label: Photo, type: image }
+              - { name: marque, label: Nom de la marque, type: string }
       - name: photos_ugc
         label: Photos UGC
         type: object
