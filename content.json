@@ -79,7 +79,7 @@
         "nom": "Education & Religion",
         "videos": [
           {
-            "marque": "Alif Story",
+            "marque": "Alif Story & Ibnati Collection",
             "video": "assets/videos/alif.mp4",
             "image": "assets/images/photos/photographie-09.jpg"
           },
@@ -174,26 +174,6 @@
       }
     ]
   },
-  "materiel": {
-    "petit_titre": "Coulisses",
-    "titre": "Mon matériel de création",
-    "photo": "assets/images/site/materiel.jpg",
-    "intro": "Pour garantir un rendu professionnel, esthétique et soigné, je travaille avec du matériel haut de gamme, adapté au contenu lifestyle, produit, storytelling et Ugc. Chaque outil est choisi pour un résultat précis : un reel en extérieur, un unboxing ou une vidéo filmée à la main, stable et bien éclairée.",
-    "groupes": [
-      {
-        "titre": "",
-        "items": [
-          "Canon G7X Mark III — vidéos lumineuses, nettes et fluides en vlog et face cam",
-          "DJI Osmo Pocket 3 — plans stabilisés, mouvements fluides, format discret",
-          "Insta360 GO 3 — plans POV créatifs et immersifs",
-          "iPhone 17 Pro Max — stories, photos produit et vidéos Instagram, rendu pro et rapide",
-          "Panneaux LED Neewer — lumière douce et maîtrisée pour l'intérieur et les shootings produit",
-          "Micro DJI Mic 2, trépieds et stabilisateur — un son net et une image stable"
-        ]
-      }
-    ],
-    "conclusion": "Un contenu de haute qualité, livré rapidement et en autonomie, fidèle à l'univers de ta marque."
-  },
   "collaborations": {
     "petit_titre": "Partenariats",
     "titre": "Marques avec lesquelles j'ai travaillé",
@@ -207,34 +187,6 @@
       "Urban Rugs Co",
       "Matchai",
       "Ritz Carlton Rabat"
-    ]
-  },
-  "prestations": {
-    "petit_titre": "Prestations",
-    "titre": "Ugc ou collaboration ?",
-    "cartes": [
-      {
-        "titre": "Création de contenu Ugc",
-        "sous_titre": "Pour tes supports, sans diffusion sur mes réseaux",
-        "description": "Je crée le contenu pour ta marque : il est pensé pour être utilisé directement sur ton site, tes réseaux et tes publicités, avec une esthétique naturelle et engageante.",
-        "points": [
-          "Contenu livré à la marque",
-          "Objectif : alimenter tes supports marketing",
-          "Formats optimisés pour la conversion (ads, site…)"
-        ],
-        "modalites": "La prestation comprend la création et la livraison du contenu. Les droits d'exploitation commerciale (publicité, ads, diffusion étendue) ne sont pas inclus par défaut : ils sont validés en amont et font l'objet d'un supplément."
-      },
-      {
-        "titre": "Collaboration d'influence",
-        "sous_titre": "Ta marque présentée à ma communauté",
-        "description": "Je mets en avant ta marque ou tes produits directement auprès de mon audience, principalement sur Instagram, dans mon univers et avec mon ton, pour un contenu authentique et cohérent avec ma communauté.",
-        "points": [
-          "Diffusion sur mes réseaux",
-          "Objectif : visibilité, notoriété, conversion",
-          "Contenu pensé pour performer auprès de mon audience"
-        ],
-        "modalites": "Le contenu reste sur mes supports : 3 mois sur mon feed et en story à la une sans limite de durée. Aucune cession de droits n'est incluse (réutilisation, publicité, whitelisting, ads) : toute autre utilisation fait l'objet d'un accord et d'une facturation à part."
-      }
     ]
   },
   "contact": {
