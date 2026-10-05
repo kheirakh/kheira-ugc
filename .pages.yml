@@ -80,6 +80,22 @@ content:
             fields:
               - { name: image, label: Photo, type: image }
               - { name: marque, label: Nom de la marque, type: string }
+      - name: materiel
+        label: Mon matériel de création
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: photo, label: Photo (à gauche), type: image }
+          - { name: intro, label: Texte d'introduction, type: text }
+          - name: groupes
+            label: Catégories de matériel
+            type: object
+            list: true
+            fields:
+              - { name: titre, label: Nom de la catégorie, type: string }
+              - { name: items, label: Matériel (une ligne = une coche), type: string, list: true }
+          - { name: conclusion, label: Phrase de fin, type: text }
       - name: collaborations
         label: Marques avec qui j'ai travaillé
         type: object
@@ -88,6 +104,22 @@ content:
           - { name: titre, label: Titre, type: string }
           - { name: marques, label: Noms des marques, type: string, list: true }
           - { name: photo_fond, label: "Photo de fond (facultatif, sinon fond beige)", type: image }
+      - name: prestations
+        label: UGC ou collaboration (prestations)
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: cartes
+            label: Cartes
+            type: object
+            list: true
+            fields:
+              - { name: titre, label: Titre de la carte, type: string }
+              - { name: sous_titre, label: Sous-titre, type: string }
+              - { name: description, label: Description, type: text }
+              - { name: points, label: Points (une ligne = une coche), type: string, list: true }
+              - { name: modalites, label: Modalités, type: text }
       - name: contact
         label: Contact
         type: object

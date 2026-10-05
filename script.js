@@ -53,6 +53,25 @@
     var ab = (c.apropos && c.apropos.paragraphes) || [];
     document.getElementById('aboutList').innerHTML = ab.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
 
+    var CHECK = '<svg class="check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg>';
+    function checks(list) { return (list || []).filter(Boolean).map(function (t) { return '<li>' + CHECK + '<span>' + esc(t) + '</span></li>'; }).join(''); }
+    var kg = document.getElementById('kitGroups');
+    if (kg && c.materiel && c.materiel.groupes) {
+      kg.innerHTML = c.materiel.groupes.filter(function (g) { return g && (g.titre || (g.items || []).length); }).map(function (g) {
+        return '<div class="kit__group">' + (g.titre ? '<h3>' + esc(g.titre) + '</h3>' : '') + '<ul>' + checks(g.items) + '</ul></div>';
+      }).join('');
+    }
+    var of = document.getElementById('offers');
+    if (of && c.prestations && c.prestations.cartes) {
+      of.innerHTML = c.prestations.cartes.filter(Boolean).map(function (k, i) {
+        return '<article class="offer"><span class="offer__num">0' + (i + 1) + '</span><h3>' + esc(k.titre) + '</h3>' +
+          (k.sous_titre ? '<p class="offer__sub">' + esc(k.sous_titre) + '</p>' : '') +
+          (k.description ? '<p>' + esc(k.description) + '</p>' : '') +
+          '<ul>' + checks(k.points) + '</ul>' +
+          (k.modalites ? '<div class="offer__mod"><strong>Modalités</strong><p>' + esc(k.modalites) + '</p></div>' : '') + '</article>';
+      }).join('');
+    }
+
     var co = (c.collaborations && c.collaborations.marques) || [];
     var coEl = document.getElementById('collabs');
     var coSec = document.getElementById('collaborations');
