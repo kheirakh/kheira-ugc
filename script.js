@@ -106,8 +106,11 @@
         // une photo peut être un simple chemin, ou { image, marque } (Photos UGC)
         var img = typeof p === 'string' ? p : p.image;
         var marque = typeof p === 'string' ? '' : (p.marque || '');
+        // point focal choisi dans l'admin (ex. "50% 0%" = garder le haut)
+        var cadrage = typeof p === 'string' ? '' : String(p.cadrage || '');
+        var pos = /^\d{1,3}% \d{1,3}%$/.test(cadrage) ? ' style="object-position:' + cadrage + '"' : '';
         if (!img) return '';
-        return '<figure class="reveal' + (marque ? ' has-marque' : '') + '"><img src="' + esc(src(img)) + '" alt="' + (marque ? esc(marque) : alt + ' ' + (i + 1)) + '" loading="lazy">' +
+        return '<figure class="reveal' + (marque ? ' has-marque' : '') + '"><img src="' + esc(src(img)) + '" alt="' + (marque ? esc(marque) : alt + ' ' + (i + 1)) + '" loading="lazy"' + pos + '>' +
           (marque ? '<figcaption class="pgrid__marque">' + esc(marque) + '</figcaption>' : '') + '</figure>';
       }).join('');
     }
