@@ -286,3 +286,13 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
 }
 /* "Hello les marques !" sur une seule ligne (ordinateur et tablette) */
 @media (min-width:761px){.about__card .title{white-space:nowrap;font-size:min(var(--taille-titre),6vw)}}
+
+/* ========= BULLES DES MARQUES : même design que les cases "Marques avec lesquelles j'ai travaillé" ========= */
+.brandlist{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;max-width:1120px;margin:0 auto}
+.brandlist li{flex:0 0 calc((100% - 42px)/4);min-height:62px;padding:12px 10px;border-radius:14px;background:var(--beige);color:var(--espresso);border:1px solid rgba(107,82,68,.25);box-shadow:none;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-align:center;line-height:1.35;white-space:normal;cursor:default;transition:background .35s ease,color .35s ease,transform .35s ease}
+.brandlist li:hover{background:var(--espresso);color:var(--cream);transform:translateY(-2px)}
+@media (max-width:1000px){.brandlist li{flex-basis:calc((100% - 28px)/3)}}
+@media (max-width:760px){
+  .brandlist{display:flex;gap:10px}
+  .brandlist li,.brandlist li:last-child:nth-child(odd){flex-basis:calc((100% - 10px)/2);width:auto;min-height:54px;padding:10px 8px;border-radius:14px;font-size:10.5px;letter-spacing:.06em}
+}
