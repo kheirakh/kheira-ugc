@@ -37,6 +37,12 @@
   .btn--ghost{background:transparent;color:var(--espresso);border:1px solid var(--espresso);margin-top:8px}
   .where{font-size:13px;line-height:1.55;margin-top:14px;color:var(--ink)}
   .where b{font-weight:500}
+  .status{font-size:13px;text-align:center;color:var(--brown);min-height:20px;margin-bottom:10px}
+  .status.ok{color:#4f7a43}.status.err{color:#a2412f}
+  .login{max-width:460px;margin:20px auto;padding:0 24px}
+  .login__box p{font-size:14px;line-height:1.55;margin:8px 0 12px}
+  .login__box input{width:100%;padding:14px;border-radius:12px;border:1px solid rgba(107,82,68,.35);font:inherit;font-size:14px;margin-bottom:12px;background:#fff}
+  .logout{display:block;margin:10px auto 0;background:none;border:0;font:inherit;font-size:12px;color:var(--brown);text-decoration:underline;cursor:pointer}
   .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--espresso);color:var(--cream);padding:12px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.3s;pointer-events:none}
   .toast.on{opacity:1;transform:translateX(-50%)}
   .tabs{display:flex;gap:6px;margin-bottom:10px}
@@ -49,9 +55,18 @@
 <body>
 <header>
   <h1>Cadrage des photos</h1>
-  <p>Choisis une photo, puis clique (ou fais glisser) sur la partie à garder visible. Copie le code et colle-le dans l'admin.</p>
+  <p>Choisis une photo, puis clique (ou fais glisser) sur la partie à garder visible. C'est enregistré directement sur ton site.</p>
 </header>
-<div class="app">
+<div class="login" id="login">
+  <div class="panel login__box">
+    <h2>Connexion (une seule fois)</h2>
+    <p>Pour enregistrer directement sur ton site, colle ici ta <b>clé GitHub</b>. Elle reste uniquement sur cet ordinateur.</p>
+    <input id="tok" type="password" placeholder="github_pat_…" autocomplete="off">
+    <button class="btn" id="save-tok">Se connecter</button>
+    <p class="status" id="login-msg"></p>
+  </div>
+</div>
+<div class="app" id="app" hidden>
   <div class="panel">
     <div class="tabs"><button class="tab is-on" data-k="photographie">Photographie</button><button class="tab" data-k="photos_ugc">Photos Ugc</button></div>
     <div class="list" id="list"></div>
@@ -66,54 +81,93 @@
       <div><div class="preview"><img id="pv1" alt=""></div><p class="cap">Ordinateur</p></div>
       <div><div class="preview carre"><img id="pv2" alt=""></div><p class="cap">Format carré</p></div>
     </div>
-    <h2>Code à coller</h2>
+    <h2>Enregistrement</h2>
     <div class="code" id="code">50% 50%</div>
-    <button class="btn" id="copy">Copier le code</button>
+    <p class="status" id="status">Clique sur la photo : c'est enregistré tout seul sur ton site.</p>
     <button class="btn btn--ghost" id="reset">Remettre au centre</button>
     <p class="where" id="where"></p>
+    <button class="logout" id="logout">Se déconnecter</button>
   </div>
 </div>
-<div class="toast" id="toast">Code copié ✓</div>
+<div class="toast" id="toast"></div>
 <script>
 (function () {
-  var data = null, key = 'photographie', idx = 0, pos = { x: 50, y: 50 };
-  var list = document.getElementById('list'), big = document.getElementById('big'), pick = document.getElementById('pick');
-  var dot = document.getElementById('dot'), code = document.getElementById('code'), where = document.getElementById('where');
-  var pv1 = document.getElementById('pv1'), pv2 = document.getElementById('pv2'), toast = document.getElementById('toast');
+  var REPO = 'kheirakh/kheira-ugc', FILE = 'content.json', BRANCH = 'main', API = 'https://api.github.com/repos/' + REPO + '/contents/' + FILE;
+  var token = null, data = null, sha = null, key = 'photographie', idx = 0, pos = { x: 50, y: 50 }, timer = null, saving = false, pending = false;
+  var $ = function (id) { return document.getElementById(id); };
+  var list = $('list'), big = $('big'), pick = $('pick'), dot = $('dot'), code = $('code'), where = $('where'), statusEl = $('status');
+  var pv1 = $('pv1'), pv2 = $('pv2');
+  function store(k, v) { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function b64dec(s) { var bin = atob(s.replace(/\n/g, '')); var bytes = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i); return new TextDecoder().decode(bytes); }
+  function b64enc(str) { var bytes = new TextEncoder().encode(str), bin = ''; for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]); return btoa(bin); }
+  function gh(method, body) {
+    return fetch(API + (method === 'GET' ? '?ref=' + BRANCH + '&t=' + Date.now() : ''), {
+      method: method, cache: 'no-store',
+      headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+      body: body ? JSON.stringify(body) : undefined
+    }).then(function (r) { return r.json().then(function (j) { if (!r.ok) { var e = new Error(j.message || r.status); e.status = r.status; throw e; } return j; }); });
+  }
+  function fetchData() { return gh('GET').then(function (j) { sha = j.sha; data = JSON.parse(b64dec(j.content)); }); }
+  function setStatus(t, cls) { statusEl.textContent = t; statusEl.className = 'status' + (cls ? ' ' + cls : ''); }
   function src(p) { return String(p || '').replace(/^\/+/, ''); }
-  function items() { return ((data[key] && data[key].photos) || []).map(function (x) { return typeof x === 'string' ? { image: x } : x; }).filter(function (x) { return x.image; }); }
+  function items() { return ((data[key] && data[key].photos) || []); }
   function parse(c) { var m = /^(\d{1,3}(?:\.\d+)?)% (\d{1,3}(?:\.\d+)?)%$/.exec(String(c || '').replace(/\s+/g, ' ').trim()); return m ? { x: +m[1], y: +m[2] } : { x: 50, y: 50 }; }
   function txt() { return Math.round(pos.x) + '% ' + Math.round(pos.y) + '%'; }
-  function draw() {
-    dot.style.left = pos.x + '%'; dot.style.top = pos.y + '%';
-    pv1.style.objectPosition = pv2.style.objectPosition = txt();
-    code.textContent = txt();
-  }
+  function draw() { dot.style.left = pos.x + '%'; dot.style.top = pos.y + '%'; pv1.style.objectPosition = pv2.style.objectPosition = txt(); code.textContent = txt(); }
+  function img(x) { return typeof x === 'string' ? x : x.image; }
   function renderList() {
-    var it = items();
-    list.innerHTML = it.map(function (x, i) {
-      return '<div class="thumb' + (i === idx ? ' is-active' : '') + (x.cadrage ? ' is-set' : '') + '" data-i="' + i + '"><img src="' + src(x.image) + '" alt="" loading="lazy" style="object-position:' + (x.cadrage || '50% 50%') + '"><span>' + (i + 1) + '</span></div>';
+    list.innerHTML = items().map(function (x, i) {
+      if (!img(x)) return '';
+      var c = typeof x === 'string' ? '' : (x.cadrage || '');
+      return '<div class="thumb' + (i === idx ? ' is-active' : '') + (c ? ' is-set' : '') + '" data-i="' + i + '"><img src="' + src(img(x)) + '" alt="" loading="lazy" style="object-position:' + (c || '50% 50%') + '"><span>' + (i + 1) + '</span></div>';
     }).join('');
   }
   function select(i) {
     var it = items(); if (!it[i]) return;
     idx = i; var x = it[i];
-    big.src = pv1.src = pv2.src = src(x.image);
-    pos = parse(x.cadrage); draw(); renderList();
-    var sec = key === 'photographie' ? 'Photographie' : 'Photos UGC';
-    where.innerHTML = 'Dans l’admin : <b>' + sec + '</b> → <b>Photos</b> → photo n° <b>' + (i + 1) + '</b>' + (x.marque ? ' (<b>' + x.marque.replace(/</g, '&lt;') + '</b>)' : '') + ' → champ <b>Point focal</b> → colle le code → <b>Save</b>.';
+    big.src = pv1.src = pv2.src = src(img(x));
+    pos = parse(typeof x === 'string' ? '' : x.cadrage); draw(); renderList();
+    var m = typeof x === 'string' ? '' : (x.marque || '');
+    where.innerHTML = 'Photo n° <b>' + (i + 1) + '</b>' + (m ? ' · <b>' + m.replace(/</g, '&lt;') + '</b>' : '');
+    setStatus('Clique sur la photo : c’est enregistré tout seul sur ton site.');
   }
+  function save() {
+    if (saving) { pending = true; return; }
+    saving = true; pending = false;
+    var k = key, i = idx, value = txt();
+    setStatus('Enregistrement…');
+    var attempt = function (n) {
+      var it = (data[k] && data[k].photos) || [];
+      var entry = it[i];
+      if (typeof entry === 'string') { entry = it[i] = { image: entry, marque: '' }; }
+      entry.cadrage = value;
+      var label = (entry.marque || ('photo ' + (i + 1)));
+      return gh('PUT', { message: 'Point focal : ' + label + ' (' + value + ')', content: b64enc(JSON.stringify(data, null, 2) + '\n'), sha: sha, branch: BRANCH })
+        .then(function (j) { sha = j.content.sha; })
+        .catch(function (e) {
+          if ((e.status === 409 || e.status === 422) && n < 2) { return fetchData().then(function () { return attempt(n + 1); }); }
+          throw e;
+        });
+    };
+    attempt(0).then(function () {
+      renderList(); setStatus('Enregistré ✓ Visible sur le site dans 1 à 2 minutes.', 'ok');
+    }).catch(function (e) {
+      setStatus(e.status === 401 ? 'Clé GitHub refusée : reconnecte-toi.' : 'Erreur : ' + e.message, 'err');
+      if (e.status === 401) logout();
+    }).then(function () { saving = false; if (pending) save(); });
+  }
+  function queueSave() { clearTimeout(timer); timer = setTimeout(save, 700); }
   function setFrom(e) {
     var r = big.getBoundingClientRect();
-    var p = e.touches ? e.touches[0] : e;
-    pos.x = Math.max(0, Math.min(100, (p.clientX - r.left) / r.width * 100));
-    pos.y = Math.max(0, Math.min(100, (p.clientY - r.top) / r.height * 100));
+    pos.x = Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100));
+    pos.y = Math.max(0, Math.min(100, (e.clientY - r.top) / r.height * 100));
     draw();
   }
   var dragging = false;
-  pick.addEventListener('pointerdown', function (e) { dragging = true; pick.setPointerCapture(e.pointerId); setFrom(e); });
+  pick.addEventListener('pointerdown', function (e) { dragging = true; pick.setPointerCapture(e.pointerId); setFrom(e); clearTimeout(timer); });
   pick.addEventListener('pointermove', function (e) { if (dragging) setFrom(e); });
-  pick.addEventListener('pointerup', function () { dragging = false; });
+  pick.addEventListener('pointerup', function () { if (dragging) { dragging = false; queueSave(); } });
   list.addEventListener('click', function (e) { var t = e.target.closest('.thumb'); if (t) select(+t.getAttribute('data-i')); });
   document.querySelectorAll('.tab').forEach(function (t) {
     t.addEventListener('click', function () {
@@ -121,15 +175,24 @@
       key = t.getAttribute('data-k'); idx = 0; select(0);
     });
   });
-  function flash(m) { toast.textContent = m; toast.classList.add('on'); setTimeout(function () { toast.classList.remove('on'); }, 1600); }
-  document.getElementById('copy').addEventListener('click', function () {
-    var v = txt();
-    (navigator.clipboard ? navigator.clipboard.writeText(v) : Promise.reject()).then(function () { flash('Code copié ✓ ' + v); }, function () {
-      var ta = document.createElement('textarea'); ta.value = v; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); flash('Code copié ✓ ' + v);
+  $('reset').addEventListener('click', function () { pos = { x: 50, y: 50 }; draw(); queueSave(); });
+  function start() {
+    $('login-msg').textContent = 'Connexion…';
+    fetchData().then(function () {
+      $('login').hidden = true; $('app').hidden = false; select(0);
+    }).catch(function (e) {
+      token = null; store('kh_gh_token', null);
+      $('login').hidden = false; $('app').hidden = true;
+      $('login-msg').textContent = e.status === 401 || e.status === 403 || e.status === 404 ? 'Clé refusée. Vérifie qu’elle donne accès au dépôt kheira-ugc (Contents : Read and write).' : 'Erreur : ' + e.message;
+      $('login-msg').className = 'status err';
     });
-  });
-  document.getElementById('reset').addEventListener('click', function () { pos = { x: 50, y: 50 }; draw(); });
-  fetch('content.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (c) { data = c; select(0); });
+  }
+  function logout() { token = null; store('kh_gh_token', null); $('app').hidden = true; $('login').hidden = false; $('tok').value = ''; $('login-msg').textContent = ''; }
+  $('logout').addEventListener('click', logout);
+  $('save-tok').addEventListener('click', function () { var v = $('tok').value.trim(); if (!v) return; token = v; store('kh_gh_token', v); start(); });
+  $('tok').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('save-tok').click(); });
+  token = load('kh_gh_token');
+  if (token) start();
 })();
 </script>
 </body>
