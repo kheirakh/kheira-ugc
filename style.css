@@ -98,7 +98,7 @@ svg{width:18px;height:18px}
 
 /* ========= ACCUEIL ========= */
 .hero{min-height:100svh;display:flex;align-items:stretch;padding:84px 12px 12px}
-.hero__card{position:relative;flex:1;max-width:1180px;margin:0 auto;border-radius:var(--radius);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;min-height:560px;box-shadow:0 20px 60px rgba(30,18,10,.3)}
+.hero__card{position:relative;flex:1;max-width:1180px;margin:0 auto;border-radius:var(--radius);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;min-height:560px}
 .hero__img{position:absolute;inset:0;object-position:50% 66%}
 .hero__card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(59,42,32,0) 35%,rgba(59,42,32,.35) 60%,rgba(59,42,32,.82) 100%)}
 .hero__content{position:relative;z-index:1;text-align:center;color:var(--cream);padding:0 20px clamp(26px,4vw,48px);width:100%}
