@@ -54,7 +54,7 @@
             "image": "assets/images/covers/maison-du-planner.jpg"
           },
           {
-            "marque": "Librairie",
+            "marque": "Ma petite biblikids",
             "video": "assets/videos/librairie.mp4",
             "image": "assets/images/covers/librairie.jpg"
           }
@@ -284,8 +284,6 @@
     "marques": [
       "Quran mon amour",
       "Maison du planner",
-      "Librairie",
-      "Malaqi Couture",
       "Maison Irya",
       "Alif Story",
       "Urban Rugs Co",
