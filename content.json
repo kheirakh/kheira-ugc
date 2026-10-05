@@ -161,8 +161,8 @@
   "materiel": {
     "petit_titre": "Coulisses",
     "titre": "Mon matériel de création",
-    "photo": "assets/images/photos/photographie-03.jpg",
-    "intro": "Pour garantir un rendu professionnel, esthétique et soigné, je travaille avec du matériel haut de gamme, adapté au contenu lifestyle, produit, storytelling et UGC. Chaque outil est choisi pour un résultat précis : un reel en extérieur, un unboxing ou une vidéo filmée à la main, stable et bien éclairée.",
+    "photo": "assets/images/site/materiel.jpg",
+    "intro": "Pour garantir un rendu professionnel, esthétique et soigné, je travaille avec du matériel haut de gamme, adapté au contenu lifestyle, produit, storytelling et Ugc. Chaque outil est choisi pour un résultat précis : un reel en extérieur, un unboxing ou une vidéo filmée à la main, stable et bien éclairée.",
     "groupes": [
       {
         "titre": "Caméras",
@@ -205,10 +205,10 @@
   },
   "prestations": {
     "petit_titre": "Prestations",
-    "titre": "UGC ou collaboration ?",
+    "titre": "Ugc ou collaboration ?",
     "cartes": [
       {
-        "titre": "Création de contenu UGC",
+        "titre": "Création de contenu Ugc",
         "sous_titre": "Pour tes supports, sans diffusion sur mes réseaux",
         "description": "Je crée le contenu pour ta marque : il est pensé pour être utilisé directement sur ton site, tes réseaux et tes publicités, avec une esthétique naturelle et engageante.",
         "points": [
