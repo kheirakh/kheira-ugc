@@ -58,14 +58,7 @@ svg{width:18px;height:18px}
 .bg--cream{background:linear-gradient(180deg,#fbf6ef 0%,var(--cream) 100%)}
 .bg--taupe{background:var(--taupe)}
 .bg--espresso{background:var(--espresso)}
-/* fonds en réserve (tes images) : remplace la classe d'une section pour les essayer */
-.bg--gradient{background-image:url("assets/images/bg/gradient.jpg")}
 .bg--satin{background-image:url("assets/images/bg/satin.jpg")}
-.bg--cow{background-image:url("assets/images/bg/cow-heart.jpg");background-color:var(--cream)}
-.bg--tortoise{background-image:url("assets/images/bg/tortoise.jpg");background-color:#2a1a10}
-.bg--spots{background-image:linear-gradient(rgba(59,42,32,.28),rgba(59,42,32,.28)),url("assets/images/bg/fawn-spots.jpg");background-size:cover}
-.bg--fawn{background-image:url("assets/images/bg/fawn.jpg");background-position:center bottom}
-.bg--zebra{background-image:url("assets/images/bg/zebra.jpg")}
 .bg--dots{background-color:var(--cocoa);
   background-image:radial-gradient(circle,#fdf9f0 2.6px,transparent 3.1px),radial-gradient(circle,#fdf9f0 2.6px,transparent 3.1px);
   background-size:77px 77px;background-position:0 0,38.5px 38.5px}
