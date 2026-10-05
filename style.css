@@ -66,6 +66,8 @@ svg{width:18px;height:18px}
 .bg--spots{background-image:linear-gradient(rgba(59,42,32,.28),rgba(59,42,32,.28)),url("assets/images/bg/fawn-spots.jpg");background-size:cover}
 .bg--fawn{background-image:url("assets/images/bg/fawn.jpg");background-position:center bottom}
 .bg--zebra{background-image:url("assets/images/bg/zebra.jpg")}
+.bg--grain{background-image:url("assets/images/bg/grain.jpg")}
+.bg--lumiere{background-image:url("assets/images/bg/lumiere.jpg")}
 .bg--dots{background-color:var(--cocoa);
   background-image:radial-gradient(circle,#fdf9f0 2.6px,transparent 3.1px),radial-gradient(circle,#fdf9f0 2.6px,transparent 3.1px);
   background-size:77px 77px;background-position:0 0,38.5px 38.5px}
@@ -185,6 +187,9 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
 /* fond : change la classe de la section dans index.html (bg--spots, bg--gradient, bg--tortoise, bg--zebra) */
 .collabs .head{margin-bottom:40px}
 .collabs .title{text-shadow:0 2px 18px rgba(30,18,10,.35)}
+/* fonds clairs : titres foncés */
+.collabs.bg--grain .title,.collabs.bg--lumiere .title{color:var(--ink);text-shadow:none}
+.collabs.bg--grain .eyebrow,.collabs.bg--lumiere .eyebrow{color:var(--espresso)}
 .collabs__list{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:1120px;margin:0 auto}
 .collabs__list li{flex:0 0 calc((100% - 70px)/6);display:flex;align-items:center;justify-content:center;min-height:62px;padding:12px 10px;border-radius:14px;background:rgba(247,239,228,.94);color:var(--espresso);border:1px solid rgba(255,255,255,.5);box-shadow:0 8px 24px rgba(30,18,10,.22);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-align:center;line-height:1.35;cursor:default;transition:background .35s ease,color .35s ease,transform .35s ease,box-shadow .35s ease}
 .collabs__list li:hover{background:var(--espresso);color:var(--cream);transform:translateY(-3px);box-shadow:0 14px 30px rgba(20,12,8,.4)}

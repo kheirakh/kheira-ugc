@@ -55,7 +55,7 @@
 
     var co = (c.collaborations && c.collaborations.marques) || [];
     var coEl = document.getElementById('collabs');
-    var fonds = ['spots', 'gradient', 'tortoise', 'zebra'];
+    var fonds = ['grain', 'lumiere', 'spots', 'gradient', 'tortoise', 'zebra'];
     var coSec = document.getElementById('collaborations');
     if (coSec && c.collaborations && fonds.indexOf(c.collaborations.fond) > -1) {
       fonds.forEach(function (f) { coSec.classList.remove('bg--' + f); });

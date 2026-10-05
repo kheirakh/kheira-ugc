@@ -92,6 +92,8 @@ content:
             type: select
             options:
               values:
+                - { value: grain, label: Dégradé doux (grain) }
+                - { value: lumiere, label: Lumière douce }
                 - { value: spots, label: Faon tacheté }
                 - { value: gradient, label: Dégradé marron }
                 - { value: tortoise, label: Écaille }
