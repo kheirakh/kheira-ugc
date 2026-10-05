@@ -323,14 +323,11 @@
     ]
   },
   "formation": {
+    "logo": "assets/images/site/myugc-girls-club.jpg",
     "petit_titre": "Formation UGC",
     "titre": "Deviens créatrice Ugc",
-    "texte": "Tu veux te lancer dans l'UGC et collaborer avec des marques ? J'ai créé la formation que j'aurais aimé avoir à mes débuts : créer du contenu qui donne envie, trouver tes premières collaborations et fixer tes tarifs avec confiance.",
-    "logo": "assets/images/site/myugc-girls-club.jpg",
-    "bouton": "Je m'inscris à la formation",
-    "lien": "https://beacons.ai/myugcgirlsclub",
-    "bouton_2": "S'inscrire à la newsletter",
-    "lien_2": "https://beacons.ai/myugcgirlsclub"
+    "texte": "Tu veux te lancer dans la creation de contenu et l'UGC et collaborer avec des marques ? J'ai créé la formation que j'aurais aimé avoir : créer du contenu qui donne envie, trouver tes premières collaborations et fixer tes tarifs avec confiance.",
+    "bouton": "S'inscrire à la newsletter"
   },
   "contact": {
     "photo": "assets/images/site/contact.jpg",
