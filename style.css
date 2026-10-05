@@ -196,7 +196,8 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
 /* ========= CONTACT ========= */
 .contact{padding-top:clamp(90px,12vw,150px);padding-bottom:clamp(90px,12vw,150px)}
 .contact__card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,56px);align-items:center;padding:clamp(24px,3vw,40px)}
-.contact__img{aspect-ratio:4/5;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(30,18,10,.25)}
+.contact__img{aspect-ratio:4/5;border-radius:18px;overflow:hidden}
+.contact__card.card--cream{box-shadow:none}
 .contact__text{padding:clamp(4px,2vw,24px) clamp(0px,2vw,24px)}
 .contact__card .title{font-size:clamp(42px,5vw,72px);margin:10px 0 34px}
 .contact__links{display:flex;flex-wrap:wrap;gap:18px 34px}
