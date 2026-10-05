@@ -192,7 +192,8 @@
       },
       {
         "image": "assets/images/photos/photographie-nahar-coque-cafe.jpg",
-        "marque": "Nahar"
+        "marque": "Nahar",
+        "cadrage": "50% 65%"
       },
       {
         "image": "assets/images/photos/photographie-quran-mon-amour-bougie.jpg",
