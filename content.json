@@ -212,7 +212,8 @@
       },
       {
         "image": "assets/images/photos/photographie-05.jpg",
-        "marque": "Maison Irya"
+        "marque": "Maison Irya",
+        "cadrage": "56% 85%"
       }
     ]
   },
