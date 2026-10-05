@@ -162,16 +162,8 @@
         "marque": "Soos Atelier"
       },
       {
-        "image": "assets/images/photos/photographie-05.jpg"
-      },
-      {
-        "image": "assets/images/photos/photographie-06.jpg"
-      },
-      {
-        "image": "assets/images/photos/photographie-08.jpg"
-      },
-      {
-        "image": "assets/images/photos/photographie-09.jpg"
+        "image": "assets/images/photos/photographie-05.jpg",
+        "marque": "Maison Irya"
       }
     ]
   },
