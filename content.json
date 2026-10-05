@@ -94,7 +94,7 @@
         "nom": "Food",
         "videos": [
           {
-            "marque": "Matchai",
+            "marque": "Matchaï",
             "video": "assets/videos/matchai.mp4",
             "image": "assets/images/covers/matchai.jpg"
           },
@@ -157,7 +157,7 @@
       },
       {
         "image": "assets/images/photos/photographie-livres-miracles-quran.jpg",
-        "marque": "Maiso du Planner",
+        "marque": "Maison du Planner",
         "cadrage": "55% 48%"
       },
       {
