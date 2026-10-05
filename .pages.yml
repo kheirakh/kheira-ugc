@@ -87,17 +87,7 @@ content:
           - { name: petit_titre, label: Petit titre, type: string }
           - { name: titre, label: Titre, type: string }
           - { name: marques, label: Noms des marques, type: string, list: true }
-          - name: fond
-            label: Fond du bloc
-            type: select
-            options:
-              values:
-                - { value: grain, label: Dégradé doux (grain) }
-                - { value: lumiere, label: Lumière douce }
-                - { value: spots, label: Faon tacheté }
-                - { value: gradient, label: Dégradé marron }
-                - { value: tortoise, label: Écaille }
-                - { value: zebra, label: Zèbre }
+          - { name: photo_fond, label: "Photo de fond (facultatif, sinon fond beige)", type: image }
       - name: contact
         label: Contact
         type: object

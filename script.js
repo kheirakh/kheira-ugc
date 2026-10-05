@@ -55,11 +55,10 @@
 
     var co = (c.collaborations && c.collaborations.marques) || [];
     var coEl = document.getElementById('collabs');
-    var fonds = ['grain', 'lumiere', 'spots', 'gradient', 'tortoise', 'zebra'];
     var coSec = document.getElementById('collaborations');
-    if (coSec && c.collaborations && fonds.indexOf(c.collaborations.fond) > -1) {
-      fonds.forEach(function (f) { coSec.classList.remove('bg--' + f); });
-      coSec.classList.add('bg--' + c.collaborations.fond);
+    if (coSec && c.collaborations && c.collaborations.photo_fond) {
+      coSec.style.backgroundImage = 'linear-gradient(rgba(43,29,21,.45),rgba(43,29,21,.45)),url("' + src(c.collaborations.photo_fond).replace(/"/g, '%22') + '")';
+      coSec.classList.add('has-photo');
     }
     if (coEl && c.collaborations) coEl.innerHTML = co.filter(Boolean).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
 
