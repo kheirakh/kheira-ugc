@@ -75,7 +75,12 @@
 
     function grid(id, list, alt) {
       document.getElementById(id).innerHTML = (list || []).filter(Boolean).map(function (p, i) {
-        return '<figure class="reveal"><img src="' + esc(src(p)) + '" alt="' + alt + ' ' + (i + 1) + '" loading="lazy"></figure>';
+        // une photo peut être un simple chemin, ou { image, marque } (Photos UGC)
+        var img = typeof p === 'string' ? p : p.image;
+        var marque = typeof p === 'string' ? '' : (p.marque || '');
+        if (!img) return '';
+        return '<figure class="reveal' + (marque ? ' has-marque' : '') + '"><img src="' + esc(src(img)) + '" alt="' + (marque ? esc(marque) : alt + ' ' + (i + 1)) + '" loading="lazy">' +
+          (marque ? '<figcaption class="pgrid__marque">' + esc(marque) + '</figcaption>' : '') + '</figure>';
       }).join('');
     }
     grid('grid9', c.photographie && c.photographie.photos, 'Photographie');

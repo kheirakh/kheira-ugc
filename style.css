@@ -159,6 +159,11 @@ svg{width:18px;height:18px}
 .pgrid figure{aspect-ratio:4/5;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.3)}
 .pgrid img{transition:transform .8s ease}
 .pgrid figure:hover img{transform:scale(1.04)}
+/* Nom de la marque sur les Photos UGC : apparaît au survol (ordinateur), toujours visible sur mobile */
+.pgrid figure{position:relative}
+.pgrid__marque{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 14px;background:linear-gradient(180deg,rgba(43,29,21,0) 0%,rgba(43,29,21,.82) 100%);color:var(--cream);font-size:12px;letter-spacing:.22em;text-transform:uppercase;text-align:center;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s;pointer-events:none}
+.pgrid figure:hover .pgrid__marque{opacity:1;transform:none}
+@media (hover:none){.pgrid__marque{opacity:1;transform:none;padding:28px 8px 10px;font-size:10px;letter-spacing:.16em}}
 .photos--ugc .pgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .photos--grid9 .pgrid{max-width:760px;margin:0 auto;gap:12px}
 .photos--grid9 .pgrid figure{border-radius:14px}

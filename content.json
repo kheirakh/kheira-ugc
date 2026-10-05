@@ -124,14 +124,38 @@
   "photos_ugc": {
     "titre": "Photos Ugc",
     "photos": [
-      "assets/images/photos/ugc-01.jpg",
-      "assets/images/photos/ugc-02.jpg",
-      "assets/images/photos/ugc-03.jpg",
-      "assets/images/photos/ugc-04.jpg",
-      "assets/images/photos/ugc-05.jpg",
-      "assets/images/photos/ugc-06.jpg",
-      "assets/images/photos/ugc-07.jpg",
-      "assets/images/photos/ugc-08.jpg"
+      {
+        "image": "assets/images/photos/ugc-01.jpg",
+        "marque": ""
+      },
+      {
+        "image": "assets/images/photos/ugc-02.jpg",
+        "marque": ""
+      },
+      {
+        "image": "assets/images/photos/ugc-03.jpg",
+        "marque": ""
+      },
+      {
+        "image": "assets/images/photos/ugc-04.jpg",
+        "marque": ""
+      },
+      {
+        "image": "assets/images/photos/ugc-05.jpg",
+        "marque": ""
+      },
+      {
+        "image": "assets/images/photos/ugc-06.jpg",
+        "marque": ""
+      },
+      {
+        "image": "assets/images/photos/ugc-07.jpg",
+        "marque": ""
+      },
+      {
+        "image": "assets/images/photos/ugc-08.jpg",
+        "marque": ""
+      }
     ]
   },
   "contact": {

@@ -73,7 +73,13 @@ content:
         type: object
         fields:
           - { name: titre, label: Titre, type: string }
-          - { name: photos, label: Photos, type: image, list: true }
+          - name: photos
+            label: Photos (le nom de la marque s'affiche au survol)
+            type: object
+            list: true
+            fields:
+              - { name: image, label: Photo, type: image }
+              - { name: marque, label: Nom de la marque, type: string }
       - name: contact
         label: Contact
         type: object
