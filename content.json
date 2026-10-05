@@ -117,7 +117,8 @@
     "photos": [
       {
         "image": "assets/images/photos/photographie-quran-mon-amour.jpg",
-        "marque": "Quran mon amour"
+        "marque": "Quran mon amour",
+        "cadrage": "48% 44%"
       },
       {
         "image": "assets/images/photos/photographie-faraasha-porte.jpg",
