@@ -194,18 +194,18 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
 .collabs__list li:hover{background:var(--espresso);color:var(--cream);transform:translateY(-2px)}
 
 /* ========= MATÉRIEL DE CRÉATION ========= */
-.kit__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:stretch}
-.kit__img{position:relative;border-radius:var(--radius);overflow:hidden;min-height:420px}
+.kit__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:stretch;max-width:1040px}
+.kit__img{position:relative;border-radius:var(--radius);overflow:hidden;min-height:380px}
 .kit__img img{position:absolute;inset:0}
-.kit__card{padding:clamp(28px,4vw,56px);box-shadow:none}
-.kit__card .title{line-height:.95;margin:4px 0 16px}
-.kit__intro{color:#4f3f34;line-height:1.5;margin-bottom:26px}
+.kit__card{padding:clamp(26px,3.4vw,44px);box-shadow:none}
+.kit__card .title{font-size:clamp(40px,4.4vw,64px);line-height:.95;margin:4px 0 16px}
+.kit__intro{color:#4f3f34;font-size:16px;line-height:1.5;margin-bottom:20px}
 .kit__groups{display:grid;gap:22px}
 .kit__group h3{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .kit__group ul,.offer ul{display:grid;gap:10px}
 .kit__group li,.offer li{display:flex;align-items:flex-start;gap:12px;font-size:16px;line-height:1.5;color:var(--ink)}
 .check{flex:0 0 auto;width:22px;height:22px;margin-top:1px;padding:4px;border-radius:50%;background:var(--espresso);fill:none;stroke:var(--cream);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-.kit__end{margin-top:26px;padding-top:20px;border-top:1px solid rgba(107,82,68,.2);font-style:italic;line-height:1.5;color:var(--brown)}
+.kit__end{margin-top:20px;padding-top:16px;font-size:16px;border-top:1px solid rgba(107,82,68,.2);font-style:italic;line-height:1.5;color:var(--brown)}
 
 /* ========= UGC OU COLLABORATION ========= */
 .bg--grid{background-color:#efe4d4;background-image:linear-gradient(rgba(107,82,68,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(107,82,68,.16) 1px,transparent 1px);background-size:22px 22px;background-position:center top}
