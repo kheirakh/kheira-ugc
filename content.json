@@ -111,6 +111,46 @@
     "titre": "Photographie",
     "photos": [
       {
+        "image": "assets/images/photos/photographie-nahar-coque-cafe.jpg",
+        "marque": "Nahar"
+      },
+      {
+        "image": "assets/images/photos/photographie-glam-by-majha-plateau.jpg",
+        "marque": "Glam by Majha"
+      },
+      {
+        "image": "assets/images/photos/photographie-alif-story-conteuse.jpg",
+        "marque": "Alif Story"
+      },
+      {
+        "image": "assets/images/photos/photographie-livres-miracles-quran.jpg",
+        "marque": "Les Miracles du Qur'an"
+      },
+      {
+        "image": "assets/images/photos/photographie-glam-by-majha-fleurs.jpg",
+        "marque": "Glam by Majha"
+      },
+      {
+        "image": "assets/images/photos/photographie-glam-by-majha-blush.jpg",
+        "marque": "Glam by Majha"
+      },
+      {
+        "image": "assets/images/photos/photographie-nahar-coques.jpg",
+        "marque": "Nahar"
+      },
+      {
+        "image": "assets/images/photos/photographie-faraasha-collection.jpg",
+        "marque": "Faraasha Collection"
+      },
+      {
+        "image": "assets/images/photos/photographie-quran-mon-amour-bougie.jpg",
+        "marque": "Quran mon amour"
+      },
+      {
+        "image": "assets/images/photos/photographie-quran-mon-amour-ysl.jpg",
+        "marque": "Quran mon amour"
+      },
+      {
         "image": "assets/images/photos/photographie-skin1004-trousse.jpg",
         "marque": "Skin 1004"
       },
