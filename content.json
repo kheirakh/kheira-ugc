@@ -327,7 +327,8 @@
     "petit_titre": "Formation UGC",
     "titre": "Deviens créatrice Ugc",
     "texte": "Tu veux te lancer dans la creation de contenu et l'UGC et collaborer avec des marques ? J'ai créé la formation que j'aurais aimé avoir : créer du contenu qui donne envie, trouver tes premières collaborations et fixer tes tarifs avec confiance.",
-    "bouton": "S'inscrire à la newsletter"
+    "bouton": "S'inscrire à la newsletter",
+    "bouton_2": " "
   },
   "contact": {
     "photo": "assets/images/site/contact.jpg",
