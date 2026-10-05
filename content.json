@@ -141,17 +141,17 @@
         "cadrage": "31% 32%"
       },
       {
-        "image": "assets/images/photos/photographie-13.jpg",
+        "image": "assets/images/photos/photographie-atelier-beldii.jpg",
         "marque": "Atelier Beldii",
         "cadrage": "54% 31%"
       },
       {
-        "image": "assets/images/photos/photographie-04.jpg",
+        "image": "assets/images/photos/photographie-soos-atelier.jpg",
         "marque": "Soos Atelier",
         "cadrage": "48% 26%"
       },
       {
-        "image": "assets/images/photos/photographie-20.jpg",
+        "image": "assets/images/photos/photographie-atelier-beldii-2.jpg",
         "marque": "Atelier Beldii",
         "cadrage": "54% 47%"
       },
@@ -161,7 +161,7 @@
         "cadrage": "55% 48%"
       },
       {
-        "image": "assets/images/photos/photographie-16.jpg",
+        "image": "assets/images/photos/photographie-quran-mon-amour-2.jpg",
         "marque": "Quran mon amour",
         "cadrage": "50% 89%"
       },
@@ -171,7 +171,7 @@
         "cadrage": "8% 95%"
       },
       {
-        "image": "assets/images/photos/photographie-22.jpg",
+        "image": "assets/images/photos/photographie-atelier-beldii-3.jpg",
         "marque": "Atelier Beldii",
         "cadrage": "47% 98%"
       },
@@ -186,7 +186,7 @@
         "cadrage": "73% 62%"
       },
       {
-        "image": "assets/images/photos/photographie-19.jpg",
+        "image": "assets/images/photos/photographie-taziri.jpg",
         "marque": "Taziri",
         "cadrage": "55% 73%"
       },
@@ -211,7 +211,7 @@
         "cadrage": "65% 66%"
       },
       {
-        "image": "assets/images/photos/photographie-05.jpg",
+        "image": "assets/images/photos/photographie-maison-irya.jpg",
         "marque": "Maison Irya",
         "cadrage": "56% 85%"
       },
@@ -323,7 +323,7 @@
     ]
   },
   "formation": {
-    "logo": "assets/images/site/myugc-girls-club.jpg",
+    "logo": "assets/images/site/formation-banniere.jpg",
     "petit_titre": "Formation UGC",
     "titre": "Deviens créatrice Ugc",
     "texte": "Tu veux te lancer dans la creation de contenu et l'UGC et collaborer avec des marques ? J'ai créé la formation que j'aurais aimé avoir : créer du contenu qui donne envie, trouver tes premières collaborations et fixer tes tarifs avec confiance.",
