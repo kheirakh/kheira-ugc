@@ -216,7 +216,7 @@
         "cadrage": "56% 85%"
       },
       {
-        "image": "assets/IMG_6980.jpeg",
+        "image": "assets/images/photos/photographie-taziri-majorelle.jpg",
         "marque": "Taziri",
         "cadrage": "57% 84%"
       }
@@ -321,6 +321,16 @@
         "modalites": "Le contenu reste sur mes supports : 3 mois sur mon feed et en story à la une sans limite de durée. Aucune cession de droits n'est incluse (réutilisation, publicité, whitelisting, ads) : toute autre utilisation fait l'objet d'un accord et d'une facturation à part."
       }
     ]
+  },
+  "formation": {
+    "petit_titre": "Formation UGC",
+    "titre": "Deviens créatrice Ugc",
+    "texte": "Tu veux te lancer dans l'UGC et collaborer avec des marques ? J'ai créé la formation que j'aurais aimé avoir à mes débuts : créer du contenu qui donne envie, trouver tes premières collaborations et fixer tes tarifs avec confiance.",
+    "logo": "assets/images/site/myugc-girls-club.jpg",
+    "bouton": "Je m'inscris à la formation",
+    "lien": "https://beacons.ai/myugcgirlsclub",
+    "bouton_2": "S'inscrire à la newsletter",
+    "lien_2": "https://beacons.ai/myugcgirlsclub"
   },
   "contact": {
     "photo": "assets/images/site/contact.jpg",

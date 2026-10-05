@@ -72,6 +72,16 @@
       }).join('');
     }
 
+    if (c.formation) {
+      [['fBtn1', 'lien'], ['fBtn2', 'lien_2']].forEach(function (b) {
+        var el = document.getElementById(b[0]); if (!el) return;
+        var u = String(c.formation[b[1]] || '');
+        var t = c.formation[b[0] === 'fBtn1' ? 'bouton' : 'bouton_2'];
+        if (/^https?:\/\//.test(u)) el.href = u;
+        el.style.display = t ? '' : 'none';
+      });
+    }
+
     var co = (c.collaborations && c.collaborations.marques) || [];
     var coEl = document.getElementById('collabs');
     var coSec = document.getElementById('collaborations');

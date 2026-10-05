@@ -128,6 +128,18 @@ content:
               - { name: description, label: Description, type: text }
               - { name: points, label: Points (une ligne = une coche), type: string, list: true }
               - { name: modalites, label: Modalités, type: text }
+      - name: formation
+        label: Bannière formation UGC
+        type: object
+        fields:
+          - { name: logo, label: Image / logo, type: image }
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text }
+          - { name: bouton, label: Texte du bouton 1, type: string }
+          - { name: lien, label: Lien du bouton 1, type: string }
+          - { name: bouton_2, label: "Texte du bouton 2 (vide = caché)", type: string }
+          - { name: lien_2, label: Lien du bouton 2, type: string }
       - name: contact
         label: Contact
         type: object

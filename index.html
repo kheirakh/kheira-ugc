@@ -13,7 +13,7 @@
 <!-- ADOBE FONTS : kit "Portfolio UGC" (Sloop Script). Ajoute Futura PT au même projet sur fonts.adobe.com, pas besoin de toucher ce code -->
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
-<link rel="stylesheet" href="style.css?v=31">
+<link rel="stylesheet" href="style.css?v=32">
 <!-- Cache les textes le temps de lire content.json (évite de voir l'ancienne version 1 seconde) -->
 <style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks,.is-loading #aboutList,.is-loading #univers,.is-loading #tabs,.is-loading #carousel,.is-loading #grid9,.is-loading #gridUgc,.is-loading #contactLinks,.is-loading #collabs,.is-loading #kitGroups,.is-loading #offers{visibility:hidden}</style>
 <script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
@@ -36,8 +36,11 @@
     <a href="#accueil">Accueil</a>
     <a href="#apropos">À propos</a>
     <a href="#portfolio">Portfolio</a>
-    <a href="#photographie">Photographie</a>
+    <a href="#photographie">Photos</a>
+    <a href="#materiel">Matériel</a>
+    <a href="#collaborations">Collaborations</a>
     <a href="#prestations">Prestations</a>
+    <a href="#formation">Formation</a>
     <a href="#contact">Contact</a>
   </nav>
   <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -82,7 +85,7 @@
 </section>
 
 <!-- MARQUES — fond : crème uni -->
-<section class="brands bg bg--cream">
+<section class="brands bg bg--cream" id="univers-marques">
   <div class="wrap">
     <div class="brands__card reveal">
       <p class="eyebrow" data-txt="univers.petit_titre">Collaboration</p>
@@ -141,25 +144,26 @@
       <figure class="reveal"><img src="assets/images/photos/photographie-alif-story-conteuse.jpg" alt="Photographie 5" loading="lazy"></figure>
       <figure class="reveal"><img src="assets/images/photos/photographie-13.jpg" alt="Photographie 6" loading="lazy"></figure>
       <figure class="reveal"><img src="assets/images/photos/photographie-04.jpg" alt="Photographie 7" loading="lazy"></figure>
-      <figure class="reveal"><img src="assets/images/photos/photographie-livres-miracles-quran.jpg" alt="Photographie 8" loading="lazy"></figure>
-      <figure class="reveal"><img src="assets/images/photos/photographie-16.jpg" alt="Photographie 9" loading="lazy"></figure>
-      <figure class="reveal"><img src="assets/images/photos/photographie-faraasha-collection.jpg" alt="Photographie 10" loading="lazy"></figure>
-      <figure class="reveal"><img src="assets/images/photos/photographie-20.jpg" alt="Photographie 11" loading="lazy"></figure>
-      <figure class="reveal"><img src="assets/images/photos/photographie-19.jpg" alt="Photographie 12" loading="lazy"></figure>
-      <figure class="reveal"><img src="assets/images/photos/photographie-22.jpg" alt="Photographie 13" loading="lazy"></figure>
-      <figure class="reveal"><img src="assets/images/photos/photographie-nahar-coques.jpg" alt="Photographie 14" loading="lazy"></figure>
-      <figure class="reveal"><img src="assets/images/photos/photographie-glam-by-majha-fleurs.jpg" alt="Photographie 15" loading="lazy"></figure>
+      <figure class="reveal"><img src="assets/images/photos/photographie-20.jpg" alt="Photographie 8" loading="lazy"></figure>
+      <figure class="reveal"><img src="assets/images/photos/photographie-livres-miracles-quran.jpg" alt="Photographie 9" loading="lazy"></figure>
+      <figure class="reveal"><img src="assets/images/photos/photographie-16.jpg" alt="Photographie 10" loading="lazy"></figure>
+      <figure class="reveal"><img src="assets/images/photos/photographie-faraasha-collection.jpg" alt="Photographie 11" loading="lazy"></figure>
+      <figure class="reveal"><img src="assets/images/photos/photographie-22.jpg" alt="Photographie 12" loading="lazy"></figure>
+      <figure class="reveal"><img src="assets/images/photos/photographie-nahar-coques.jpg" alt="Photographie 13" loading="lazy"></figure>
+      <figure class="reveal"><img src="assets/images/photos/photographie-glam-by-majha-fleurs.jpg" alt="Photographie 14" loading="lazy"></figure>
+      <figure class="reveal"><img src="assets/images/photos/photographie-19.jpg" alt="Photographie 15" loading="lazy"></figure>
       <figure class="reveal"><img src="assets/images/photos/photographie-nahar-coque-cafe.jpg" alt="Photographie 16" loading="lazy"></figure>
       <figure class="reveal"><img src="assets/images/photos/photographie-quran-mon-amour-bougie.jpg" alt="Photographie 17" loading="lazy"></figure>
       <figure class="reveal"><img src="assets/images/photos/photographie-glam-by-majha-plateau.jpg" alt="Photographie 18" loading="lazy"></figure>
       <figure class="reveal"><img src="assets/images/photos/photographie-gratitude-journal.jpg" alt="Photographie 19" loading="lazy"></figure>
       <figure class="reveal"><img src="assets/images/photos/photographie-05.jpg" alt="Photographie 20" loading="lazy"></figure>
+      <figure class="reveal"><img src="assets/images/photos/photographie-taziri-majorelle.jpg" alt="Photographie 21" loading="lazy"></figure>
     </div>
   </div>
 </section>
 
 <!-- PHOTOS UGC — fond : pois (dessinés en CSS) -->
-<section class="photos bg bg--dots photos--ugc">
+<section class="photos bg bg--dots photos--ugc" id="photos-ugc">
   <div class="wrap">
     <h2 class="title title--light title--center reveal" data-txt="photos_ugc.titre">Photos Ugc</h2>
     <div class="pgrid" id="gridUgc">
@@ -221,6 +225,22 @@
   </div>
 </section>
 
+<!-- FORMATION UGC (bannière) — fond : chocolat -->
+<section class="formation bg bg--espresso" id="formation">
+  <div class="wrap formation__card reveal">
+    <figure class="formation__logo"><img src="assets/images/site/myugc-girls-club.jpg" alt="Logo My UGC Girls Club" loading="lazy" data-img="formation.logo"></figure>
+    <div class="formation__text">
+      <p class="eyebrow eyebrow--light" data-txt="formation.petit_titre">Formation UGC</p>
+      <h2 class="title title--light" data-txt="formation.titre">Deviens créatrice Ugc</h2>
+      <p class="formation__p" data-txt="formation.texte">Tu veux te lancer dans l&#x27;UGC et collaborer avec des marques ? J&#x27;ai créé la formation que j&#x27;aurais aimé avoir à mes débuts : créer du contenu qui donne envie, trouver tes premières collaborations et fixer tes tarifs avec confiance.</p>
+      <div class="formation__btns">
+        <a class="fbtn fbtn--main" id="fBtn1" href="https://beacons.ai/myugcgirlsclub" target="_blank" rel="noopener" data-txt="formation.bouton">Je m&#x27;inscris à la formation</a>
+        <a class="fbtn" id="fBtn2" href="https://beacons.ai/myugcgirlsclub" target="_blank" rel="noopener" data-txt="formation.bouton_2">S&#x27;inscrire à la newsletter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT — fond : beige uni -->
 <section class="contact bg bg--beige" id="contact">
   <div class="wrap">
@@ -246,6 +266,6 @@
   <p class="footer__pill">© <span id="year"></span> <span data-txt="accueil.titre">kheira</span> · Tous droits réservés</p>
 </footer>
 
-<script src="script.js?v=13"></script>
+<script src="script.js?v=14"></script>
 </body>
 </html>
