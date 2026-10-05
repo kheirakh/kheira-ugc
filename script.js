@@ -102,73 +102,123 @@
     document.querySelectorAll('#navLinks a').forEach(function (a) { a.addEventListener('click', closeMenu); });
     document.addEventListener('click', function (e) { if (!nav.contains(e.target)) closeMenu(); });
 
-    // Vidéos : survol sur ordinateur, tap sur mobile, une seule à la fois
+    // Vidéos : aperçu muet au survol (ordinateur) ; clic ou tap = lecture en grand (pop-up)
     var cards = Array.prototype.slice.call(document.querySelectorAll('.vcard'));
     var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    function stop(card) { card.querySelector('video').pause(); card.classList.remove('is-playing'); }
-    function play(card) {
+    function stop(card) { var v = card.querySelector('video'); v.pause(); card.classList.remove('is-playing'); }
+    function preview(card) {
       cards.forEach(function (c) { if (c !== card) stop(c); });
       var v = card.querySelector('video');
+      v.muted = true;
       var p = v.play();
       card.classList.add('is-playing');
       if (p && p.catch) p.catch(function () { card.classList.remove('is-playing'); });
     }
+
+    // Pop-up vidéo
+    var box = document.createElement('div');
+    box.className = 'vbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.innerHTML = '<div class="vbox__inner"><button class="vbox__close" aria-label="Fermer la vidéo">&times;</button>' +
+      '<video class="vbox__video" controls playsinline></video><p class="vbox__marque"></p></div>';
+    document.body.appendChild(box);
+    var boxVideo = box.querySelector('video');
+    function openBox(card) {
+      cards.forEach(stop);
+      var v = card.querySelector('video');
+      boxVideo.src = v.getAttribute('src').replace('#t=0.1', '');
+      if (v.getAttribute('poster')) boxVideo.setAttribute('poster', v.getAttribute('poster')); else boxVideo.removeAttribute('poster');
+      box.querySelector('.vbox__marque').textContent = (card.querySelector('p') || {}).textContent || '';
+      box.classList.add('is-open');
+      document.documentElement.classList.add('vbox-open');
+      boxVideo.muted = false;
+      var p = boxVideo.play();
+      if (p && p.catch) p.catch(function () {});
+      box.querySelector('.vbox__close').focus({ preventScroll: true });
+    }
+    function closeBox() {
+      if (!box.classList.contains('is-open')) return;
+      boxVideo.pause();
+      boxVideo.removeAttribute('src');
+      boxVideo.load();
+      box.classList.remove('is-open');
+      document.documentElement.classList.remove('vbox-open');
+    }
+    box.addEventListener('click', function (e) { if (e.target === box || e.target.closest('.vbox__close')) closeBox(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeBox(); });
+
     cards.forEach(function (card) {
       var media = card.querySelector('.vcard__media');
-      var v = card.querySelector('video');
       if (canHover) {
-        media.addEventListener('mouseenter', function () { play(card); });
+        media.addEventListener('mouseenter', function () { preview(card); });
         media.addEventListener('mouseleave', function () { stop(card); });
-        media.addEventListener('click', function () { v.muted = !v.muted; if (v.paused) play(card); });
-      } else {
-        media.addEventListener('click', function () {
-          if (card.classList.contains('is-playing')) stop(card);
-          else { v.muted = false; play(card); }
-        });
       }
+      media.addEventListener('click', function () { openBox(card); });
     });
 
-    // Carrousel + onglets
+    // Carrousel : toutes les vidéos sur une ligne ; l'onglet suit la vidéo affichée
     var car = document.getElementById('carousel');
     var prev = document.getElementById('carPrev');
     var next = document.getElementById('carNext');
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
     function stepSize() {
-      var first = cards.filter(function (c) { return !c.classList.contains('is-hidden'); })[0];
-      if (!first) return car.clientWidth;
+      if (!cards[0]) return car.clientWidth;
       var gap = parseFloat(getComputedStyle(car).columnGap) || 0;
-      return first.getBoundingClientRect().width + gap;
+      return cards[0].getBoundingClientRect().width + gap;
     }
+    function maxScroll() { return car.scrollWidth - car.clientWidth; }
     function updateArrows() {
-      var max = car.scrollWidth - car.clientWidth - 2;
       prev.disabled = car.scrollLeft <= 2;
-      next.disabled = car.scrollLeft >= max;
+      next.disabled = car.scrollLeft >= maxScroll() - 2;
       prev.parentNode.style.visibility = (prev.disabled && next.disabled) ? 'hidden' : '';
     }
-    prev.addEventListener('click', function () { car.scrollBy({ left: -stepSize(), behavior: 'smooth' }); });
-    next.addEventListener('click', function () { car.scrollBy({ left: stepSize(), behavior: 'smooth' }); });
-    car.addEventListener('scroll', function () { window.requestAnimationFrame(updateArrows); }, { passive: true });
-    window.addEventListener('resize', updateArrows);
-
-    var tabs = document.querySelectorAll('.tab');
-    function filter(cat) {
+    function setActive(cat) {
       tabs.forEach(function (t) {
         var on = t.getAttribute('data-filter') === cat;
         t.classList.toggle('is-active', on);
         t.setAttribute('aria-selected', on);
       });
-      cards.forEach(function (c) {
-        var show = c.getAttribute('data-cat') === cat;
-        if (!show) stop(c);
-        c.classList.toggle('is-hidden', !show);
-      });
-      car.style.scrollBehavior = 'auto';
-      car.scrollLeft = 0;
-      car.style.scrollBehavior = '';
-      updateArrows();
     }
-    tabs.forEach(function (t) { t.addEventListener('click', function () { filter(t.getAttribute('data-filter')); }); });
-    var first = document.querySelector('.tab.is-active') || tabs[0];
-    if (first) filter(first.getAttribute('data-filter')); else updateArrows();
+    function cardLeft(c) { return c.getBoundingClientRect().left - car.getBoundingClientRect().left + car.scrollLeft; }
+    function firstOf(cat) { return cards.filter(function (c) { return c.getAttribute('data-cat') === cat; })[0]; }
+    var lock = null;
+    function spy() {
+      if (lock || !cards.length) return;
+      var cat;
+      if (car.scrollLeft >= maxScroll() - 4) {
+        // tout au bout : dernière catégorie dont la 1re vidéo est visible
+        var right = car.scrollLeft + car.clientWidth;
+        tabs.forEach(function (t) {
+          var f = firstOf(t.getAttribute('data-filter'));
+          if (f && cardLeft(f) + f.offsetWidth / 2 <= right) cat = t.getAttribute('data-filter');
+        });
+      } else {
+        var best = Infinity;
+        cards.forEach(function (c) {
+          var d = Math.abs(cardLeft(c) - car.scrollLeft);
+          if (d < best) { best = d; cat = c.getAttribute('data-cat'); }
+        });
+      }
+      if (cat) setActive(cat);
+    }
+    prev.addEventListener('click', function () { car.scrollBy({ left: -stepSize(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { car.scrollBy({ left: stepSize(), behavior: 'smooth' }); });
+    car.addEventListener('scroll', function () { window.requestAnimationFrame(function () { updateArrows(); spy(); }); }, { passive: true });
+    window.addEventListener('resize', function () { updateArrows(); spy(); });
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        var cat = t.getAttribute('data-filter');
+        var f = firstOf(cat);
+        setActive(cat);
+        if (!f) return;
+        clearTimeout(lock);
+        lock = setTimeout(function () { lock = null; }, 900);
+        car.scrollTo({ left: Math.min(cardLeft(f), maxScroll()), behavior: 'smooth' });
+      });
+    });
+    if (tabs[0]) setActive(tabs[0].getAttribute('data-filter'));
+    updateArrows();
 
     // Apparition au scroll
     var reveals = document.querySelectorAll('.reveal');
