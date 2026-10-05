@@ -13,7 +13,7 @@
 <!-- ADOBE FONTS : kit "Portfolio UGC" (Sloop Script). Ajoute Futura PT au même projet sur fonts.adobe.com, pas besoin de toucher ce code -->
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=19">
 <!-- Cache les textes le temps de lire content.json (évite de voir l'ancienne version 1 seconde) -->
 <style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks,.is-loading #aboutList,.is-loading #univers,.is-loading #tabs,.is-loading #carousel,.is-loading #grid9,.is-loading #gridUgc,.is-loading #contactLinks,.is-loading #collabs{visibility:hidden}</style>
 <script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
@@ -122,8 +122,8 @@
       <article class="vcard" data-cat="cat2"><div class="vcard__media"><video src="assets/videos/ritz-carlton.mp4" poster="assets/images/covers/ritz-carlton.jpg" muted loop playsinline preload="none"></video><span class="play" aria-hidden="true"></span></div><h3></h3><p>Ritz Carlton Rabat</p></article>
     </div>
     <div class="carousel__nav">
-      <button class="round" id="carPrev" aria-label="Vidéos précédentes"><span class="chev chev--l"></span></button>
-      <button class="round" id="carNext" aria-label="Vidéos suivantes"><span class="chev chev--r"></span></button>
+      <button class="round" id="carPrev" aria-label="Vidéos précédentes"><svg class="arrow" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <button class="round" id="carNext" aria-label="Vidéos suivantes"><svg class="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
     </div>
   </div>
 </section>
@@ -189,12 +189,14 @@
   <div class="wrap">
     <div class="contact__card card card--cream reveal">
       <figure class="contact__img"><img src="assets/images/site/contact.jpg" alt="Portrait de Kheira" loading="lazy" data-img="contact.photo"></figure>
-      <p class="eyebrow" data-txt="contact.petit_titre">Get in touch</p>
-      <h2 class="title title--center" data-txt="contact.titre">Créons du contenu que ton audience a vraiment envie de regarder.</h2>
-      <div class="contact__links" id="contactLinks">
-        <a href="mailto:helloookheira@gmail.com"><span class="round round--dark"><svg><use href="#i-mail"/></svg></span>helloookheira@gmail.com</a>
-        <a href="https://www.instagram.com/kheira.kh__" target="_blank" rel="noopener"><span class="round round--dark"><svg><use href="#i-ig"/></svg></span>Instagram · @kheira.kh__</a>
-        <a href="https://www.tiktok.com/@kheira.kh__" target="_blank" rel="noopener"><span class="round round--dark"><svg><use href="#i-tt"/></svg></span>TikTok · @kheira.kh__</a>
+      <div class="contact__text">
+        <p class="eyebrow" data-txt="contact.petit_titre">Get in touch</p>
+        <h2 class="title" data-txt="contact.titre">Créons du contenu que ton audience a vraiment envie de regarder.</h2>
+        <div class="contact__links" id="contactLinks">
+          <a href="mailto:helloookheira@gmail.com"><span class="round round--dark"><svg><use href="#i-mail"/></svg></span>helloookheira@gmail.com</a>
+          <a href="https://www.instagram.com/kheira.kh__" target="_blank" rel="noopener"><span class="round round--dark"><svg><use href="#i-ig"/></svg></span>Instagram · @kheira.kh__</a>
+          <a href="https://www.tiktok.com/@kheira.kh__" target="_blank" rel="noopener"><span class="round round--dark"><svg><use href="#i-tt"/></svg></span>TikTok · @kheira.kh__</a>
+        </div>
       </div>
     </div>
   </div>
