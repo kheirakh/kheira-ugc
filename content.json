@@ -111,6 +111,10 @@
     "titre": "Photographie",
     "photos": [
       {
+        "image": "assets/images/photos/photographie-skin1004-trousse.jpg",
+        "marque": "Skin 1004"
+      },
+      {
         "image": "assets/images/photos/photographie-gratitude-journal.jpg",
         "marque": "The Gratitude Journal"
       },
