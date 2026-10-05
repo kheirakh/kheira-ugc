@@ -53,6 +53,10 @@
     var ab = (c.apropos && c.apropos.paragraphes) || [];
     document.getElementById('aboutList').innerHTML = ab.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
 
+    var co = (c.collaborations && c.collaborations.marques) || [];
+    var coEl = document.getElementById('collabs');
+    if (coEl && c.collaborations) coEl.innerHTML = co.filter(Boolean).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
+
     var un = (c.univers && c.univers.liste) || [];
     document.getElementById('univers').innerHTML = un.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
 

@@ -80,6 +80,13 @@ content:
             fields:
               - { name: image, label: Photo, type: image }
               - { name: marque, label: Nom de la marque, type: string }
+      - name: collaborations
+        label: Marques avec qui j'ai travaillé
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: marques, label: Noms des marques, type: string, list: true }
       - name: contact
         label: Contact
         type: object

@@ -158,6 +158,21 @@
       }
     ]
   },
+  "collaborations": {
+    "petit_titre": "Partenariats",
+    "titre": "Marques avec lesquelles j'ai travaillé",
+    "marques": [
+      "Quran mon amour",
+      "Maison du planner",
+      "Librairie",
+      "Malaqi Couture",
+      "Maison Irya",
+      "Alif Story",
+      "Urban Rugs Co",
+      "Matchai",
+      "Ritz Carlton Rabat"
+    ]
+  },
   "contact": {
     "photo": "assets/images/site/contact.jpg",
     "petit_titre": "Get in touch",

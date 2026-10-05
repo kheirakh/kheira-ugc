@@ -13,9 +13,9 @@
 <!-- ADOBE FONTS : kit "Portfolio UGC" (Sloop Script). Ajoute Futura PT au même projet sur fonts.adobe.com, pas besoin de toucher ce code -->
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
-<link rel="stylesheet" href="style.css?v=15">
+<link rel="stylesheet" href="style.css?v=16">
 <!-- Cache les textes le temps de lire content.json (évite de voir l'ancienne version 1 seconde) -->
-<style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks,.is-loading #aboutList,.is-loading #univers,.is-loading #tabs,.is-loading #carousel,.is-loading #grid9,.is-loading #gridUgc,.is-loading #contactLinks{visibility:hidden}</style>
+<style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks,.is-loading #aboutList,.is-loading #univers,.is-loading #tabs,.is-loading #carousel,.is-loading #grid9,.is-loading #gridUgc,.is-loading #contactLinks,.is-loading #collabs{visibility:hidden}</style>
 <script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
 </head>
 <body>
@@ -163,6 +163,27 @@
   </div>
 </section>
 
+<!-- MARQUES AVEC QUI J'AI TRAVAILLÉ — fond : faon tacheté (fawn-spots.jpg) -->
+<section class="collabs bg bg--spots" id="collaborations">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow eyebrow--light" data-txt="collaborations.petit_titre">Partenariats</p>
+      <h2 class="title title--light" data-txt="collaborations.titre">Marques avec lesquelles j'ai travaillé</h2>
+    </div>
+    <ul class="collabs__list reveal" id="collabs">
+      <li>Quran mon amour</li>
+      <li>Maison du planner</li>
+      <li>Librairie</li>
+      <li>Malaqi Couture</li>
+      <li>Maison Irya</li>
+      <li>Alif Story</li>
+      <li>Urban Rugs Co</li>
+      <li>Matchai</li>
+      <li>Ritz Carlton Rabat</li>
+    </ul>
+  </div>
+</section>
+
 <!-- CONTACT — fond : beige uni -->
 <section class="contact bg bg--beige" id="contact">
   <div class="wrap">
@@ -186,6 +207,6 @@
   <p class="footer__pill">© <span id="year"></span> <span data-txt="accueil.titre">kheira</span> · Tous droits réservés</p>
 </footer>
 
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>
