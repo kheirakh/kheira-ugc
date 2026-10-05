@@ -92,7 +92,7 @@ svg{width:18px;height:18px}
 /* ========= ACCUEIL ========= */
 .hero{min-height:100svh;display:flex;flex-direction:column;align-items:stretch;padding:84px 12px 12px}
 .hero__card{width:100%}
-.hero__ship{text-align:center;margin:12px auto 0;line-height:1.4;font-size:14px;letter-spacing:.08em;color:var(--brown)}
+.hero__ship{margin:-12px auto 24px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cream)}
 .hero__card{position:relative;flex:1;max-width:1180px;margin:0 auto;border-radius:var(--radius);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;min-height:560px}
 .hero__img{position:absolute;inset:0;object-position:50% 66%}
 .hero__card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(59,42,32,0) 35%,rgba(59,42,32,.35) 60%,rgba(59,42,32,.82) 100%)}
@@ -257,8 +257,8 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
   .nav__links a::after{display:none}
   .nav.is-open .nav__links{opacity:1;transform:none;pointer-events:auto}
   .hero{padding:72px 8px 8px}
-  .hero__card{min-height:calc(100svh - 124px)}
-  .hero__ship{font-size:12px;letter-spacing:.02em;margin-top:10px}
+  .hero__card{min-height:calc(100svh - 80px)}
+  .hero__ship{font-size:11px;letter-spacing:.08em;margin:-8px auto 18px;line-height:1.5}
   .hero__name{font-size:var(--taille-kheira-mobile)}
   .hero__sub{font-size:19px}
   .hero__lead{font-size:15px;line-height:1.5;margin:8px auto 18px;max-width:320px}
