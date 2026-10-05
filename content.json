@@ -111,6 +111,14 @@
     "titre": "Photographie",
     "photos": [
       {
+        "image": "assets/images/photos/photographie-24.jpg",
+        "marque": "The Gratitude Journal"
+      },
+      {
+        "image": "assets/images/photos/photographie-25.jpg",
+        "marque": "Quran mon amour"
+      },
+      {
         "image": "assets/images/photos/photographie-10.jpg",
         "marque": "Kayali"
       },
