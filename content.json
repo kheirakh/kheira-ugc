@@ -160,10 +160,6 @@
         "marque": "Atelier Beldii"
       },
       {
-        "image": "assets/images/photos/photographie-19.jpg",
-        "marque": "Taziri"
-      },
-      {
         "image": "assets/images/photos/photographie-22.jpg",
         "marque": "Atelier Beldii"
       },
@@ -174,6 +170,10 @@
       {
         "image": "assets/images/photos/photographie-glam-by-majha-fleurs.jpg",
         "marque": "Glam by Majha"
+      },
+      {
+        "image": "assets/images/photos/photographie-19.jpg",
+        "marque": "Taziri"
       },
       {
         "image": "assets/images/photos/photographie-nahar-coque-cafe.jpg",
