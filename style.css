@@ -337,7 +337,7 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
 /* ========= FORMATION UGC (bannière) ========= */
 .formation .formation__card{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:1080px}
 .formation__logo{aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(247,239,228,.18)}
-.formation__text .title{margin:6px 0 16px;line-height:.95}
+.formation__text .title{font-size:clamp(44px,5vw,72px);margin:6px 0 16px;line-height:.95}
 .formation__p{color:rgba(247,239,228,.85);line-height:1.6;max-width:560px}
 .formation__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .fbtn{display:inline-flex;align-items:center;justify-content:center;padding:15px 26px;border-radius:999px;border:1px solid rgba(247,239,228,.6);color:var(--cream);font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:background .3s,color .3s}
