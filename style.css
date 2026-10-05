@@ -352,3 +352,10 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
   .formation__p{margin:0 auto}
   .formation__btns{flex-direction:column;align-items:stretch}
 }
+
+/* Contact : texte à gauche, photo à droite (ordinateur) */
+@media (min-width:761px){
+  .contact__card{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .contact__img{order:2}
+  .contact__text{order:1}
+}
