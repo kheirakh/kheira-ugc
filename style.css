@@ -142,6 +142,11 @@ svg{width:18px;height:18px}
 .play{position:absolute;left:50%;bottom:18px;width:46px;height:46px;margin-left:-23px;border-radius:50%;background:rgba(59,42,32,.75);backdrop-filter:blur(4px);transition:opacity .3s}
 .play::after{content:"";position:absolute;left:18px;top:14px;border-left:13px solid var(--cream);border-top:9px solid transparent;border-bottom:9px solid transparent}
 .vcard.is-playing .play{opacity:0}
+/* Catégorie visible : étiquette sur chaque vidéo + vidéos des autres catégories en retrait */
+.vcard{transition:opacity .35s ease,filter .35s ease}
+.vcard.is-other{opacity:.38;filter:grayscale(.4)}
+.vcard.is-other:hover{opacity:.85;filter:none}
+.vcard__cat{position:absolute;top:12px;left:12px;z-index:1;padding:6px 12px;border-radius:999px;background:rgba(251,246,239,.92);color:var(--espresso);font-size:10px;letter-spacing:.18em;text-transform:uppercase;line-height:1.2;pointer-events:none}
 /* Pop-up vidéo (clic sur une vidéo) */
 .vbox{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(24,16,11,.88);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
 .vbox.is-open{opacity:1;visibility:visible}
@@ -229,6 +234,7 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
   .vcard{flex-basis:calc((100% - 12px)/2)}
 
   .vcard h3{font-size:11px}.vcard p{font-size:9.5px}
+  .vcard__cat{top:8px;left:8px;padding:5px 9px;font-size:8.5px;letter-spacing:.12em}
   .tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .tab{display:flex;align-items:center;justify-content:center;min-height:58px;padding:10px;letter-spacing:.14em;line-height:1.4;text-align:center}
   .tab:last-child:nth-child(odd){grid-column:1 / -1;justify-self:center;width:calc(50% - 5px)}

@@ -179,7 +179,19 @@
         t.classList.toggle('is-active', on);
         t.setAttribute('aria-selected', on);
       });
+      // les vidéos des autres catégories passent en retrait
+      cards.forEach(function (c) { c.classList.toggle('is-other', c.getAttribute('data-cat') !== cat); });
     }
+    // petite étiquette de catégorie sur chaque vidéo
+    cards.forEach(function (c) {
+      var t = tabs.filter(function (x) { return x.getAttribute('data-filter') === c.getAttribute('data-cat'); })[0];
+      if (t && !c.querySelector('.vcard__cat')) {
+        var tag = document.createElement('span');
+        tag.className = 'vcard__cat';
+        tag.textContent = t.textContent;
+        c.querySelector('.vcard__media').appendChild(tag);
+      }
+    });
     function cardLeft(c) { return c.getBoundingClientRect().left - car.getBoundingClientRect().left + car.scrollLeft; }
     function firstOf(cat) { return cards.filter(function (c) { return c.getAttribute('data-cat') === cat; })[0]; }
     var lock = null;
