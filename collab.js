@@ -101,6 +101,18 @@
       d.parentNode.querySelectorAll('.qa[open]').forEach(function (o) { if (o !== d) o.open = false; });
     }, true);
 
+    // Étapes : apparition une à une au scroll
+    var steps = $('clSteps');
+    if (steps && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      steps.classList.add('is-anim');
+      var so = new IntersectionObserver(function (en) {
+        if (!en[0].isIntersecting) return;
+        steps.classList.add('is-in'); so.disconnect();
+        setTimeout(function () { steps.classList.add('is-done'); }, 1200);
+      }, { threshold: .15 });
+      so.observe(steps);
+    }
+
     // Menu mobile
     var nav = $('nav'), burger = $('burger');
     function closeMenu() { nav.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); }

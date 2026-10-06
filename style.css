@@ -648,3 +648,29 @@ body{background:var(--cocoa)}
 @media (min-width:761px){.cl-brief{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media (max-width:760px){.cl-brief__head{text-align:center}}
 .cl-brief__img img{object-position:55% 45%}
+/* Chiffres : cartes et blocs alignés sur la même largeur */
+.collab-page .cl-stats .stats__list{max-width:1180px;flex-wrap:nowrap}
+.collab-page .cl-stats .stats__list li{flex:1 1 0;max-width:none;min-width:0}
+@media (max-width:760px){.collab-page .cl-stats .stats__list{flex-wrap:wrap}.collab-page .cl-stats .stats__list li{flex:1 1 calc(50% - 10px)}}
+/* Haut de page mobile : boutons sur plusieurs lignes, rien ne dépasse */
+@media (max-width:760px){
+  .cl-chips{flex-wrap:wrap;overflow:visible;justify-content:center!important;padding-bottom:0}
+  .cl-hero__card{min-width:0}
+}
+/* Email du déroulé : ne se coupe plus au milieu */
+.cl-mail{word-break:normal;overflow-wrap:anywhere;white-space:nowrap}
+/* Étapes : petite animation */
+.cl-steplist li{transition:transform .35s ease,box-shadow .35s ease,background .35s ease,border-color .35s ease}
+.cl-step__n{transition:transform .35s ease,color .35s ease;transform-origin:left center}
+.cl-steplist li:hover{transform:translateY(-6px);background:#efe4d4;border-color:rgba(107,82,68,.35);box-shadow:0 14px 30px rgba(59,42,32,.14)}
+.cl-steplist li:hover .cl-step__n{transform:scale(1.15);color:var(--brown)}
+.cl-steplist.is-anim li{opacity:0;transform:translateY(18px)}
+.cl-steplist.is-anim.is-in li{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+.cl-steplist.is-anim.is-in li:nth-child(2){transition-delay:.12s}
+.cl-steplist.is-anim.is-in li:nth-child(3){transition-delay:.24s}
+.cl-steplist.is-anim.is-in li:nth-child(4){transition-delay:.36s}
+.cl-steplist.is-anim.is-in li:nth-child(5){transition-delay:.48s}
+.cl-steplist.is-anim.is-in.is-done li{transition:transform .35s ease,box-shadow .35s ease,background .35s ease,border-color .35s ease}
+.cl-steplist.is-anim.is-in.is-done li:hover{transform:translateY(-6px)}
+@media (max-width:560px){.cl-steplist{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.cl-steplist.is-anim li{opacity:1;transform:none}}
