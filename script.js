@@ -21,7 +21,67 @@
     tt: '<svg><use href="#i-tt"/></svg>'
   };
 
+  // ================================================================
+  // LANGUE : français par défaut ; anglais avec ?lang=en ou le bouton EN
+  // Les textes anglais sont dans en.json (modifiable dans l'admin)
+  // ================================================================
+  var LANG = 'fr';
+  try {
+    var qs = new URLSearchParams(location.search).get('lang');
+    if (qs === 'en' || qs === 'fr') { LANG = qs; try { localStorage.setItem('kh_lang', qs); } catch (e) {} }
+    else { try { if (localStorage.getItem('kh_lang') === 'en') LANG = 'en'; } catch (e) {} }
+  } catch (e) {}
+
+  var UI = {
+    fr: {
+      nav_accueil: 'Accueil', nav_apropos: 'À propos', nav_portfolio: 'Portfolio', nav_photographie: 'Photos', nav_materiel: 'Matériel',
+      nav_collaborations: 'Collaborations', nav_prestations: 'Prestations', nav_formation: 'Formation', nav_contact: 'Contact',
+      droits: 'Tous droits réservés', modalites: 'Modalités', lang_btn: 'EN', lang_aria: 'Read in English',
+      f_nom: 'Nom et prénom', f_marque: 'Marque', f_email: 'Email', f_site: 'Site ou Instagram de la marque', f_type: 'Type de contenu',
+      f_budget: 'Budget', f_delai: 'Date de livraison souhaitée', f_message: 'Ton projet en quelques mots', f_choisir: 'Choisir…',
+      f_envoi: 'Envoi en cours…', f_manque: 'Merci de remplir les champs obligatoires.', f_erreur: 'Oups, l’envoi n’a pas fonctionné. Écris-moi directement à ',
+      f_merci: 'Merci ! Ta demande est bien envoyée, je reviens vers toi très vite.'
+    },
+    en: {
+      nav_accueil: 'Home', nav_apropos: 'About', nav_portfolio: 'Portfolio', nav_photographie: 'Photos', nav_materiel: 'Gear',
+      nav_collaborations: 'Brands', nav_prestations: 'Services', nav_formation: 'Course', nav_contact: 'Contact',
+      droits: 'All rights reserved', modalites: 'Terms', lang_btn: 'FR', lang_aria: 'Lire en français',
+      f_nom: 'Full name', f_marque: 'Brand', f_email: 'Email', f_site: 'Brand website or Instagram', f_type: 'Type of content',
+      f_budget: 'Budget', f_delai: 'Desired delivery date', f_message: 'Your project in a few words', f_choisir: 'Select…',
+      f_envoi: 'Sending…', f_manque: 'Please fill in the required fields.', f_erreur: 'Oops, the form could not be sent. Email me directly at ',
+      f_merci: 'Thank you! Your request has been sent, I will get back to you very soon.'
+    }
+  };
+  function t(k) { return (UI[LANG] && UI[LANG][k]) || UI.fr[k] || ''; }
+
+  // Fusionne les textes anglais par-dessus le contenu français (les listes élément par élément)
+  function merge(base, over) {
+    if (over == null || over === '') return base;
+    if (Array.isArray(base) && Array.isArray(over)) {
+      return base.map(function (b, i) { return i < over.length ? merge(b, over[i]) : b; });
+    }
+    if (base && typeof base === 'object' && over && typeof over === 'object' && !Array.isArray(over)) {
+      var r = {};
+      Object.keys(base).forEach(function (k) { r[k] = base[k]; });
+      Object.keys(over).forEach(function (k) { r[k] = k in base ? merge(base[k], over[k]) : over[k]; });
+      return r;
+    }
+    return typeof over === 'object' ? base : over;
+  }
+
+  var CONTENT = {};
+
   function render(c) {
+    CONTENT = c;
+    document.documentElement.lang = LANG;
+    document.querySelectorAll('[data-ui]').forEach(function (el) { var v = t(el.getAttribute('data-ui')); if (v) el.textContent = v; });
+    var lb = document.getElementById('langBtn');
+    var FLAG = {
+      EN: '<svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><clipPath id="fgb"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="fgb2"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#fgb)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#fgb2)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>',
+      FR: '<svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><path fill="#002654" d="M0 0h1v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/><path fill="#CE1126" d="M2 0h1v2H2z"/></svg>'
+    };
+    if (lb) { lb.innerHTML = FLAG[t('lang_btn')] + '<span>' + t('lang_btn') + '</span>'; lb.setAttribute('aria-label', t('lang_aria')); }
+
     document.querySelectorAll('[data-txt]').forEach(function (el) {
       var v = get(c, el.getAttribute('data-txt'));
       if (v != null && v !== '') el.innerHTML = nbsp(v);
@@ -47,6 +107,15 @@
       hero += '<a class="pill" href="https://www.tiktok.com/@' + esc(tt) + '" target="_blank" rel="noopener"><span class="pill__icon">' + ICON.tt + '</span>TikTok</a>';
       contact += '<a href="https://www.tiktok.com/@' + esc(tt) + '" target="_blank" rel="noopener"><span class="round round--dark">' + ICON.tt + '</span>TikTok · @' + esc(tt) + '</a>';
     }
+    var kit = L.media_kit ? src(L.media_kit) : '';
+    var kitTxt = L.media_kit_texte || 'Media kit';
+    var DL = '<svg class="arrow" viewBox="0 0 24 24"><path d="M12 4v13M6 11l6 6 6-6M5 20h14"/></svg>';
+    if (kit) {
+      hero += '<a class="pill pill--kit" href="' + esc(kit) + '" target="_blank" rel="noopener"><span class="pill__icon">' + DL + '</span>' + esc(kitTxt) + '</a>';
+      contact += '<a href="' + esc(kit) + '" target="_blank" rel="noopener"><span class="round round--dark">' + DL + '</span>' + esc(kitTxt) + '</a>';
+    }
+    var bk = document.getElementById('briefKit');
+    if (bk) { if (kit) { bk.href = kit; bk.hidden = false; } else { bk.hidden = true; } }
     document.getElementById('heroLinks').innerHTML = hero;
     document.getElementById('contactLinks').innerHTML = contact;
 
@@ -68,7 +137,7 @@
           (k.sous_titre ? '<p class="offer__sub">' + esc(k.sous_titre) + '</p>' : '') +
           (k.description ? '<p>' + esc(k.description) + '</p>' : '') +
           '<ul>' + checks(k.points) + '</ul>' +
-          (k.modalites ? '<div class="offer__mod"><strong>Modalités</strong><p>' + esc(k.modalites) + '</p></div>' : '') + '</article>';
+          (k.modalites ? '<div class="offer__mod"><strong>' + esc(t('modalites')) + '</strong><p>' + esc(k.modalites) + '</p></div>' : '') + '</article>';
       }).join('');
     }
 
@@ -78,9 +147,46 @@
         var u = String(c.formation[b[1]] || '');
         var t = c.formation[b[0] === 'fBtn1' ? 'bouton' : 'bouton_2'];
         if (/^https?:\/\//.test(u)) el.href = u;
-        el.style.display = t ? '' : 'none';
+        el.style.display = (t && String(t).trim()) ? '' : 'none';
       });
     }
+
+    // Chiffres clés
+    var st = ((c.chiffres && c.chiffres.liste) || []).filter(function (x) { return x && x.chiffre; });
+    var stSec = document.getElementById('chiffres');
+    if (stSec) {
+      stSec.hidden = !st.length;
+      document.getElementById('statsList').innerHTML = st.map(function (x) {
+        return '<li><strong>' + esc(x.chiffre) + '</strong><span>' + esc(x.libelle) + '</span></li>';
+      }).join('');
+    }
+    // Avis des marques
+    var av = ((c.avis && c.avis.liste) || []).filter(function (x) { return x && x.texte; });
+    var avSec = document.getElementById('avis');
+    if (avSec) {
+      avSec.hidden = !av.length;
+      document.getElementById('reviewsList').innerHTML = av.map(function (x) {
+        return '<figure class="review"><span class="review__q" aria-hidden="true">“</span><blockquote>' + esc(x.texte) + '</blockquote>' +
+          '<figcaption><strong>' + esc(x.nom) + '</strong>' + (x.marque ? '<span>' + esc(x.marque) + '</span>' : '') + '</figcaption></figure>';
+      }).join('');
+    }
+    // FAQ
+    var fq = ((c.faq && c.faq.questions) || []).filter(function (x) { return x && x.question; });
+    var fqSec = document.getElementById('faq');
+    if (fqSec) {
+      fqSec.hidden = !fq.length;
+      document.getElementById('faqList').innerHTML = fq.map(function (x, i) {
+        return '<details class="qa"' + (i === 0 ? ' open' : '') + '><summary>' + nbsp(x.question) + '<span class="qa__plus" aria-hidden="true"></span></summary><p>' + esc(x.reponse) + '</p></details>';
+      }).join('');
+    }
+    // Formulaire : listes déroulantes
+    var B = c.brief || {};
+    function opts(list) {
+      return '<option value="">' + esc(t('f_choisir')) + '</option>' + (list || []).filter(Boolean).map(function (o) { return '<option>' + esc(o) + '</option>'; }).join('');
+    }
+    var fT = document.getElementById('fType'), fB = document.getElementById('fBudget');
+    if (fT) fT.innerHTML = opts(B.types);
+    if (fB) fB.innerHTML = opts(B.budgets);
 
     var co = (c.collaborations && c.collaborations.marques) || [];
     var coEl = document.getElementById('collabs');
@@ -142,6 +248,57 @@
     });
     document.querySelectorAll('#navLinks a').forEach(function (a) { a.addEventListener('click', closeMenu); });
     document.addEventListener('click', function (e) { if (!nav.contains(e.target)) closeMenu(); });
+
+    // Bouton de langue
+    var lb = document.getElementById('langBtn');
+    if (lb) lb.addEventListener('click', function () {
+      var next = LANG === 'en' ? 'fr' : 'en';
+      try { localStorage.setItem('kh_lang', next); } catch (e) {}
+      var u = new URL(location.href);
+      u.searchParams.set('lang', next);
+      location.href = u.toString();
+    });
+
+    // Formulaire « Travaillons ensemble » : envoyé par FormSubmit vers l'email de « Mes liens »
+    var form = document.getElementById('briefForm');
+    if (form) {
+      var msg = document.getElementById('briefMsg');
+      var btn = form.querySelector('button[type=submit]');
+      var mail = (CONTENT.liens && CONTENT.liens.email) || 'helloookheira@gmail.com';
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        msg.className = 'brief__msg';
+        if (!form.checkValidity()) {
+          form.classList.add('was-checked');
+          msg.textContent = t('f_manque');
+          msg.classList.add('is-error');
+          var bad = form.querySelector(':invalid'); if (bad) bad.focus();
+          return;
+        }
+        if (form._honey.value) return;
+        var d = new FormData(form);
+        var data = {
+          _subject: 'Nouvelle demande de collaboration — ' + d.get('marque'),
+          _template: 'table', _captcha: 'false', _replyto: d.get('email'),
+          'Nom': d.get('nom'), 'Marque': d.get('marque'), 'Email': d.get('email'), 'Site / Instagram': d.get('site'),
+          'Type de contenu': d.get('type'), 'Budget': d.get('budget'), 'Date souhaitée': d.get('delai'),
+          'Message': d.get('message'), 'Langue du site': LANG.toUpperCase()
+        };
+        btn.disabled = true;
+        msg.textContent = t('f_envoi');
+        fetch('https://formsubmit.co/ajax/' + encodeURIComponent(mail), {
+          method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data)
+        }).then(function (r) { return r.json(); }).then(function (r) {
+          if (String(r.success) !== 'true') throw new Error(r.message || 'échec');
+          form.reset(); form.classList.remove('was-checked');
+          msg.textContent = (CONTENT.brief && CONTENT.brief.merci) || t('f_merci');
+          msg.classList.add('is-ok');
+        }).catch(function () {
+          msg.innerHTML = esc(t('f_erreur')) + '<a href="mailto:' + esc(mail) + '">' + esc(mail) + '</a>';
+          msg.classList.add('is-error');
+        }).then(function () { btn.disabled = false; });
+      });
+    }
 
     // Vidéos : aperçu muet au survol (ordinateur) ; clic ou tap = lecture en grand (pop-up)
     var cards = Array.prototype.slice.call(document.querySelectorAll('.vcard'));
@@ -288,8 +445,12 @@
   }
 
   // Charge content.json ; si le fichier est introuvable (ouverture directe du fichier), le contenu écrit dans index.html reste affiché
-  fetch('content.json', { cache: 'no-cache' })
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+  function load(f) { return fetch(f, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(f + ' ' + r.status); return r.json(); }); }
+  load('content.json')
+    .then(function (c) {
+      if (LANG !== 'en') return c;
+      return load('en.json').then(function (en) { return merge(c, en); }).catch(function (e) { console.warn('en.json non chargé', e); return c; });
+    })
     .then(function (c) { try { render(c); } catch (e) { console.error('content.json :', e); } })
     .catch(function (e) { console.warn('content.json non chargé, contenu par défaut affiché.', e); })
     .then(function () { document.documentElement.classList.remove('is-loading'); })

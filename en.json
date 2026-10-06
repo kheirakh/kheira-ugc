@@ -1,0 +1,123 @@
+{
+  "accueil": {
+    "sous_titre": "UGC Portfolio",
+    "accroche": "Visual stories that elevate the way brands are seen. Beauty, fashion, lifestyle, business and everything that makes up everyday life.",
+    "envois": "Products can be shipped to France 🇫🇷 & Morocco 🇲🇦"
+  },
+  "liens": {
+    "media_kit_texte": "Download my media kit"
+  },
+  "apropos": {
+    "petit_titre": "About",
+    "titre": "Hello brands!",
+    "paragraphes": [
+      "Your product deserves content that feels aesthetic, natural and stops the scroll. Not an over-staged ad everyone skips. I create warm, polished UGC that people actually want to watch.",
+      "I'm a content creator based in Rabat, Morocco. On my channels I talk about mindset, personal growth and faith, with honesty. After receiving more and more requests from brands, I started creating content for brands and UGC, and today I work with the ones that truly inspire me.",
+      "I create visuals with meaning and impact, designed to reach your audience and make them want to act. I pair them with dark aesthetic photography: deep tones, controlled shadows and crafted light, to give your product an elegant, strong presence in your feed.",
+      "My community is French-speaking, 60% based in France, and they follow me for my sincerity. So I choose the brands I work with the way I choose what I share: only what feels meaningful and true to me. You get ready-to-post content, delivered on time, by a creator involved from the brief to the final edit."
+    ]
+  },
+  "chiffres": {
+    "petit_titre": "In numbers",
+    "liste": [
+      { "libelle": "Instagram followers" },
+      { "libelle": "TikTok followers" },
+      { "libelle": "Audience based in France" },
+      { "libelle": "Brands I've worked with" }
+    ]
+  },
+  "univers": {
+    "petit_titre": "Collaboration",
+    "titre": "The brands I work with",
+    "liste": ["Skincare & Beauty", "Home decor", "Fashion & Jewelry", "Food & More", "Stationery & Journaling", "Books & Education", "Personal growth", "Business & Organization"]
+  },
+  "portfolio": {
+    "petit_titre": "Selection",
+    "titre": "Portfolio",
+    "categories": [
+      { "nom": "Stationery" },
+      { "nom": "Fashion & jewelry" },
+      { "nom": "Education & Faith" },
+      { "nom": "Food" }
+    ]
+  },
+  "photographie": { "titre": "Photography" },
+  "photos_ugc": { "titre": "UGC Photos" },
+  "materiel": {
+    "petit_titre": "Behind the scenes",
+    "titre": "My creative gear",
+    "intro": "To deliver a professional, aesthetic and polished result, I work with high-end gear suited to lifestyle, product, storytelling and UGC content. Each tool is chosen for a specific result: an outdoor reel, an unboxing or a handheld video that stays steady and well lit.",
+    "groupes": [
+      {
+        "items": [
+          "Canon G7X Mark III — bright, sharp and smooth videos for vlogs and talking-to-camera",
+          "DJI Osmo Pocket 3 — stabilized shots, smooth movement, discreet format",
+          "Insta360 GO 3 — creative, immersive POV shots",
+          "iPhone 17 Pro Max — stories, product photos and Instagram videos, fast and professional",
+          "Neewer LED panels — soft, controlled light for indoor and product shoots",
+          "DJI Mic 2, tripods and gimbal — clean sound and a steady image"
+        ]
+      }
+    ],
+    "conclusion": "High-quality content, delivered quickly and independently, true to your brand's world."
+  },
+  "collaborations": {
+    "petit_titre": "Partnerships",
+    "titre": "Brands I've worked with"
+  },
+  "avis": {
+    "petit_titre": "Reviews",
+    "titre": "What brands say"
+  },
+  "prestations": {
+    "petit_titre": "Services",
+    "titre": "UGC or collaboration?",
+    "cartes": [
+      {
+        "titre": "UGC content creation",
+        "sous_titre": "For your channels, not posted on mine",
+        "description": "I create content for your brand, designed to be used directly on your website, social media and ads, with a natural and engaging look.",
+        "points": ["Content delivered to the brand", "Goal: feed your marketing channels", "Formats optimized for conversion (ads, website…)"],
+        "modalites": "The service includes creating and delivering the content. Commercial usage rights (paid ads, extended distribution) are not included by default: they are agreed upfront and charged as an extra."
+      },
+      {
+        "titre": "Influencer collaboration",
+        "sous_titre": "Your brand introduced to my community",
+        "description": "I showcase your brand or products directly to my audience, mainly on Instagram, in my own style and tone, for authentic content that fits my community.",
+        "points": ["Posted on my channels", "Goal: visibility, awareness, conversion", "Content designed to perform with my audience"],
+        "modalites": "The content stays on my channels: 3 months on my feed and in a story highlight with no time limit. No usage rights are included (reposting, ads, whitelisting): any other use requires a separate agreement and fee."
+      }
+    ]
+  },
+  "brief": {
+    "petit_titre": "Let's work together",
+    "titre": "Tell me about your project",
+    "texte": "Fill in this short form: your request comes straight to me and I'll get back to you with a proposal tailored to your brand.",
+    "bouton": "Send my request",
+    "merci": "Thank you! Your request has been sent, I'll get back to you very soon.",
+    "types": ["UGC video", "UGC photos", "Videos + photos bundle", "Influencer collaboration", "Other"],
+    "budgets": ["Under €300", "€300 to €600", "€600 to €1,000", "Over €1,000", "To be discussed"]
+  },
+  "faq": {
+    "petit_titre": "FAQ",
+    "titre": "Frequently asked questions",
+    "questions": [
+      { "question": "What's the difference between UGC and a collaboration?", "reponse": "With UGC, I create content for your brand and deliver it to you: you post it on your website, social media or ads. With an influencer collaboration, I introduce your brand directly to my community, on my own channels." },
+      { "question": "Are usage rights included?", "reponse": "Creating and delivering the content is included. Commercial usage rights (paid ads, whitelisting, extended distribution) are not included by default: we agree on them upfront and they are charged as an extra." },
+      { "question": "How do I send you my product?", "reponse": "You can ship your product to France or Morocco. I'll share the address as soon as the collaboration is confirmed." },
+      { "question": "What formats do you deliver?", "reponse": "Ready-to-post vertical videos (Reels, TikTok, stories, ads) and polished product photos, in high quality, tailored to your brand's world." },
+      { "question": "What are your turnaround times?", "reponse": "We set the deadline together based on your brief and the number of pieces, and I stick to it. Add your preferred date in the form." },
+      { "question": "How do we get started?", "reponse": "Fill in the \"Let's work together\" form or email me. I'll get back to you with a proposal tailored to your brief." }
+    ]
+  },
+  "formation": {
+    "petit_titre": "UGC course",
+    "titre": "Become a UGC creator",
+    "texte": "Want to get into content creation and UGC and work with brands? I created the course I wish I'd had: making content people want to watch, landing your first collaborations and setting your rates with confidence.",
+    "bouton": "Join the newsletter"
+  },
+  "contact": {
+    "petit_titre": "Get in touch",
+    "titre": "Let's create content your audience actually wants to watch."
+  }
+}

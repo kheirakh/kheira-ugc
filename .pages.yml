@@ -1,7 +1,7 @@
 media:
   input: assets
   output: assets
-  extensions: [jpg, jpeg, png, webp, mp4, mov]
+  extensions: [jpg, jpeg, png, webp, mp4, mov, pdf]
 
 content:
   - name: site
@@ -26,6 +26,8 @@ content:
           - { name: email, label: Email, type: string }
           - { name: instagram, label: Pseudo Instagram (sans @), type: string }
           - { name: tiktok, label: Pseudo TikTok (sans @), type: string }
+          - { name: media_kit, label: "Media kit (fichier PDF, vide = bouton caché)", type: file }
+          - { name: media_kit_texte, label: Texte du bouton media kit, type: string }
       - name: apropos
         label: À propos
         type: object
@@ -35,6 +37,18 @@ content:
           - { name: titre, label: Titre, type: string }
           - { name: paragraphes, label: Paragraphes, type: text, list: true }
           - { name: signature, label: Signature, type: string }
+      - name: chiffres
+        label: Chiffres clés
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - name: liste
+            label: "Chiffres (chiffre vide = case cachée)"
+            type: object
+            list: true
+            fields:
+              - { name: chiffre, label: "Chiffre (ex. 25 k, 60 %)", type: string }
+              - { name: libelle, label: Texte sous le chiffre, type: string }
       - name: univers
         label: Univers / marques
         type: object
@@ -113,6 +127,20 @@ content:
           - { name: titre, label: Titre, type: string }
           - { name: marques, label: Noms des marques, type: string, list: true }
           - { name: photo_fond, label: "Photo de fond (facultatif, sinon fond beige)", type: image }
+      - name: avis
+        label: Avis des marques
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: liste
+            label: "Avis (aucun avis = section cachée)"
+            type: object
+            list: true
+            fields:
+              - { name: texte, label: Avis (mot pour mot), type: text }
+              - { name: nom, label: Prénom ou nom, type: string }
+              - { name: marque, label: Marque, type: string }
       - name: prestations
         label: UGC ou collaboration (prestations)
         type: object
@@ -129,6 +157,30 @@ content:
               - { name: description, label: Description, type: text }
               - { name: points, label: Points (une ligne = une coche), type: string, list: true }
               - { name: modalites, label: Modalités, type: text }
+      - name: brief
+        label: Formulaire « Travaillons ensemble »
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text }
+          - { name: types, label: Choix « Type de contenu », type: string, list: true }
+          - { name: budgets, label: Choix « Budget », type: string, list: true }
+          - { name: bouton, label: Texte du bouton, type: string }
+          - { name: merci, label: Message après l'envoi, type: text }
+      - name: faq
+        label: FAQ
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: questions
+            label: "Questions (aucune = section cachée)"
+            type: object
+            list: true
+            fields:
+              - { name: question, label: Question, type: string }
+              - { name: reponse, label: Réponse, type: text }
       - name: formation
         label: Bannière formation UGC
         type: object
@@ -146,5 +198,159 @@ content:
         type: object
         fields:
           - { name: photo, label: Portrait, type: image }
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+
+  - name: anglais
+    label: Mon site en anglais
+    type: file
+    path: en.json
+    format: json
+    fields:
+      - name: accueil
+        label: Accueil
+        type: object
+        fields:
+          - { name: sous_titre, label: Sous-titre, type: string }
+          - { name: accroche, label: Phrase d'accroche, type: text }
+          - { name: envois, label: Phrase envois de colis, type: string }
+      - name: liens
+        label: Mes liens
+        type: object
+        fields:
+          - { name: media_kit_texte, label: Texte du bouton media kit, type: string }
+      - name: apropos
+        label: À propos
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: paragraphes, label: "Paragraphes (même ordre que le français)", type: text, list: true }
+      - name: chiffres
+        label: Chiffres clés
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - name: liste
+            label: "Textes sous les chiffres (même ordre que le français)"
+            type: object
+            list: true
+            fields:
+              - { name: libelle, label: Texte, type: string }
+      - name: univers
+        label: Univers / marques
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: liste, label: "Bulles (même ordre que le français)", type: string, list: true }
+      - name: portfolio
+        label: Portfolio vidéo
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: categories
+            label: "Noms des onglets (même ordre que le français)"
+            type: object
+            list: true
+            fields:
+              - { name: nom, label: Nom de l'onglet, type: string }
+      - name: photographie
+        label: Photographie
+        type: object
+        fields:
+          - { name: titre, label: Titre, type: string }
+      - name: photos_ugc
+        label: Photos UGC
+        type: object
+        fields:
+          - { name: titre, label: Titre, type: string }
+      - name: materiel
+        label: Mon matériel de création
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: intro, label: Texte d'introduction, type: text }
+          - name: groupes
+            label: Catégories de matériel
+            type: object
+            list: true
+            fields:
+              - { name: titre, label: Nom de la catégorie, type: string }
+              - { name: items, label: "Matériel (même ordre que le français)", type: string, list: true }
+          - { name: conclusion, label: Phrase de fin, type: text }
+      - name: collaborations
+        label: Marques avec qui j'ai travaillé
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+      - name: avis
+        label: Avis des marques
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: liste
+            label: "Avis traduits (même ordre que le français)"
+            type: object
+            list: true
+            fields:
+              - { name: texte, label: Avis, type: text }
+      - name: prestations
+        label: UGC ou collaboration (prestations)
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: cartes
+            label: Cartes
+            type: object
+            list: true
+            fields:
+              - { name: titre, label: Titre de la carte, type: string }
+              - { name: sous_titre, label: Sous-titre, type: string }
+              - { name: description, label: Description, type: text }
+              - { name: points, label: Points, type: string, list: true }
+              - { name: modalites, label: Modalités, type: text }
+      - name: brief
+        label: Formulaire « Travaillons ensemble »
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text }
+          - { name: types, label: "Choix « Type de contenu » (même ordre)", type: string, list: true }
+          - { name: budgets, label: "Choix « Budget » (même ordre)", type: string, list: true }
+          - { name: bouton, label: Texte du bouton, type: string }
+          - { name: merci, label: Message après l'envoi, type: text }
+      - name: faq
+        label: FAQ
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: questions
+            label: "Questions (même ordre que le français)"
+            type: object
+            list: true
+            fields:
+              - { name: question, label: Question, type: string }
+              - { name: reponse, label: Réponse, type: text }
+      - name: formation
+        label: Bannière formation UGC
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text }
+          - { name: bouton, label: Texte du bouton 1, type: string }
+          - { name: bouton_2, label: Texte du bouton 2, type: string }
+      - name: contact
+        label: Contact
+        type: object
+        fields:
           - { name: petit_titre, label: Petit titre, type: string }
           - { name: titre, label: Titre, type: string }

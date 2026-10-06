@@ -11,13 +11,18 @@
 <link rel="icon" href="assets/images/site/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/images/site/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="Kheira | UGC">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#e8dccd">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" href="assets/fonts/great-vibes-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <!-- ADOBE FONTS : kit "Portfolio UGC" (Sloop Script). Ajoute Futura PT au même projet sur fonts.adobe.com, pas besoin de toucher ce code -->
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
-<link rel="stylesheet" href="style.css?v=39">
+<link rel="stylesheet" href="style.css?v=41">
 <!-- Cache les textes le temps de lire content.json (évite de voir l'ancienne version 1 seconde) -->
-<style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks,.is-loading #aboutList,.is-loading #univers,.is-loading #tabs,.is-loading #carousel,.is-loading #grid9,.is-loading #gridUgc,.is-loading #contactLinks,.is-loading #collabs,.is-loading #kitGroups,.is-loading #offers{visibility:hidden}</style>
+<style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks,.is-loading #aboutList,.is-loading #univers,.is-loading #tabs,.is-loading #carousel,.is-loading #grid9,.is-loading #gridUgc,.is-loading #contactLinks,.is-loading #collabs,.is-loading #kitGroups,.is-loading #offers,.is-loading #statsList,.is-loading #reviewsList,.is-loading #faqList,.is-loading #fType,.is-loading #fBudget,.is-loading [data-ui],.is-loading #langBtn{visibility:hidden}</style>
 <script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
 </head>
 <body>
@@ -35,16 +40,17 @@
 <header class="nav" id="nav">
   <a href="#accueil" class="nav__logo">Kheira</a>
   <nav class="nav__links" id="navLinks">
-    <a href="#accueil">Accueil</a>
-    <a href="#apropos">À propos</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#photographie">Photos</a>
-    <a href="#materiel">Matériel</a>
-    <a href="#collaborations">Collaborations</a>
-    <a href="#prestations">Prestations</a>
-    <a href="#formation">Formation</a>
-    <a href="#contact">Contact</a>
+    <a href="#accueil" data-ui="nav_accueil">Accueil</a>
+    <a href="#apropos" data-ui="nav_apropos">À propos</a>
+    <a href="#portfolio" data-ui="nav_portfolio">Portfolio</a>
+    <a href="#photographie" data-ui="nav_photographie">Photos</a>
+    <a href="#materiel" data-ui="nav_materiel">Matériel</a>
+    <a href="#collaborations" data-ui="nav_collaborations">Collaborations</a>
+    <a href="#prestations" data-ui="nav_prestations">Prestations</a>
+    <a href="#formation" data-ui="nav_formation">Formation</a>
+    <a href="#contact" data-ui="nav_contact">Contact</a>
   </nav>
+  <button class="nav__lang" id="langBtn" type="button" aria-label="Read in English"></button>
   <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
 
@@ -84,6 +90,14 @@
       </ul>
       <p class="signature" data-txt="apropos.signature">kheira</p>
     </div>
+  </div>
+</section>
+
+<!-- CHIFFRES CLÉS — fond : beige uni (section masquée si aucun chiffre) -->
+<section class="stats bg bg--beige" id="chiffres">
+  <div class="wrap">
+    <p class="eyebrow stats__eyebrow reveal" data-txt="chiffres.petit_titre">En chiffres</p>
+    <ul class="stats__list reveal" id="statsList"></ul>
   </div>
 </section>
 
@@ -217,6 +231,17 @@
   </div>
 </section>
 
+<!-- AVIS DES MARQUES — fond : taupe uni (section masquée s'il n'y a aucun avis) -->
+<section class="reviews bg bg--taupe" id="avis">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow" data-txt="avis.petit_titre">Avis</p>
+      <h2 class="title" data-txt="avis.titre">Ce que disent les marques</h2>
+    </div>
+    <div class="reviews__grid reveal" id="reviewsList"></div>
+  </div>
+</section>
+
 <!-- UGC OU COLLABORATION — fond : quadrillage beige et marron (dessiné en CSS) -->
 <section class="offers bg bg--grid" id="prestations">
   <div class="wrap">
@@ -225,6 +250,48 @@
       <h2 class="title" data-txt="prestations.titre">Ugc ou collaboration ?</h2>
     </div>
     <div class="offers__grid reveal" id="offers"><article class="offer"><span class="offer__num">01</span><h3>Création de contenu Ugc</h3><p class="offer__sub">Pour tes supports, sans diffusion sur mes réseaux</p><p>Je crée le contenu pour ta marque : il est pensé pour être utilisé directement sur ton site, tes réseaux et tes publicités, avec une esthétique naturelle et engageante.</p><ul><li><svg class="check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Contenu livré à la marque</span></li><li><svg class="check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Objectif : alimenter tes supports marketing</span></li><li><svg class="check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Formats optimisés pour la conversion (ads, site…)</span></li></ul><div class="offer__mod"><strong>Modalités</strong><p>La prestation comprend la création et la livraison du contenu. Les droits d'exploitation commerciale (publicité, ads, diffusion étendue) ne sont pas inclus par défaut : ils sont validés en amont et font l'objet d'un supplément.</p></div></article><article class="offer"><span class="offer__num">02</span><h3>Collaboration d'influence</h3><p class="offer__sub">Ta marque présentée à ma communauté</p><p>Je mets en avant ta marque ou tes produits directement auprès de mon audience, principalement sur Instagram, dans mon univers et avec mon ton, pour un contenu authentique et cohérent avec ma communauté.</p><ul><li><svg class="check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Diffusion sur mes réseaux</span></li><li><svg class="check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Objectif : visibilité, notoriété, conversion</span></li><li><svg class="check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Contenu pensé pour performer auprès de mon audience</span></li></ul><div class="offer__mod"><strong>Modalités</strong><p>Le contenu reste sur mes supports : 3 mois sur mon feed et en story à la une sans limite de durée. Aucune cession de droits n'est incluse (réutilisation, publicité, whitelisting, ads) : toute autre utilisation fait l'objet d'un accord et d'une facturation à part.</p></div></article></div>
+  </div>
+</section>
+
+<!-- TRAVAILLONS ENSEMBLE (formulaire) — fond : crème uni -->
+<section class="brief bg bg--cream" id="travaillons-ensemble">
+  <div class="wrap brief__card card card--cream reveal">
+    <div class="brief__intro">
+      <p class="eyebrow" data-txt="brief.petit_titre">Travaillons ensemble</p>
+      <h2 class="title" data-txt="brief.titre">Parle-moi de ton projet</h2>
+      <p class="brief__p" data-txt="brief.texte">Remplis ce petit formulaire : je reçois ta demande directement et je reviens vers toi avec une proposition adaptée.</p>
+      <a class="brief__kit" id="briefKit" href="#" target="_blank" rel="noopener" hidden><span data-txt="liens.media_kit_texte">Télécharger mon media kit</span> <svg class="arrow" viewBox="0 0 24 24"><path d="M12 4v13M6 11l6 6 6-6M5 20h14"/></svg></a>
+    </div>
+    <form class="brief__form" id="briefForm" novalidate>
+      <div class="f2">
+        <label><span data-ui="f_nom">Nom et prénom</span><input name="nom" required autocomplete="name"></label>
+        <label><span data-ui="f_marque">Marque</span><input name="marque" required autocomplete="organization"></label>
+      </div>
+      <div class="f2">
+        <label><span data-ui="f_email">Email</span><input name="email" type="email" required autocomplete="email"></label>
+        <label><span data-ui="f_site">Site ou Instagram de la marque</span><input name="site"></label>
+      </div>
+      <div class="f2">
+        <label><span data-ui="f_type">Type de contenu</span><select name="type" id="fType" required></select></label>
+        <label><span data-ui="f_budget">Budget</span><select name="budget" id="fBudget" required></select></label>
+      </div>
+      <label><span data-ui="f_delai">Date de livraison souhaitée</span><input name="delai"></label>
+      <label><span data-ui="f_message">Ton projet en quelques mots</span><textarea name="message" rows="4" required></textarea></label>
+      <input type="text" name="_honey" class="brief__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="fbtn fbtn--main brief__btn" type="submit" data-txt="brief.bouton">Envoyer ma demande</button>
+      <p class="brief__msg" id="briefMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ — fond : beige uni (section masquée s'il n'y a aucune question) -->
+<section class="faq bg bg--beige" id="faq">
+  <div class="wrap faq__wrap">
+    <div class="head reveal">
+      <p class="eyebrow" data-txt="faq.petit_titre">FAQ</p>
+      <h2 class="title" data-txt="faq.titre">Questions fréquentes</h2>
+    </div>
+    <div class="faq__list reveal" id="faqList"></div>
   </div>
 </section>
 
@@ -266,9 +333,9 @@
 
 <!-- PIED DE PAGE — fond : marron uni -->
 <footer class="footer bg bg--espresso">
-  <p class="footer__pill">© <span id="year"></span> <span data-txt="accueil.titre">kheira</span> · Tous droits réservés</p>
+  <p class="footer__pill">© <span id="year"></span> <span data-txt="accueil.titre">kheira</span> · <span data-ui="droits">Tous droits réservés</span></p>
 </footer>
 
-<script src="script.js?v=14"></script>
+<script src="script.js?v=16"></script>
 </body>
 </html>

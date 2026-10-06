@@ -361,3 +361,86 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
   .contact__img{order:2}
   .contact__text{order:1}
 }
+
+/* =====================================================================
+   NOUVEAUTÉS : langue, chiffres clés, avis, formulaire, FAQ, media kit
+   ===================================================================== */
+[hidden]{display:none!important}
+
+/* Bouton FR / EN dans le menu */
+.nav__lang{flex:0 0 auto;margin-left:6px;min-width:42px;height:34px;padding:0 10px;border-radius:999px;border:1px solid rgba(59,42,32,.35);font-size:11px;font-weight:500;letter-spacing:.18em;color:var(--ink);transition:background .3s,color .3s}
+.nav__lang:hover{background:var(--espresso);color:var(--cream)}
+
+/* Media kit dans l'accueil */
+.pill__icon .arrow,.round .arrow{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* Chiffres clés */
+.stats{padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(56px,7vw,90px)}
+.stats__eyebrow{text-align:center;margin-bottom:26px}
+.stats__list{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:1120px;margin:0 auto}
+.stats__list li{flex:1 1 200px;max-width:270px;display:flex;flex-direction:column;align-items:center;gap:8px;padding:26px 16px 22px;border-radius:var(--radius);background:rgba(251,246,239,.75);border:1px solid rgba(107,82,68,.2);text-align:center}
+.stats__list strong{font-family:var(--titres);font-weight:400;font-size:clamp(46px,5vw,64px);line-height:1;color:var(--espresso)}
+.stats__list span{font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brown);line-height:1.4}
+
+/* Avis des marques */
+.reviews .eyebrow{color:var(--espresso)}
+.reviews .head{margin-bottom:40px}
+.reviews__grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.review{flex:1 1 300px;max-width:380px;position:relative;display:flex;flex-direction:column;gap:18px;padding:34px 30px 28px;border-radius:var(--radius);background:rgba(251,246,239,.94);color:#4f3f34}
+.review__q{font-family:var(--titres);font-size:84px;line-height:.6;height:34px;color:var(--gold)}
+.review blockquote{font-size:16px;line-height:1.6;font-style:italic}
+.review figcaption{margin-top:auto;padding-top:14px;border-top:1px solid rgba(107,82,68,.2);display:flex;flex-direction:column;gap:2px}
+.review figcaption strong{font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.review figcaption span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+
+/* Formulaire « Travaillons ensemble » */
+.brief__card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,60px);padding:clamp(26px,3.6vw,52px);max-width:1120px;box-shadow:none;border:1px solid rgba(107,82,68,.18)}
+.brief__card .title{font-size:clamp(42px,4.6vw,66px);line-height:.95;margin:8px 0 18px}
+.brief__p{font-size:16px;line-height:1.6;color:#4f3f34}
+.brief__kit{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:13px 22px;border-radius:999px;background:var(--espresso);color:var(--cream);font-size:12px;letter-spacing:.16em;text-transform:uppercase;transition:background .3s}
+.brief__kit:hover{background:var(--brown)}
+.brief__kit .arrow{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.brief__form{display:grid;gap:14px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.brief__form label{display:flex;flex-direction:column;gap:6px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brown)}
+.brief__form input,.brief__form select,.brief__form textarea{width:100%;font:inherit;font-size:16px;letter-spacing:0;text-transform:none;color:var(--ink);padding:12px 14px;border-radius:12px;border:1px solid rgba(107,82,68,.3);background:#fffdf9;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.brief__form select{background-image:linear-gradient(45deg,transparent 50%,var(--brown) 50%),linear-gradient(135deg,var(--brown) 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
+.brief__form textarea{resize:vertical;min-height:110px;line-height:1.5}
+.brief__form input:focus,.brief__form select:focus,.brief__form textarea:focus{border-color:var(--brown);box-shadow:0 0 0 3px rgba(107,82,68,.15)}
+.brief__form.was-checked :invalid{border-color:#b5523b}
+.brief__honey{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.brief__btn{justify-self:start;margin-top:4px;background:var(--espresso);color:var(--cream);border-color:var(--espresso)}
+.brief__btn:hover{background:var(--brown);color:var(--cream)}
+.brief__btn:disabled{opacity:.6;cursor:wait}
+.brief__msg{font-size:15px;line-height:1.5;min-height:1em}
+.brief__msg.is-ok{color:#4c6b3f;font-weight:500}
+.brief__msg.is-error{color:#b5523b}
+.brief__msg a{text-decoration:underline}
+
+/* FAQ */
+.faq__wrap{max-width:860px}
+.faq .head{margin-bottom:34px}
+.faq__list{display:grid;gap:10px}
+.qa{border-radius:16px;background:rgba(251,246,239,.85);border:1px solid rgba(107,82,68,.2);overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 22px;font-size:15px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.qa summary::-webkit-details-marker{display:none}
+.qa__plus{position:relative;flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--espresso)}
+.qa__plus::before,.qa__plus::after{content:"";position:absolute;left:8px;right:8px;top:13px;height:2px;background:var(--cream);transition:transform .3s}
+.qa__plus::after{transform:rotate(90deg)}
+.qa[open] .qa__plus::after{transform:rotate(0)}
+.qa p{padding:0 22px 20px;font-size:16px;line-height:1.6;color:#4f3f34}
+
+@media (max-width:760px){
+  .nav__lang{margin-left:auto;margin-right:4px}
+  .stats__list{gap:10px}
+  .stats__list li{flex:1 1 calc(50% - 10px);padding:20px 10px 16px}
+  .stats__list strong{font-size:42px}
+  .stats__list span{font-size:10px;letter-spacing:.12em}
+  .brief__card{grid-template-columns:1fr}
+  .f2{grid-template-columns:1fr}
+  .brief__btn{justify-self:stretch}
+  .qa summary{font-size:13px;padding:16px 18px}
+  .qa p{padding:0 18px 18px;font-size:15px}
+}
+.nav__lang{display:inline-flex;align-items:center;gap:7px;padding:0 12px 0 10px}
+.nav__lang .flag{width:20px;height:14px;border-radius:3px;box-shadow:0 0 0 1px rgba(59,42,32,.18);flex:0 0 auto}
