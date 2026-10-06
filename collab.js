@@ -54,6 +54,9 @@
     var t = c.tarifs || {};
     $('clInfluence').innerHTML = items((t.influence || {}).items);
     $('clUgc').innerHTML = items((t.ugc || {}).items);
+    // même nombre de lignes dans les 2 cartes (titre + sous-titre + formules) pour qu'elles soient alignées
+    var rows = 2 + Math.max(list((t.influence || {}).items).length, list((t.ugc || {}).items).length);
+    document.querySelector('.cl-menu').style.setProperty('--rows', rows);
     $('clInfos').innerHTML = list((c.savoir || {}).items).filter(function (q) { return q.question; }).map(function (q) {
       var lignes = list(q.lignes);
       return '<details class="qa"><summary>' + nbsp(q.question) + '<span class="qa__plus" aria-hidden="true"></span></summary>' +

@@ -602,3 +602,13 @@ body{background:var(--cocoa)}
   .cl-chips::-webkit-scrollbar{display:none}
   .cl-gal .pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+/* Tarifs : les deux cartes de même hauteur, formules alignées ligne à ligne */
+@media (min-width:761px){
+  @supports (grid-template-rows:subgrid){
+    .cl-menu{grid-auto-rows:auto;row-gap:0}
+    .cl-menu .cl-card{display:grid;grid-template-rows:subgrid;grid-row:span var(--rows,7);row-gap:0}
+    .cl-menu .cl-items{display:contents}
+    .cl-menu .cl-item{border-top:1px solid rgba(107,82,68,.18)}
+    .cl-menu .cl-card--dark .cl-item{border-top-color:rgba(247,239,228,.16)}
+  }
+}

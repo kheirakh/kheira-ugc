@@ -193,11 +193,6 @@
         "question": "Bon à savoir sur les stories",
         "reponse": "Une story, c'est une présentation de 2 à 4 slides qui s'enchaînent le même jour. Un pack de 3 stories, ce sont 3 jours différents de visibilité : idéal pour créer du rappel auprès de mon audience.",
         "lignes": []
-      },
-      {
-        "question": "Gifting (envoi de produits sans rémunération)",
-        "reponse": "Uniquement sur validation, à partir de 200 € de valeur produit, sans garantie de publication.",
-        "lignes": []
       }
     ]
   },
@@ -208,8 +203,7 @@
     "types": [
       "Collaboration d'influence",
       "Création de contenu UGC",
-      "Influence + UGC",
-      "Gifting"
+      "Influence + UGC"
     ],
     "bouton": "Envoyer mon brief",
     "merci": "Merci ! Ton brief est bien envoyé. Je reviens vers toi très vite pour confirmer la collaboration et le planning.",
