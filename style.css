@@ -643,3 +643,7 @@ body{background:var(--cocoa)}
 @media (max-width:760px){
   .cl-brief .cl-brief__img{display:block;order:0;margin:0;max-width:none;aspect-ratio:4/5;position:relative}
 }
+/* Brief : texte à gauche (ordinateur), photo plus large */
+.cl-brief__head{text-align:left;margin:0 0 6px;max-width:none}
+@media (min-width:761px){.cl-brief{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:760px){.cl-brief__head{text-align:center}}
