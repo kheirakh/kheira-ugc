@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espace marques | Kheira</title>
+<!-- Page privée : accessible seulement avec le lien, invisible pour Google -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/images/site/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/images/site/apple-touch-icon.png">
+<meta name="theme-color" content="#e8dccd">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
+<link rel="stylesheet" href="style.css?v=61">
+<style>.is-loading [data-c],.is-loading [data-ci],.is-loading .cl-list{visibility:hidden}</style>
+<script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
+</head>
+<body class="collab-page">
+
+<!-- TOUT LE CONTENU DE CETTE PAGE EST DANS collab.json : modifie-le dans l'admin, rubrique « Espace marques » -->
+
+<header class="nav" id="nav">
+  <a href="/" class="nav__logo">Kheira</a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#chiffres">Chiffres</a>
+    <a href="#deroule">Déroulé</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#conditions">À savoir</a>
+    <a href="#brief" class="nav__cta">Remplir le brief</a>
+  </nav>
+  <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+
+<!-- INTRO — fond : beige -->
+<section class="cl-hero bg bg--beige" id="haut">
+  <div class="wrap cl-hero__card card card--cream">
+    <figure class="cl-hero__img"><img src="assets/images/site/hero.jpg" alt="Kheira" data-ci="intro.photo"></figure>
+    <div class="cl-hero__text">
+    <p class="eyebrow" data-c="intro.petit_titre">Espace marques</p>
+    <p class="cl-for" id="pour" hidden></p>
+    <h1 class="title" data-c="intro.titre">Travaillons ensemble</h1>
+    <p class="cl-lead" data-c="intro.texte"></p>
+    <div class="cl-chips">
+      <a href="#chiffres">Chiffres</a><a href="#deroule">Déroulé</a><a href="#tarifs">Tarifs</a><a href="#conditions">À savoir</a><a href="#brief" class="is-main">Remplir le brief</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHIFFRES — fond : taupe -->
+<section class="cl-stats bg bg--taupe" id="chiffres">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-c="stats.petit_titre">Statistiques</p>
+      <h2 class="title" data-c="stats.titre">Mes chiffres</h2>
+      <p class="cl-period" data-c="stats.periode"></p>
+    </div>
+    <ul class="stats__list cl-list" id="clStats"></ul>
+    <div class="cl-two">
+      <div class="cl-box"><h3>Audience</h3><ul class="cl-dots cl-list" id="clAudience"></ul></div>
+      <div class="cl-box"><h3>Performances moyennes</h3><ul class="cl-dots cl-list" id="clPerf"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE — fond : pois, comme les Photos UGC -->
+<section class="photos bg bg--dots photos--ugc cl-gal">
+  <div class="wrap">
+    <h2 class="title title--light title--center" data-c="galerie.petit_titre">Mon univers</h2>
+    <div class="pgrid cl-list" id="clGal"></div>
+  </div>
+</section>
+
+<!-- DÉROULÉ — fond : crème -->
+<section class="cl-steps bg bg--cream" id="deroule">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-c="deroule.petit_titre">Déroulé</p>
+      <h2 class="title" data-c="deroule.titre">Comment ça se passe</h2>
+    </div>
+    <ol class="cl-steplist cl-list" id="clSteps"></ol>
+  </div>
+</section>
+
+<!-- TARIFS — fond : pois -->
+<section class="cl-prices bg bg--dots" id="tarifs">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow eyebrow--light" data-c="tarifs.petit_titre">Tarifs</p>
+      <h2 class="title title--light" data-c="tarifs.titre">Mes formules</h2>
+    </div>
+    <div class="cl-menu">
+      <article class="cl-card"><h3 data-c="tarifs.influence.titre"></h3><p class="cl-card__sub" data-c="tarifs.influence.sous_titre"></p><ul class="cl-items cl-list" id="clInfluence"></ul></article>
+      <article class="cl-card cl-card--dark"><h3 data-c="tarifs.ugc.titre"></h3><p class="cl-card__sub" data-c="tarifs.ugc.sous_titre"></p><ul class="cl-items cl-list" id="clUgc"></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- À SAVOIR (conditions, droits, stories, gifting) — fond : beige -->
+<section class="cl-cond bg bg--beige" id="conditions">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-c="savoir.petit_titre">À savoir</p>
+      <h2 class="title" data-c="savoir.titre">Bon à savoir</h2>
+    </div>
+    <div class="faq__list cl-infos cl-list" id="clInfos"></div>
+  </div>
+</section>
+
+<!-- BRIEF — fond : crème -->
+<section class="brief bg bg--cream" id="brief">
+  <div class="wrap brief__card card card--cream cl-brief">
+    <div class="cl-brief__head">
+      <p class="eyebrow" data-c="brief.petit_titre">Brief</p>
+      <h2 class="title" data-c="brief.titre">Ton brief</h2>
+      <p class="brief__p" data-c="brief.texte"></p>
+    </div>
+    <figure class="cl-brief__img"><img src="assets/images/site/about.jpg" alt="" loading="lazy" data-ci="brief.photo"></figure>
+    <form class="brief__form" id="clForm" novalidate>
+      <p class="cl-fs">1 · Ta marque</p>
+      <div class="f2">
+        <label><span>Marque *</span><input name="marque" id="fMarque" required autocomplete="organization"></label>
+        <label><span>Nom et prénom *</span><input name="nom" required autocomplete="name"></label>
+      </div>
+      <div class="f2">
+        <label><span>Email *</span><input name="email" type="email" required autocomplete="email"></label>
+        <label><span>Lien site ou Instagram</span><input name="site" id="fSite" inputmode="url" autocomplete="url" placeholder="https://… ou instagram.com/tamarque"><em class="cl-err" id="siteErr" hidden>Colle un lien valide, par exemple instagram.com/tamarque ou https://tamarque.com</em></label>
+      </div>
+      <p class="cl-fs">2 · Le projet</p>
+      <div class="f2">
+        <label><span>Type de collaboration *</span><select name="type" id="sType" required></select></label>
+        <label><span>Formule souhaitée</span><select name="formule" id="sFormule"></select></label>
+      </div>
+      <label><span>Produit(s) à mettre en avant * (noms exacts)</span><textarea name="produits" rows="3" required></textarea></label>
+      <label><span>Messages clés à faire passer</span><textarea name="messages" rows="3"></textarea></label>
+      <div class="f2">
+        <label><span>Ce qu'il faut éviter</span><input name="eviter"></label>
+        <label><span>Exemples que tu aimes (liens)</span><input name="exemples"></label>
+      </div>
+      <p class="cl-fs">3 · Planning</p>
+      <label><span>Date de livraison ou de publication souhaitée *</span><input name="date_publication" type="date" class="js-date" required></label>
+      <label><span>Autre chose à me dire ?</span><textarea name="message" rows="3"></textarea></label>
+      <input type="text" name="_honey" class="brief__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="fbtn fbtn--main brief__btn" type="submit" data-c="brief.bouton">Envoyer mon brief</button>
+      <p class="brief__msg" id="clMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer bg bg--dots">
+  <p class="footer__pill">© <span id="year"></span> Kheira · <a href="/">kheirakh.com</a></p>
+</footer>
+
+<a href="#haut" class="totop" id="toTop" aria-label="Remonter en haut"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+
+<script src="collab.js?v=9"></script>
+</body>
+</html>

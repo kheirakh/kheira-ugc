@@ -354,3 +354,123 @@ content:
         fields:
           - { name: petit_titre, label: Petit titre, type: string }
           - { name: titre, label: Titre, type: string }
+
+  - name: collab
+    label: Espace marques (page privée)
+    type: file
+    path: collab.json
+    format: json
+    fields:
+      - name: intro
+        label: Introduction
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text }
+          - { name: photo, label: Photo, type: image }
+      - name: stats
+        label: Statistiques
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: periode, label: "Période (ex. Instagram · 30 derniers jours)", type: string }
+          - name: chiffres
+            label: Chiffres
+            type: object
+            list: true
+            fields:
+              - { name: chiffre, label: Chiffre, type: string }
+              - { name: libelle, label: Texte sous le chiffre, type: string }
+          - { name: audience, label: Audience (une ligne par info), type: string, list: true }
+          - { name: performances, label: Performances moyennes (une ligne par info), type: string, list: true }
+      - name: galerie
+        label: Galerie de photos
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - name: photos
+            label: "Photos (4 par ligne, le nom de la marque s'affiche au survol)"
+            type: object
+            list: true
+            fields:
+              - { name: image, label: Photo, type: image }
+              - { name: marque, label: Nom de la marque, type: string }
+              - { name: cadrage, label: "Point focal (ex. 50% 30%)", type: string }
+      - name: deroule
+        label: Déroulé
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: etapes
+            label: Étapes
+            type: object
+            list: true
+            fields:
+              - { name: titre, label: Titre de l'étape, type: string }
+              - { name: texte, label: Texte, type: text }
+      - name: tarifs
+        label: Tarifs
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: influence
+            label: Carte collaboration d'influence
+            type: object
+            fields:
+              - { name: titre, label: Titre, type: string }
+              - { name: sous_titre, label: Sous-titre, type: string }
+              - { name: prefixe, label: "Préfixe dans le brief (ex. Collab, UGC)", type: string }
+              - name: items
+                label: Formules
+                type: object
+                list: true
+                fields:
+                  - { name: nom, label: Nom de la formule, type: string }
+                  - { name: prix, label: "Prix (ex. 180 €)", type: string }
+                  - { name: texte, label: Description, type: text }
+                  - { name: badge, label: "Badge (facultatif, ex. Meilleure formule)", type: string }
+          - name: ugc
+            label: Carte création UGC
+            type: object
+            fields:
+              - { name: titre, label: Titre, type: string }
+              - { name: sous_titre, label: Sous-titre, type: string }
+              - { name: prefixe, label: "Préfixe dans le brief (ex. Collab, UGC)", type: string }
+              - name: items
+                label: Formules
+                type: object
+                list: true
+                fields:
+                  - { name: nom, label: Nom de la formule, type: string }
+                  - { name: prix, label: "Prix (ex. 180 €)", type: string }
+                  - { name: texte, label: Description, type: text }
+                  - { name: badge, label: "Badge (facultatif, ex. Meilleure formule)", type: string }
+      - name: savoir
+        label: "Bon à savoir (conditions, droits ads, stories, gifting)"
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: items
+            label: Lignes à dérouler
+            type: object
+            list: true
+            fields:
+              - { name: question, label: Titre, type: string }
+              - { name: reponse, label: Texte, type: text }
+              - { name: lignes, label: "Lignes (prix courts = cases, phrases = liste cochée)", type: text, list: true }
+      - name: brief
+        label: Formulaire de brief
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text }
+          - { name: types, label: Choix « Type de collaboration », type: string, list: true }
+          - { name: bouton, label: Texte du bouton, type: string }
+          - { name: merci, label: Message après l'envoi, type: text }
+          - { name: photo, label: "Photo à côté du brief (ordinateur)", type: image }
