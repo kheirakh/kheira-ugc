@@ -36,7 +36,7 @@
     fr: {
       nav_accueil: 'Accueil', nav_apropos: 'À propos', nav_portfolio: 'Portfolio', nav_photographie: 'Photos', nav_materiel: 'Matériel',
       nav_collaborations: 'Collaborations', nav_prestations: 'Prestations', nav_formation: 'Formation', nav_contact: 'Contact', nav_faq: 'FAQ', nav_brief: 'Travaillons ensemble', nav_hello: 'Hello les marques', nav_choisir: 'Comment choisir\u00a0?',
-      droits: 'Tous droits réservés', modalites: 'Modalités', lang_btn: 'FR', lang_aria: 'Read in English',
+      droits: 'Tous droits réservés', audience: 'Audience', performances: 'Performances moyennes', modalites: 'Modalités', lang_btn: 'FR', lang_aria: 'Read in English',
       f_nom: 'Nom et prénom', f_marque: 'Marque', f_email: 'Email', f_site: 'Site ou Instagram de la marque', f_type: 'Type de contenu',
       f_budget: 'Budget', f_delai: 'Date de livraison souhaitée', f_message: 'Ton projet en quelques mots', f_choisir: 'Choisir…',
       f_envoi: 'Envoi en cours…', f_manque: 'Merci de remplir les champs obligatoires.', f_erreur: 'Oups, l’envoi n’a pas fonctionné. Écris-moi directement à ',
@@ -45,7 +45,7 @@
     en: {
       nav_accueil: 'Home', nav_apropos: 'About', nav_portfolio: 'Portfolio', nav_photographie: 'Photos', nav_materiel: 'Gear',
       nav_collaborations: 'Brands', nav_prestations: 'Services', nav_formation: 'Course', nav_contact: 'Contact', nav_faq: 'FAQ', nav_brief: 'Let’s work together', nav_hello: 'Hello brands', nav_choisir: 'How to choose?',
-      droits: 'All rights reserved', modalites: 'Terms', lang_btn: 'EN', lang_aria: 'Lire en français',
+      droits: 'All rights reserved', audience: 'Audience', performances: 'Average performance', modalites: 'Terms', lang_btn: 'EN', lang_aria: 'Lire en français',
       f_nom: 'Full name', f_marque: 'Brand', f_email: 'Email', f_site: 'Brand website or Instagram', f_type: 'Type of content',
       f_budget: 'Budget', f_delai: 'Desired delivery date', f_message: 'Your project in a few words', f_choisir: 'Select…',
       f_envoi: 'Sending…', f_manque: 'Please fill in the required fields.', f_erreur: 'Oops, the form could not be sent. Email me directly at ',
@@ -157,8 +157,14 @@
     if (stSec) {
       stSec.hidden = !st.length;
       document.getElementById('statsList').innerHTML = st.map(function (x) {
-        return '<li><strong>' + esc(x.chiffre) + '</strong><span>' + esc(x.libelle) + '</span></li>';
+        return '<li><strong>' + nbsp(x.chiffre) + '</strong><span>' + esc(x.libelle) + '</span></li>';
       }).join('');
+      var au = ((c.chiffres || {}).audience || []).filter(Boolean), pe = ((c.chiffres || {}).performances || []).filter(Boolean);
+      document.getElementById('statsAudience').innerHTML = au.map(function (t) { return '<li>' + nbsp(t) + '</li>'; }).join('');
+      document.getElementById('statsPerf').innerHTML = pe.map(function (t) { return '<li>' + nbsp(t) + '</li>'; }).join('');
+      document.getElementById('statsAudience').parentNode.hidden = !au.length;
+      document.getElementById('statsPerf').parentNode.hidden = !pe.length;
+      document.getElementById('statsMore').hidden = !au.length && !pe.length;
     }
     // Avis des marques
     var av = ((c.avis && c.avis.liste) || []).filter(function (x) { return x && x.texte; });

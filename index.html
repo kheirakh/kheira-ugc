@@ -20,9 +20,9 @@
 <!-- ADOBE FONTS : kit "Portfolio UGC" (Sloop Script). Ajoute Futura PT au même projet sur fonts.adobe.com, pas besoin de toucher ce code -->
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
-<link rel="stylesheet" href="style.css?v=61">
+<link rel="stylesheet" href="style.css?v=62">
 <!-- Cache les textes le temps de lire content.json (évite de voir l'ancienne version 1 seconde) -->
-<style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks,.is-loading #aboutList,.is-loading #univers,.is-loading #tabs,.is-loading #carousel,.is-loading #grid9,.is-loading #gridUgc,.is-loading #contactLinks,.is-loading #collabs,.is-loading #kitGroups,.is-loading #offers,.is-loading #statsList,.is-loading #reviewsList,.is-loading #faqList,.is-loading #fType,.is-loading #fBudget,.is-loading [data-ui],.is-loading #langBtn{visibility:hidden}</style>
+<style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks,.is-loading #aboutList,.is-loading #univers,.is-loading #tabs,.is-loading #carousel,.is-loading #grid9,.is-loading #gridUgc,.is-loading #contactLinks,.is-loading #collabs,.is-loading #kitGroups,.is-loading #offers,.is-loading #statsList,.is-loading #statsMore,.is-loading #reviewsList,.is-loading #faqList,.is-loading #fType,.is-loading #fBudget,.is-loading [data-ui],.is-loading #langBtn{visibility:hidden}</style>
 <script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
 </head>
 <body>
@@ -91,11 +91,19 @@
   </div>
 </section>
 
-<!-- CHIFFRES CLÉS — fond : beige uni (section masquée si aucun chiffre) -->
-<section class="stats bg bg--beige" id="chiffres">
+<!-- CHIFFRES — fond : taupe (section masquée si aucun chiffre) -->
+<section class="stats cl-stats bg bg--taupe" id="chiffres">
   <div class="wrap">
-    <p class="eyebrow stats__eyebrow reveal" data-txt="chiffres.petit_titre">En chiffres</p>
-    <ul class="stats__list reveal" id="statsList"></ul>
+    <div class="head reveal">
+      <p class="eyebrow" data-txt="chiffres.petit_titre">Statistiques</p>
+      <h2 class="title" data-txt="chiffres.titre">Mes chiffres</h2>
+      <p class="cl-period" data-txt="chiffres.periode">Instagram · 30 derniers jours</p>
+    </div>
+    <ul class="stats__list stats__list--big reveal" id="statsList"></ul>
+    <div class="cl-two reveal" id="statsMore">
+      <div class="cl-box"><h3 data-ui="audience">Audience</h3><ul class="cl-dots" id="statsAudience"></ul></div>
+      <div class="cl-box"><h3 data-ui="performances">Performances moyennes</h3><ul class="cl-dots" id="statsPerf"></ul></div>
+    </div>
   </div>
 </section>
 
@@ -336,6 +344,6 @@
 
 <a href="#accueil" class="totop" id="toTop" aria-label="Remonter en haut"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 
-<script src="script.js?v=25"></script>
+<script src="script.js?v=26"></script>
 </body>
 </html>

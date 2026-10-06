@@ -674,3 +674,16 @@ body{background:var(--cocoa)}
 .cl-steplist.is-anim.is-in.is-done li:hover{transform:translateY(-6px)}
 @media (max-width:560px){.cl-steplist{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.cl-steplist.is-anim li{opacity:1;transform:none}}
+/* Mes chiffres (site principal) : grandes cartes + animation au survol */
+.stats.cl-stats{padding-top:clamp(70px,9vw,120px);padding-bottom:clamp(70px,9vw,120px)}
+.stats__list--big{max-width:1180px;flex-wrap:nowrap;margin-bottom:20px}
+.stats__list--big li{flex:1 1 0;max-width:none;min-width:0;background:rgba(232,220,205,.9);transition:transform .35s ease,box-shadow .35s ease,background .35s ease}
+.stats__list--big strong{transition:transform .35s ease}
+.stats__list--big li:hover{transform:translateY(-6px);background:var(--cream);box-shadow:0 16px 34px rgba(43,29,21,.22)}
+.stats__list--big li:hover strong{transform:scale(1.08)}
+.stats.cl-stats .cl-two{max-width:1180px}
+.cl-box{transition:transform .35s ease,box-shadow .35s ease}
+.cl-box:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(43,29,21,.18)}
+.cl-dots li{transition:transform .3s ease}
+.cl-dots li:hover{transform:translateX(4px)}
+@media (max-width:760px){.stats__list--big{flex-wrap:wrap}.stats__list--big li{flex:1 1 calc(50% - 10px)}}

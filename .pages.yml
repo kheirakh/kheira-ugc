@@ -38,17 +38,21 @@ content:
           - { name: paragraphes, label: Paragraphes, type: text, list: true }
           - { name: signature, label: Signature, type: string }
       - name: chiffres
-        label: Chiffres clés
+        label: Mes chiffres
         type: object
         fields:
           - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: periode, label: "Période (ex. Instagram · 30 derniers jours)", type: string }
           - name: liste
             label: "Chiffres (chiffre vide = case cachée)"
             type: object
             list: true
             fields:
-              - { name: chiffre, label: "Chiffre (ex. 25 k, 60 %)", type: string }
+              - { name: chiffre, label: "Chiffre (ex. 53,4 k, 16,5 %)", type: string }
               - { name: libelle, label: Texte sous le chiffre, type: string }
+          - { name: audience, label: Audience (une ligne par info), type: string, list: true }
+          - { name: performances, label: Performances moyennes (une ligne par info), type: string, list: true }
       - name: univers
         label: Univers / marques
         type: object
@@ -227,16 +231,20 @@ content:
           - { name: titre, label: Titre, type: string }
           - { name: paragraphes, label: "Paragraphes (même ordre que le français)", type: text, list: true }
       - name: chiffres
-        label: Chiffres clés
+        label: Mes chiffres
         type: object
         fields:
           - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: periode, label: Période, type: string }
           - name: liste
             label: "Textes sous les chiffres (même ordre que le français)"
             type: object
             list: true
             fields:
               - { name: libelle, label: Texte, type: string }
+          - { name: audience, label: "Audience (même ordre)", type: string, list: true }
+          - { name: performances, label: "Performances (même ordre)", type: string, list: true }
       - name: univers
         label: Univers / marques
         type: object
@@ -369,22 +377,6 @@ content:
           - { name: titre, label: Titre, type: string }
           - { name: texte, label: Texte, type: text }
           - { name: photo, label: Photo, type: image }
-      - name: stats
-        label: Statistiques
-        type: object
-        fields:
-          - { name: petit_titre, label: Petit titre, type: string }
-          - { name: titre, label: Titre, type: string }
-          - { name: periode, label: "Période (ex. Instagram · 30 derniers jours)", type: string }
-          - name: chiffres
-            label: Chiffres
-            type: object
-            list: true
-            fields:
-              - { name: chiffre, label: Chiffre, type: string }
-              - { name: libelle, label: Texte sous le chiffre, type: string }
-          - { name: audience, label: Audience (une ligne par info), type: string, list: true }
-          - { name: performances, label: Performances moyennes (une ligne par info), type: string, list: true }
       - name: galerie
         label: Galerie de photos
         type: object

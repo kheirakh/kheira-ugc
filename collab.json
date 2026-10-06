@@ -2,41 +2,8 @@
   "intro": {
     "petit_titre": "Espace marques",
     "titre": "Travaillons ensemble",
-    "texte": "Tout ce qu'il faut pour préparer notre collaboration : mes statistiques, le déroulé, mes tarifs et le brief à remplir. Cette page t'est réservée, merci de ne pas la partager.",
+    "texte": "Tout ce qu'il faut pour préparer notre collaboration : le déroulé, mes tarifs et le brief à remplir. Cette page t'est réservée, merci de ne pas la partager.",
     "photo": "assets/images/site/collab-hero.jpg"
-  },
-  "stats": {
-    "petit_titre": "Statistiques",
-    "titre": "Mes chiffres",
-    "periode": "Instagram · 30 derniers jours",
-    "chiffres": [
-      {
-        "chiffre": "53,4 k",
-        "libelle": "Abonnés Instagram"
-      },
-      {
-        "chiffre": "1,2 M",
-        "libelle": "Vues"
-      },
-      {
-        "chiffre": "363 k",
-        "libelle": "Comptes touchés"
-      },
-      {
-        "chiffre": "16,5 %",
-        "libelle": "Taux d'engagement"
-      }
-    ],
-    "audience": [
-      "88 % de femmes",
-      "18 – 44 ans",
-      "75 % en France, puis Belgique et Maroc"
-    ],
-    "performances": [
-      "Reels : 5 000 à 15 000 likes, 500 à 1 500 partages, 100 à 300 commentaires",
-      "Stories : 3 000 à 7 000 vues",
-      "TikTok : 17 k abonnés"
-    ]
   },
   "galerie": {
     "petit_titre": "Mon univers",

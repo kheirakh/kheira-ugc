@@ -46,12 +46,6 @@
         (g.marque ? '<figcaption class="pgrid__marque">' + esc(g.marque) + '</figcaption>' : '') + '</figure>';
     }).join('');
     if (!gal.length) $('clGal').closest('section').hidden = true;
-    var s = c.stats || {};
-    $('clStats').innerHTML = list(s.chiffres).filter(function (x) { return x.chiffre; }).map(function (x) {
-      return '<li><strong>' + nbsp(x.chiffre) + '</strong><span>' + esc(x.libelle) + '</span></li>';
-    }).join('');
-    $('clAudience').innerHTML = list(s.audience).map(function (t) { return '<li>' + nbsp(t) + '</li>'; }).join('');
-    $('clPerf').innerHTML = list(s.performances).map(function (t) { return '<li>' + nbsp(t) + '</li>'; }).join('');
     $('clSteps').innerHTML = list((c.deroule || {}).etapes).map(function (e, i) {
       return '<li><span class="cl-step__n">' + ('0' + (i + 1)).slice(-2) + '</span><h3>' + esc(e.titre) + '</h3><p>' + mailLink(esc(e.texte)) + '</p></li>';
     }).join('');
