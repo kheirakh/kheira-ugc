@@ -465,3 +465,5 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
   .nav__links{align-items:stretch}
   .nav__cta{margin:8px 14px 6px;text-align:center;padding:14px 18px!important}
 }
+/* Pied de page à pois : un peu plus haut pour voir le motif */
+.footer.bg--dots{padding:60px var(--gutter)}
