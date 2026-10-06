@@ -2,17 +2,30 @@
   "intro": {
     "petit_titre": "Espace marques",
     "titre": "Travaillons ensemble",
-    "texte": "Tout ce qu'il faut pour préparer notre collaboration : mes statistiques, le déroulé, mes tarifs et le brief à remplir. Cette page t'est réservée, merci de ne pas la partager."
+    "texte": "Tout ce qu'il faut pour préparer notre collaboration : mes statistiques, le déroulé, mes tarifs et le brief à remplir. Cette page t'est réservée, merci de ne pas la partager.",
+    "photo": "assets/images/site/hero.jpg"
   },
   "stats": {
     "petit_titre": "Statistiques",
     "titre": "Mes chiffres",
     "periode": "Instagram · 30 derniers jours",
     "chiffres": [
-      { "chiffre": "52,6 k", "libelle": "Abonnés Instagram" },
-      { "chiffre": "1,2 M", "libelle": "Vues" },
-      { "chiffre": "363 k", "libelle": "Comptes touchés" },
-      { "chiffre": "16,5 %", "libelle": "Taux d'engagement" }
+      {
+        "chiffre": "52,6 k",
+        "libelle": "Abonnés Instagram"
+      },
+      {
+        "chiffre": "1,2 M",
+        "libelle": "Vues"
+      },
+      {
+        "chiffre": "363 k",
+        "libelle": "Comptes touchés"
+      },
+      {
+        "chiffre": "16,5 %",
+        "libelle": "Taux d'engagement"
+      }
     ],
     "audience": [
       "88 % de femmes",
@@ -26,15 +39,41 @@
       "TikTok : 17 k abonnés"
     ]
   },
+  "galerie": {
+    "petit_titre": "Mon univers",
+    "photos": [
+      "assets/images/photos/photographie-quran-mon-amour.jpg",
+      "assets/images/photos/photographie-faraasha-porte.jpg",
+      "assets/images/photos/photographie-glam-by-majha-blush.jpg",
+      "assets/images/photos/photographie-alif-story-conteuse.jpg",
+      "assets/images/photos/photographie-atelier-beldii.jpg",
+      "assets/images/photos/photographie-livres-miracles-quran.jpg"
+    ]
+  },
   "deroule": {
     "petit_titre": "Déroulé",
     "titre": "Comment ça se passe",
     "etapes": [
-      { "titre": "Le brief", "texte": "Tu remplis le brief en bas de cette page : ta marque, tes produits, tes objectifs et tes dates." },
-      { "titre": "La proposition", "texte": "Je reviens vers toi avec une proposition et un devis adaptés. On valide ensemble la formule et le planning." },
-      { "titre": "L'envoi du produit", "texte": "Tu m'envoies les produits avec leurs noms exacts, en France ou au Maroc. Depuis la France, compte environ 2 semaines de réexpédition." },
-      { "titre": "La création", "texte": "Je crée ton contenu dans mon univers : hook, storytelling, lumière soignée, rendu esthétique." },
-      { "titre": "Validation et livraison", "texte": "Tu reçois le contenu pour validation, puis on fixe ensemble la date de publication ou je te livre les fichiers (UGC)." }
+      {
+        "titre": "Le brief",
+        "texte": "Tu remplis le brief en bas de cette page : ta marque, tes produits, tes objectifs et tes dates."
+      },
+      {
+        "titre": "La proposition",
+        "texte": "Je reviens vers toi avec une proposition et un devis adaptés. On valide ensemble la formule et le planning."
+      },
+      {
+        "titre": "L'envoi du produit",
+        "texte": "Tu m'envoies les produits avec leurs noms exacts, en France ou au Maroc. Depuis la France, compte environ 2 semaines de réexpédition."
+      },
+      {
+        "titre": "La création",
+        "texte": "Je crée ton contenu dans mon univers : hook, storytelling, lumière soignée, rendu esthétique."
+      },
+      {
+        "titre": "Validation et livraison",
+        "texte": "Tu reçois le contenu pour validation, puis on fixe ensemble la date de publication ou je te livre les fichiers (UGC)."
+      }
     ]
   },
   "tarifs": {
@@ -44,42 +83,107 @@
       "titre": "Collaboration d'influence",
       "sous_titre": "Diffusion sur mes réseaux",
       "items": [
-        { "nom": "Carrousel post", "prix": "300 €", "texte": "Esthétique et stratégique, pour éduquer, inspirer et pousser à l'action. Le format qui performe le mieux.", "badge": "Meilleure formule" },
-        { "nom": "Reel Instagram", "prix": "350 €", "texte": "Court, dynamique, pensé pour capter dès les premières secondes et toucher large.", "badge": "" },
-        { "nom": "Story Instagram", "prix": "110 €", "texte": "Directe et spontanée. Lien cliquable, code promo, sondage possibles.", "badge": "" },
-        { "nom": "Pack 3 stories", "prix": "280 €", "texte": "Introduction, mise en valeur du produit et appel à l'action, sur 3 jours.", "badge": "" },
-        { "nom": "Pack Visibilité Boost", "prix": "650 €", "texte": "3 stories + 3 newsletters envoyées à plus de 35 000 personnes. Idéal pour un lancement.", "badge": "" }
+        {
+          "nom": "Carrousel post",
+          "prix": "300 €",
+          "texte": "Esthétique et stratégique, pour éduquer, inspirer et pousser à l'action. Le format qui performe le mieux.",
+          "badge": "Meilleure formule"
+        },
+        {
+          "nom": "Reel Instagram",
+          "prix": "350 €",
+          "texte": "Court, dynamique, pensé pour capter dès les premières secondes et toucher large.",
+          "badge": ""
+        },
+        {
+          "nom": "Story Instagram",
+          "prix": "110 €",
+          "texte": "Directe et spontanée. Lien cliquable, code promo, sondage possibles.",
+          "badge": ""
+        },
+        {
+          "nom": "Pack 3 stories",
+          "prix": "280 €",
+          "texte": "Introduction, mise en valeur du produit et appel à l'action, sur 3 jours.",
+          "badge": ""
+        },
+        {
+          "nom": "Pack Visibilité Boost",
+          "prix": "650 €",
+          "texte": "3 stories + 1 reel : un dispositif complet pour capter l'attention, créer l'envie et ancrer ta marque. Idéal pour un lancement.",
+          "badge": ""
+        }
       ]
     },
     "ugc": {
       "titre": "Création de contenu UGC",
       "sous_titre": "Contenu livré à ta marque",
       "items": [
-        { "nom": "Vidéo UGC (15 à 30 s)", "prix": "180 €", "texte": "Naturelle, esthétique et engageante, pour Reels et TikTok.", "badge": "" },
-        { "nom": "Pack 3 vidéos UGC", "prix": "460 €", "texte": "3 angles différents : présentation, usage, storytelling.", "badge": "" },
-        { "nom": "Photos UGC (x3)", "prix": "120 €", "texte": "Photos esthétiques et naturelles pour ton site ou tes réseaux.", "badge": "" },
-        { "nom": "Pack UGC complet", "prix": "550 €", "texte": "3 vidéos + 3 photos pour alimenter ton site, tes réseaux et tes campagnes.", "badge": "Le plus complet" },
-        { "nom": "Script + concept créatif", "prix": "+ 100 €", "texte": "Recherche d'angle marketing et script optimisé pour la conversion.", "badge": "" }
+        {
+          "nom": "Vidéo UGC (5 à 20 s)",
+          "prix": "180 €",
+          "texte": "Naturelle, esthétique et engageante, pour Reels et TikTok.",
+          "badge": "Best seller"
+        },
+        {
+          "nom": "Pack 3 vidéos UGC",
+          "prix": "460 €",
+          "texte": "3 angles différents : présentation, usage, storytelling.",
+          "badge": ""
+        },
+        {
+          "nom": "Photos UGC (x3)",
+          "prix": "120 €",
+          "texte": "Photos esthétiques et naturelles pour ton site ou tes réseaux.",
+          "badge": ""
+        },
+        {
+          "nom": "Pack UGC complet",
+          "prix": "550 €",
+          "texte": "3 vidéos + 3 photos pour alimenter ton site, tes réseaux et tes campagnes.",
+          "badge": "Le plus complet"
+        },
+        {
+          "nom": "Script + concept créatif",
+          "prix": "+ 100 €",
+          "texte": "Recherche d'angle marketing et script optimisé pour la conversion.",
+          "badge": ""
+        }
       ]
     },
     "options": {
-      "titre": "Options",
+      "titre": "Droits d'utilisation publicitaire (ads)",
+      "texte": "En option sur les contenus UGC. Les droits sont strictement limités à la durée choisie, toute prolongation est facturée en supplément.",
       "items": [
-        { "nom": "Droits publicitaires (ads) · 1 mois", "prix": "+ 150 €" },
-        { "nom": "Droits publicitaires (ads) · 2 mois", "prix": "+ 200 €" },
-        { "nom": "Droits publicitaires (ads) · 3 mois", "prix": "+ 250 €" },
-        { "nom": "Droits publicitaires (ads) · 6 mois", "prix": "+ 350 €" },
-        { "nom": "Utilisation sur ton site / supports marketing · 2 mois", "prix": "+ 150 €" },
-        { "nom": "Livraison express en 5 jours", "prix": "+ 100 €" }
+        {
+          "nom": "1 mois",
+          "prix": "+ 150 €"
+        },
+        {
+          "nom": "2 mois",
+          "prix": "+ 200 €"
+        },
+        {
+          "nom": "3 mois",
+          "prix": "+ 250 €"
+        },
+        {
+          "nom": "6 mois",
+          "prix": "+ 350 €"
+        }
       ]
     },
-    "gifting": "Gifting (envoi de produits sans rémunération) : uniquement sur validation, à partir de 200 € de valeur produit, sans garantie de publication."
+    "gifting": "Gifting (envoi de produits sans rémunération) : uniquement sur validation, à partir de 200 € de valeur produit, sans garantie de publication.",
+    "stories": {
+      "titre": "Bon à savoir sur les stories",
+      "texte": "Une story, c'est une présentation de 2 à 4 slides qui s'enchaînent le même jour. Un pack de 3 stories, ce sont 3 jours différents de visibilité : idéal pour créer du rappel auprès de mon audience."
+    }
   },
   "conditions": {
     "petit_titre": "À savoir",
     "titre": "Mes conditions",
     "liste": [
-      "Collaboration d'influence : le contenu reste sur mes réseaux, 3 mois sur mon feed et en story à la une sans limite de durée.",
+      "Collaboration d'influence : le contenu reste sur mes réseaux, sur mon feed et en story à la une.",
       "UGC : la prestation comprend la création et la livraison du contenu. Les droits d'utilisation (ads, site, campagnes) sont en option.",
       "Toute utilisation en dehors de ce qui a été validé fait l'objet d'un accord et d'une facturation à part.",
       "Colis : je ne peux pas être tenue responsable d'un colis perdu, ouvert ou bloqué en douane. Le travail engagé en amont reste dû.",
@@ -90,12 +194,41 @@
     "petit_titre": "Brief",
     "titre": "Ton brief",
     "texte": "Plus ton brief est précis, plus ma proposition sera juste. Je te réponds rapidement avec un devis.",
-    "types": ["Collaboration d'influence", "Création de contenu UGC", "Influence + UGC", "Gifting"],
-    "objectifs": ["Ventes", "Notoriété", "Lancement d'un produit", "Contenu pour mes publicités", "Autre"],
-    "droits": ["Aucun", "Ads 1 mois", "Ads 2 mois", "Ads 3 mois", "Ads 6 mois", "Site / supports marketing 2 mois", "Je ne sais pas encore"],
-    "envoi": ["En France", "Au Maroc"],
-    "budgets": ["Moins de 300 €", "300 € à 600 €", "600 € à 1 000 €", "Plus de 1 000 €", "À définir ensemble"],
+    "types": [
+      "Collaboration d'influence",
+      "Création de contenu UGC",
+      "Influence + UGC",
+      "Gifting"
+    ],
+    "objectifs": [
+      "Ventes",
+      "Notoriété",
+      "Lancement d'un produit",
+      "Contenu pour mes publicités",
+      "Autre"
+    ],
+    "droits": [
+      "Aucun",
+      "Ads 1 mois",
+      "Ads 2 mois",
+      "Ads 3 mois",
+      "Ads 6 mois",
+      "Site / supports marketing 2 mois",
+      "Je ne sais pas encore"
+    ],
+    "envoi": [
+      "En France",
+      "Au Maroc"
+    ],
+    "budgets": [
+      "Moins de 300 €",
+      "300 € à 600 €",
+      "600 € à 1 000 €",
+      "Plus de 1 000 €",
+      "À définir ensemble"
+    ],
     "bouton": "Envoyer mon brief",
-    "merci": "Merci ! Ton brief est bien envoyé. Je reviens vers toi très vite avec une proposition."
+    "merci": "Merci ! Ton brief est bien envoyé. Je reviens vers toi très vite avec une proposition.",
+    "photo": "assets/images/site/about.jpg"
   }
 }

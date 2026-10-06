@@ -11,8 +11,8 @@
 <meta name="theme-color" content="#e8dccd">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
-<link rel="stylesheet" href="style.css?v=49">
-<style>.is-loading [data-c],.is-loading .cl-list{visibility:hidden}</style>
+<link rel="stylesheet" href="style.css?v=50">
+<style>.is-loading [data-c],.is-loading [data-ci],.is-loading .cl-list{visibility:hidden}</style>
 <script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
 </head>
 <body class="collab-page">
@@ -36,12 +36,15 @@
 <!-- INTRO — fond : beige -->
 <section class="cl-hero bg bg--beige" id="haut">
   <div class="wrap cl-hero__card card card--cream">
+    <figure class="cl-hero__img"><img src="assets/images/site/hero.jpg" alt="Kheira" data-ci="intro.photo"></figure>
+    <div class="cl-hero__text">
     <p class="eyebrow" data-c="intro.petit_titre">Espace marques</p>
     <p class="cl-for" id="pour" hidden></p>
     <h1 class="title" data-c="intro.titre">Travaillons ensemble</h1>
     <p class="cl-lead" data-c="intro.texte"></p>
     <div class="cl-chips">
       <a href="#chiffres">Chiffres</a><a href="#deroule">Déroulé</a><a href="#tarifs">Tarifs</a><a href="#conditions">Conditions</a><a href="#brief" class="is-main">Remplir le brief</a>
+    </div>
     </div>
   </div>
 </section>
@@ -62,6 +65,14 @@
   </div>
 </section>
 
+<!-- GALERIE — fond : beige -->
+<section class="cl-gal bg bg--beige">
+  <div class="wrap">
+    <p class="eyebrow cl-gal__eyebrow" data-c="galerie.petit_titre">Mon univers</p>
+    <div class="cl-gal__grid cl-list" id="clGal"></div>
+  </div>
+</section>
+
 <!-- DÉROULÉ — fond : crème -->
 <section class="cl-steps bg bg--cream" id="deroule">
   <div class="wrap">
@@ -73,18 +84,19 @@
   </div>
 </section>
 
-<!-- TARIFS — fond : quadrillage -->
-<section class="cl-prices bg bg--grid" id="tarifs">
+<!-- TARIFS — fond : pois -->
+<section class="cl-prices bg bg--dots" id="tarifs">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow" data-c="tarifs.petit_titre">Tarifs</p>
-      <h2 class="title" data-c="tarifs.titre">Mes formules</h2>
+      <p class="eyebrow eyebrow--light" data-c="tarifs.petit_titre">Tarifs</p>
+      <h2 class="title title--light" data-c="tarifs.titre">Mes formules</h2>
     </div>
     <div class="cl-menu">
       <article class="cl-card"><h3 data-c="tarifs.influence.titre"></h3><p class="cl-card__sub" data-c="tarifs.influence.sous_titre"></p><ul class="cl-items cl-list" id="clInfluence"></ul></article>
       <article class="cl-card cl-card--dark"><h3 data-c="tarifs.ugc.titre"></h3><p class="cl-card__sub" data-c="tarifs.ugc.sous_titre"></p><ul class="cl-items cl-list" id="clUgc"></ul></article>
     </div>
-    <article class="cl-card cl-options"><h3 data-c="tarifs.options.titre">Options</h3><ul class="cl-items cl-items--compact cl-list" id="clOptions"></ul><p class="cl-gift" data-c="tarifs.gifting"></p></article>
+    <aside class="cl-note"><h3 data-c="tarifs.stories.titre">Bon à savoir sur les stories</h3><p data-c="tarifs.stories.texte"></p></aside>
+    <article class="cl-card cl-options"><h3 data-c="tarifs.options.titre">Options</h3><p class="cl-options__txt" data-c="tarifs.options.texte"></p><ul class="cl-tiles cl-list" id="clOptions"></ul><p class="cl-gift" data-c="tarifs.gifting"></p></article>
   </div>
 </section>
 
@@ -106,6 +118,7 @@
       <p class="eyebrow" data-c="brief.petit_titre">Brief</p>
       <h2 class="title" data-c="brief.titre">Ton brief</h2>
       <p class="brief__p" data-c="brief.texte"></p>
+      <figure class="cl-brief__img"><img src="assets/images/site/about.jpg" alt="" loading="lazy" data-ci="brief.photo"></figure>
     </div>
     <form class="brief__form" id="clForm" novalidate>
       <p class="cl-fs">1 · Ta marque</p>
@@ -157,6 +170,6 @@
 
 <a href="#haut" class="totop" id="toTop" aria-label="Remonter en haut"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 
-<script src="collab.js?v=1"></script>
+<script src="collab.js?v=2"></script>
 </body>
 </html>

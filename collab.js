@@ -31,6 +31,13 @@
       var v = get(c, el.getAttribute('data-c'));
       if (v != null && v !== '') el.innerHTML = nbsp(v); else if (!el.textContent.trim()) el.hidden = true;
     });
+    document.querySelectorAll('[data-ci]').forEach(function (el) {
+      var v = get(c, el.getAttribute('data-ci'));
+      if (v) el.src = String(v).replace(/^\/+/, ''); else el.closest('figure').hidden = true;
+    });
+    var gal = list((c.galerie || {}).photos);
+    $('clGal').innerHTML = gal.map(function (g) { return '<figure><img src="' + esc(String(g).replace(/^\/+/, '')) + '" alt="" loading="lazy"></figure>'; }).join('');
+    if (!gal.length) $('clGal').closest('section').hidden = true;
     var s = c.stats || {};
     $('clStats').innerHTML = list(s.chiffres).filter(function (x) { return x.chiffre; }).map(function (x) {
       return '<li><strong>' + nbsp(x.chiffre) + '</strong><span>' + esc(x.libelle) + '</span></li>';
@@ -43,7 +50,9 @@
     var t = c.tarifs || {};
     $('clInfluence').innerHTML = items((t.influence || {}).items);
     $('clUgc').innerHTML = items((t.ugc || {}).items);
-    $('clOptions').innerHTML = items((t.options || {}).items, true);
+    $('clOptions').innerHTML = list((t.options || {}).items).map(function (o) {
+      return '<li><span>' + nbsp(o.nom) + '</span><strong>' + nbsp(o.prix) + '</strong></li>';
+    }).join('');
     $('clCond').innerHTML = list((c.conditions || {}).liste).map(function (x) { return '<li>' + CHECK + '<span>' + nbsp(x) + '</span></li>'; }).join('');
 
     var b = c.brief || {};

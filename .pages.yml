@@ -368,6 +368,7 @@ content:
           - { name: petit_titre, label: Petit titre, type: string }
           - { name: titre, label: Titre, type: string }
           - { name: texte, label: Texte, type: text }
+          - { name: photo, label: Photo, type: image }
       - name: stats
         label: Statistiques
         type: object
@@ -384,6 +385,12 @@ content:
               - { name: libelle, label: Texte sous le chiffre, type: string }
           - { name: audience, label: Audience (une ligne par info), type: string, list: true }
           - { name: performances, label: Performances moyennes (une ligne par info), type: string, list: true }
+      - name: galerie
+        label: Galerie de photos
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: photos, label: "Photos (6 conseillées)", type: image, list: true }
       - name: deroule
         label: Déroulé
         type: object
@@ -433,11 +440,18 @@ content:
                   - { name: prix, label: "Prix (ex. 180 €)", type: string }
                   - { name: texte, label: Description, type: text }
                   - { name: badge, label: "Badge (facultatif, ex. Meilleure formule)", type: string }
-          - name: options
-            label: Options
+          - name: stories
+            label: Encadré sur les stories
             type: object
             fields:
               - { name: titre, label: Titre, type: string }
+              - { name: texte, label: Texte, type: text }
+          - name: options
+            label: Options (droits ads)
+            type: object
+            fields:
+              - { name: titre, label: Titre, type: string }
+              - { name: texte, label: Texte, type: text }
               - name: items
                 label: Options
                 type: object
@@ -467,3 +481,4 @@ content:
           - { name: budgets, label: Choix « Budget », type: string, list: true }
           - { name: bouton, label: Texte du bouton, type: string }
           - { name: merci, label: Message après l'envoi, type: text }
+          - { name: photo, label: "Photo à côté du brief (ordinateur)", type: image }
