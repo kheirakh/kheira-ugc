@@ -93,32 +93,32 @@
       "sous_titre": "Diffusion sur mes réseaux",
       "items": [
         {
-          "nom": "Carrousel post",
-          "prix": "300 €",
+          "nom": "Carrousel post (5 photos)",
+          "prix": "250 €",
           "texte": "Esthétique et stratégique, pour éduquer, inspirer et pousser à l'action. Le format qui performe le mieux.",
           "badge": "Meilleure formule"
         },
         {
           "nom": "Reel Instagram",
-          "prix": "350 €",
+          "prix": "300 €",
           "texte": "Court, dynamique, pensé pour capter dès les premières secondes et toucher large.",
           "badge": ""
         },
         {
           "nom": "Story Instagram",
-          "prix": "110 €",
+          "prix": "80 €",
           "texte": "Directe et spontanée. Lien cliquable, code promo, sondage possibles.",
           "badge": ""
         },
         {
           "nom": "Pack 3 stories",
-          "prix": "280 €",
+          "prix": "200 €",
           "texte": "Introduction, mise en valeur du produit et appel à l'action, sur 3 jours.",
           "badge": ""
         },
         {
           "nom": "Pack Visibilité Boost",
-          "prix": "650 €",
+          "prix": "450 €",
           "texte": "3 stories + 1 reel : un dispositif complet pour capter l'attention, créer l'envie et ancrer ta marque. Idéal pour un lancement.",
           "badge": ""
         }
@@ -131,25 +131,25 @@
       "items": [
         {
           "nom": "Vidéo UGC (5 à 20 s)",
-          "prix": "180 €",
+          "prix": "150 €",
           "texte": "Naturelle, esthétique et engageante, pour Reels et TikTok.",
           "badge": "Best seller"
         },
         {
           "nom": "Pack 3 vidéos UGC",
-          "prix": "460 €",
+          "prix": "400 €",
           "texte": "3 angles différents : présentation, usage, storytelling.",
           "badge": ""
         },
         {
-          "nom": "Photos UGC (x3)",
+          "nom": "Photos UGC (x5)",
           "prix": "120 €",
           "texte": "Photos esthétiques et naturelles pour ton site ou tes réseaux.",
           "badge": ""
         },
         {
           "nom": "Pack UGC complet",
-          "prix": "550 €",
+          "prix": "480 €",
           "texte": "3 vidéos + 3 photos pour alimenter ton site, tes réseaux et tes campagnes.",
           "badge": "Le plus complet"
         },
