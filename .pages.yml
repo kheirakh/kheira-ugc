@@ -172,6 +172,7 @@ content:
           - { name: budgets, label: Choix « Budget », type: string, list: true }
           - { name: bouton, label: Texte du bouton, type: string }
           - { name: merci, label: Message après l'envoi, type: text }
+          - { name: photo, label: "Photo sous le texte (ordinateur)", type: image }
       - name: faq
         label: FAQ
         type: object

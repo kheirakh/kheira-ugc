@@ -380,7 +380,8 @@
       "À définir ensemble"
     ],
     "bouton": "Envoyer ma demande",
-    "merci": "Merci ! Ta demande est bien envoyée, je reviens vers toi très vite."
+    "merci": "Merci ! Ta demande est bien envoyée, je reviens vers toi très vite.",
+    "photo": "assets/images/site/collab-hero.jpg"
   },
   "faq": {
     "petit_titre": "FAQ",
