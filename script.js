@@ -176,7 +176,7 @@
     if (fqSec) {
       fqSec.hidden = !fq.length;
       document.getElementById('faqList').innerHTML = fq.map(function (x, i) {
-        return '<details class="qa"' + (i === 0 ? ' open' : '') + '><summary>' + nbsp(x.question) + '<span class="qa__plus" aria-hidden="true"></span></summary><p>' + esc(x.reponse) + '</p></details>';
+        return '<details class="qa"><summary>' + nbsp(x.question) + '<span class="qa__plus" aria-hidden="true"></span></summary><p>' + esc(x.reponse) + '</p></details>';
       }).join('');
     }
     // Formulaire : listes déroulantes
