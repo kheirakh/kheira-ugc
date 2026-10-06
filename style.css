@@ -623,3 +623,11 @@ body{background:var(--cocoa)}
 .cl-lines li,.cl-checks--in li{transition:background .3s,color .3s;cursor:default}
 .cl-lines li:hover,.cl-checks--in li:hover{background:var(--espresso);color:var(--cream)}
 .cl-checks--in li:hover .check{background:var(--cream);stroke:var(--espresso)}
+/* Brief : même largeur que les autres blocs, photo de Kheira, photo en haut sur mobile */
+.cl-brief{max-width:1180px}
+.cl-brief__img img{object-position:50% 40%}
+@media (max-width:760px){
+  .cl-brief .brief__intro{display:flex;flex-direction:column}
+  .cl-brief__img{display:block;order:-1;margin:0 0 22px;max-width:none;aspect-ratio:4/5}
+}
+.collab-page .cl-hero__card,.collab-page .cl-cond .cl-infos,.collab-page .cl-two{max-width:1180px}
