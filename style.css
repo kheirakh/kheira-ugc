@@ -379,7 +379,7 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
 .stats__eyebrow{text-align:center;margin-bottom:26px}
 .stats__list{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:1120px;margin:0 auto}
 .stats__list li{flex:1 1 200px;max-width:270px;display:flex;flex-direction:column;align-items:center;gap:8px;padding:26px 16px 22px;border-radius:var(--radius);background:rgba(251,246,239,.75);border:1px solid rgba(107,82,68,.2);text-align:center}
-.stats__list strong{font-family:var(--titres);font-weight:400;font-size:clamp(46px,5vw,64px);line-height:1;color:var(--espresso)}
+.stats__list strong{font-family:var(--sans);font-weight:500;font-size:clamp(40px,4.4vw,56px);line-height:1;letter-spacing:.02em;color:var(--espresso)}
 .stats__list span{font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brown);line-height:1.4}
 
 /* Avis des marques */
@@ -434,7 +434,7 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
   .nav__lang{margin-left:auto;margin-right:4px}
   .stats__list{gap:10px}
   .stats__list li{flex:1 1 calc(50% - 10px);padding:20px 10px 16px}
-  .stats__list strong{font-size:42px}
+  .stats__list strong{font-size:36px}
   .stats__list span{font-size:10px;letter-spacing:.12em}
   .brief__card{grid-template-columns:1fr}
   .f2{grid-template-columns:1fr}
