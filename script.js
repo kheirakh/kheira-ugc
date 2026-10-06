@@ -265,6 +265,10 @@
       var msg = document.getElementById('briefMsg');
       var btn = form.querySelector('button[type=submit]');
       var mail = (CONTENT.liens && CONTENT.liens.email) || 'helloookheira@gmail.com';
+      // calendrier : pas de date passée
+      var fd = document.getElementById('fDelai');
+      if (fd) { var n = new Date(); fd.min = n.getFullYear() + '-' + ('0' + (n.getMonth() + 1)).slice(-2) + '-' + ('0' + n.getDate()).slice(-2); }
+      function frDate(v) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : (v || ''); }
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         msg.className = 'brief__msg';
@@ -281,7 +285,7 @@
           _subject: 'Nouvelle demande de collaboration — ' + d.get('marque'),
           _template: 'table', _captcha: 'false', _replyto: d.get('email'),
           'Nom': d.get('nom'), 'Marque': d.get('marque'), 'Email': d.get('email'), 'Site / Instagram': d.get('site'),
-          'Type de contenu': d.get('type'), 'Budget': d.get('budget'), 'Date souhaitée': d.get('delai'),
+          'Type de contenu': d.get('type'), 'Budget': d.get('budget'), 'Date souhaitée': frDate(d.get('delai')),
           'Message': d.get('message'), 'Langue du site': LANG.toUpperCase()
         };
         btn.disabled = true;
@@ -293,7 +297,13 @@
           form.reset(); form.classList.remove('was-checked');
           msg.textContent = (CONTENT.brief && CONTENT.brief.merci) || t('f_merci');
           msg.classList.add('is-ok');
-        }).catch(function () {
+        }).catch(function (err) {
+          // 1re utilisation : FormSubmit demande d'activer le formulaire (email « Activate Form » reçu par Kheira)
+          if (/activat/i.test(String(err && err.message))) {
+            msg.textContent = LANG === 'en' ? 'This form is being activated, please email me directly in the meantime.' : 'Formulaire en cours d’activation : regarde ta boîte mail (et les spams) pour l’email FormSubmit « Activate Form ».';
+            msg.classList.add('is-error');
+            return;
+          }
           msg.innerHTML = esc(t('f_erreur')) + '<a href="mailto:' + esc(mail) + '">' + esc(mail) + '</a>';
           msg.classList.add('is-error');
         }).then(function () { btn.disabled = false; });

@@ -20,7 +20,7 @@
 <!-- ADOBE FONTS : kit "Portfolio UGC" (Sloop Script). Ajoute Futura PT au même projet sur fonts.adobe.com, pas besoin de toucher ce code -->
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
-<link rel="stylesheet" href="style.css?v=42">
+<link rel="stylesheet" href="style.css?v=43">
 <!-- Cache les textes le temps de lire content.json (évite de voir l'ancienne version 1 seconde) -->
 <style>.is-loading [data-txt],.is-loading [data-img],.is-loading #heroLinks,.is-loading #aboutList,.is-loading #univers,.is-loading #tabs,.is-loading #carousel,.is-loading #grid9,.is-loading #gridUgc,.is-loading #contactLinks,.is-loading #collabs,.is-loading #kitGroups,.is-loading #offers,.is-loading #statsList,.is-loading #reviewsList,.is-loading #faqList,.is-loading #fType,.is-loading #fBudget,.is-loading [data-ui],.is-loading #langBtn{visibility:hidden}</style>
 <script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
@@ -275,7 +275,7 @@
         <label><span data-ui="f_type">Type de contenu</span><select name="type" id="fType" required></select></label>
         <label><span data-ui="f_budget">Budget</span><select name="budget" id="fBudget" required></select></label>
       </div>
-      <label><span data-ui="f_delai">Date de livraison souhaitée</span><input name="delai"></label>
+      <label><span data-ui="f_delai">Date de livraison souhaitée</span><input name="delai" type="date" id="fDelai"></label>
       <label><span data-ui="f_message">Ton projet en quelques mots</span><textarea name="message" rows="4" required></textarea></label>
       <input type="text" name="_honey" class="brief__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button class="fbtn fbtn--main brief__btn" type="submit" data-txt="brief.bouton">Envoyer ma demande</button>
@@ -336,6 +336,6 @@
   <p class="footer__pill">© <span id="year"></span> <span data-txt="accueil.titre">kheira</span> · <span data-ui="droits">Tous droits réservés</span></p>
 </footer>
 
-<script src="script.js?v=16"></script>
+<script src="script.js?v=17"></script>
 </body>
 </html>
