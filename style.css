@@ -647,3 +647,4 @@ body{background:var(--cocoa)}
 .cl-brief__head{text-align:left;margin:0 0 6px;max-width:none}
 @media (min-width:761px){.cl-brief{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media (max-width:760px){.cl-brief__head{text-align:center}}
+.cl-brief__img img{object-position:55% 45%}
