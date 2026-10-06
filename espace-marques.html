@@ -11,6 +11,7 @@
 <meta name="theme-color" content="#e8dccd">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
+<link rel="preload" as="image" href="assets/images/site/collab-hero.jpg">
 <link rel="stylesheet" href="style.css?v=62">
 <style>.is-loading [data-c],.is-loading [data-ci],.is-loading .cl-list{visibility:hidden}</style>
 <script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
@@ -35,7 +36,7 @@
 <!-- INTRO — fond : beige -->
 <section class="cl-hero bg bg--beige" id="haut">
   <div class="wrap cl-hero__card card card--cream">
-    <figure class="cl-hero__img"><img src="assets/images/site/hero.jpg" alt="Kheira" data-ci="intro.photo"></figure>
+    <figure class="cl-hero__img"><img src="assets/images/site/collab-hero.jpg" alt="Kheira" data-ci="intro.photo" fetchpriority="high"></figure>
     <div class="cl-hero__text">
     <p class="eyebrow" data-c="intro.petit_titre">Espace marques</p>
     <p class="cl-for" id="pour" hidden></p>
@@ -100,7 +101,7 @@
       <h2 class="title" data-c="brief.titre">Ton brief</h2>
       <p class="brief__p" data-c="brief.texte"></p>
     </div>
-    <figure class="cl-brief__img"><img src="assets/images/site/about.jpg" alt="" loading="lazy" data-ci="brief.photo"></figure>
+    <figure class="cl-brief__img"><img src="assets/images/photos/photographie-atelier-beldii-2.jpg" alt="" loading="lazy" data-ci="brief.photo"></figure>
     <form class="brief__form" id="clForm" novalidate>
       <p class="cl-fs">1 · Ta marque</p>
       <div class="f2">
@@ -140,6 +141,6 @@
 
 <a href="#haut" class="totop" id="toTop" aria-label="Remonter en haut"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 
-<script src="collab.js?v=10"></script>
+<script src="collab.js?v=11"></script>
 </body>
 </html>

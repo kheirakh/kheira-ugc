@@ -88,7 +88,7 @@
     });
     document.querySelectorAll('[data-img]').forEach(function (el) {
       var v = get(c, el.getAttribute('data-img'));
-      if (v) el.src = src(v);
+      if (v && el.getAttribute('src') !== src(v)) el.src = src(v);
     });
 
     var L = c.liens || {};

@@ -37,7 +37,9 @@
     });
     document.querySelectorAll('[data-ci]').forEach(function (el) {
       var v = get(c, el.getAttribute('data-ci'));
-      if (v) el.src = String(v).replace(/^\/+/, ''); else el.closest('figure').hidden = true;
+      var nv = String(v || '').replace(/^\/+/, '');
+      if (!nv) { el.closest('figure').hidden = true; return; }
+      if (el.getAttribute('src') !== nv) el.src = nv; // ne recharge pas si c'est déjà la bonne photo
     });
     var gal = list((c.galerie || {}).photos).map(function (g) { return typeof g === 'string' ? { image: g } : g; }).filter(function (g) { return g.image; });
     $('clGal').innerHTML = gal.map(function (g) {
