@@ -50,8 +50,11 @@
     var t = c.tarifs || {};
     $('clInfluence').innerHTML = items((t.influence || {}).items);
     $('clUgc').innerHTML = items((t.ugc || {}).items);
-    $('clOptions').innerHTML = list((t.options || {}).items).map(function (o) {
-      return '<li><span>' + nbsp(o.nom) + '</span><strong>' + nbsp(o.prix) + '</strong></li>';
+    $('clInfos').innerHTML = list(t.infos).filter(function (q) { return q.question; }).map(function (q) {
+      var lignes = list(q.lignes);
+      return '<details class="qa"><summary>' + nbsp(q.question) + '<span class="qa__plus" aria-hidden="true"></span></summary>' +
+        (q.reponse ? '<p>' + esc(q.reponse) + '</p>' : '') +
+        (lignes.length ? '<ul class="cl-lines">' + lignes.map(function (l) { return '<li>' + nbsp(l) + '</li>'; }).join('') + '</ul>' : '') + '</details>';
     }).join('');
     $('clCond').innerHTML = list((c.conditions || {}).liste).map(function (x) { return '<li>' + CHECK + '<span>' + nbsp(x) + '</span></li>'; }).join('');
 
@@ -59,11 +62,14 @@
     $('sType').innerHTML = opts(b.types);
     $('sObjectif').innerHTML = opts(b.objectifs);
     $('sDroits').innerHTML = opts(b.droits);
-    $('sEnvoi').innerHTML = opts(b.envoi);
-    $('sBudget').innerHTML = opts(b.budgets);
-    var formules = list((t.influence || {}).items).concat(list((t.ugc || {}).items)).map(function (x) { return x.nom + (x.prix ? ' (' + x.prix + ')' : ''); });
-    formules.push('Je ne sais pas encore');
-    $('sFormule').innerHTML = opts(formules);
+    // Formules classées : « Collab · Reel Instagram · 350 € », « UGC · Vidéo UGC · 180 € »
+    function group(card) {
+      card = card || {};
+      var pre = card.prefixe ? card.prefixe + ' · ' : '';
+      var o = list(card.items).map(function (x) { var v = pre + x.nom + (x.prix ? ' · ' + x.prix : ''); return '<option>' + esc(v) + '</option>'; }).join('');
+      return o ? '<optgroup label="' + esc(card.titre || '') + '">' + o + '</optgroup>' : '';
+    }
+    $('sFormule').innerHTML = '<option value="">Choisir…</option>' + group(t.influence) + group(t.ugc) + '<option>Je ne sais pas encore</option>';
   }
 
   function init() {
@@ -116,9 +122,8 @@
         'Marque': d.get('marque'), 'Nom': d.get('nom'), 'Email': d.get('email'), 'Site / Instagram': d.get('site'),
         'Type de collaboration': d.get('type'), 'Formule souhaitée': d.get('formule'), 'Produits': d.get('produits'),
         'Objectif': d.get('objectif'), 'Droits d\'utilisation': d.get('droits'), 'Messages clés': d.get('messages'),
-        'À éviter': d.get('eviter'), 'Exemples': d.get('exemples'), 'Envoi du produit': d.get('envoi'),
-        'Date d\'envoi': frDate(d.get('date_envoi')), 'Date de livraison / publication': frDate(d.get('date_publication')),
-        'Budget': d.get('budget'), 'Message': d.get('message')
+        'À éviter': d.get('eviter'), 'Exemples': d.get('exemples'),
+        'Date de livraison / publication': frDate(d.get('date_publication')), 'Message': d.get('message')
       };
       btn.disabled = true;
       msg.textContent = 'Envoi en cours…';

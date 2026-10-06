@@ -580,3 +580,9 @@ body{background:var(--cocoa)}
 }
 /* Titres : première lettre en minuscule, comme « kheira » */
 .title::first-letter{text-transform:lowercase}
+/* Espace marques : infos à dérouler sous les tarifs */
+.cl-infos{max-width:820px;margin:0 auto}
+.cl-infos .qa{background:rgba(251,246,239,.96)}
+.cl-lines{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:0 22px 20px}
+.cl-lines li{padding:12px 8px;border-radius:12px;background:var(--beige);text-align:center;font-size:14px;font-weight:600;color:var(--ink)}
+@media (max-width:760px){.cl-lines{grid-template-columns:1fr 1fr;padding:0 18px 18px}}

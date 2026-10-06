@@ -416,6 +416,7 @@ content:
             fields:
               - { name: titre, label: Titre, type: string }
               - { name: sous_titre, label: Sous-titre, type: string }
+              - { name: prefixe, label: "Préfixe dans le brief (ex. Collab, UGC)", type: string }
               - name: items
                 label: Formules
                 type: object
@@ -431,6 +432,7 @@ content:
             fields:
               - { name: titre, label: Titre, type: string }
               - { name: sous_titre, label: Sous-titre, type: string }
+              - { name: prefixe, label: "Préfixe dans le brief (ex. Collab, UGC)", type: string }
               - name: items
                 label: Formules
                 type: object
@@ -440,26 +442,14 @@ content:
                   - { name: prix, label: "Prix (ex. 180 €)", type: string }
                   - { name: texte, label: Description, type: text }
                   - { name: badge, label: "Badge (facultatif, ex. Meilleure formule)", type: string }
-          - name: stories
-            label: Encadré sur les stories
+          - name: infos
+            label: "Infos à dérouler (droits ads, stories, gifting…)"
             type: object
+            list: true
             fields:
-              - { name: titre, label: Titre, type: string }
-              - { name: texte, label: Texte, type: text }
-          - name: options
-            label: Options (droits ads)
-            type: object
-            fields:
-              - { name: titre, label: Titre, type: string }
-              - { name: texte, label: Texte, type: text }
-              - name: items
-                label: Options
-                type: object
-                list: true
-                fields:
-                  - { name: nom, label: Option, type: string }
-                  - { name: prix, label: Prix, type: string }
-          - { name: gifting, label: Phrase sur le gifting, type: text }
+              - { name: question, label: Titre, type: string }
+              - { name: reponse, label: Texte, type: text }
+              - { name: lignes, label: "Lignes de prix (ex. 1 mois : + 150 €)", type: string, list: true }
       - name: conditions
         label: Conditions
         type: object
@@ -477,8 +467,6 @@ content:
           - { name: types, label: Choix « Type de collaboration », type: string, list: true }
           - { name: objectifs, label: Choix « Objectif », type: string, list: true }
           - { name: droits, label: Choix « Droits d'utilisation », type: string, list: true }
-          - { name: envoi, label: Choix « Envoi du produit », type: string, list: true }
-          - { name: budgets, label: Choix « Budget », type: string, list: true }
           - { name: bouton, label: Texte du bouton, type: string }
           - { name: merci, label: Message après l'envoi, type: text }
           - { name: photo, label: "Photo à côté du brief (ordinateur)", type: image }

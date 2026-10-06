@@ -56,11 +56,7 @@
     "etapes": [
       {
         "titre": "Le brief",
-        "texte": "Tu remplis le brief en bas de cette page : ta marque, tes produits, tes objectifs et tes dates."
-      },
-      {
-        "titre": "La proposition",
-        "texte": "Je reviens vers toi avec une proposition et un devis adaptés. On valide ensemble la formule et le planning."
+        "texte": "Tu choisis ta formule et tu remplis le brief en bas de cette page : ta marque, tes produits, tes objectifs et tes dates."
       },
       {
         "titre": "L'envoi du produit",
@@ -113,7 +109,8 @@
           "texte": "3 stories + 1 reel : un dispositif complet pour capter l'attention, créer l'envie et ancrer ta marque. Idéal pour un lancement.",
           "badge": ""
         }
-      ]
+      ],
+      "prefixe": "Collab"
     },
     "ugc": {
       "titre": "Création de contenu UGC",
@@ -149,35 +146,31 @@
           "texte": "Recherche d'angle marketing et script optimisé pour la conversion.",
           "badge": ""
         }
-      ]
+      ],
+      "prefixe": "UGC"
     },
-    "options": {
-      "titre": "Droits d'utilisation publicitaire (ads)",
-      "texte": "En option sur les contenus UGC. Les droits sont strictement limités à la durée choisie, toute prolongation est facturée en supplément.",
-      "items": [
-        {
-          "nom": "1 mois",
-          "prix": "+ 150 €"
-        },
-        {
-          "nom": "2 mois",
-          "prix": "+ 200 €"
-        },
-        {
-          "nom": "3 mois",
-          "prix": "+ 250 €"
-        },
-        {
-          "nom": "6 mois",
-          "prix": "+ 350 €"
-        }
-      ]
-    },
-    "gifting": "Gifting (envoi de produits sans rémunération) : uniquement sur validation, à partir de 200 € de valeur produit, sans garantie de publication.",
-    "stories": {
-      "titre": "Bon à savoir sur les stories",
-      "texte": "Une story, c'est une présentation de 2 à 4 slides qui s'enchaînent le même jour. Un pack de 3 stories, ce sont 3 jours différents de visibilité : idéal pour créer du rappel auprès de mon audience."
-    }
+    "infos": [
+      {
+        "question": "Droits d'utilisation publicitaire (ads)",
+        "reponse": "En option sur les contenus UGC. Les droits sont strictement limités à la durée choisie, toute prolongation est facturée en supplément.",
+        "lignes": [
+          "1 mois : + 150 €",
+          "2 mois : + 200 €",
+          "3 mois : + 250 €",
+          "6 mois : + 350 €"
+        ]
+      },
+      {
+        "question": "Bon à savoir sur les stories",
+        "reponse": "Une story, c'est une présentation de 2 à 4 slides qui s'enchaînent le même jour. Un pack de 3 stories, ce sont 3 jours différents de visibilité : idéal pour créer du rappel auprès de mon audience.",
+        "lignes": []
+      },
+      {
+        "question": "Gifting (envoi de produits sans rémunération)",
+        "reponse": "Uniquement sur validation, à partir de 200 € de valeur produit, sans garantie de publication.",
+        "lignes": []
+      }
+    ]
   },
   "conditions": {
     "petit_titre": "À savoir",
@@ -193,7 +186,7 @@
   "brief": {
     "petit_titre": "Brief",
     "titre": "Ton brief",
-    "texte": "Plus ton brief est précis, plus ma proposition sera juste. Je te réponds rapidement avec un devis.",
+    "texte": "Plus ton brief est précis, plus je peux te répondre vite. Je reviens vers toi pour confirmer la collaboration et le planning.",
     "types": [
       "Collaboration d'influence",
       "Création de contenu UGC",
@@ -213,22 +206,10 @@
       "Ads 2 mois",
       "Ads 3 mois",
       "Ads 6 mois",
-      "Site / supports marketing 2 mois",
       "Je ne sais pas encore"
     ],
-    "envoi": [
-      "En France",
-      "Au Maroc"
-    ],
-    "budgets": [
-      "Moins de 300 €",
-      "300 € à 600 €",
-      "600 € à 1 000 €",
-      "Plus de 1 000 €",
-      "À définir ensemble"
-    ],
     "bouton": "Envoyer mon brief",
-    "merci": "Merci ! Ton brief est bien envoyé. Je reviens vers toi très vite avec une proposition.",
+    "merci": "Merci ! Ton brief est bien envoyé. Je reviens vers toi très vite pour confirmer la collaboration et le planning.",
     "photo": "assets/images/site/about.jpg"
   }
 }
