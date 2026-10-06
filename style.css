@@ -467,3 +467,23 @@ html.vbox-open,html.vbox-open body{overflow:hidden}
 }
 /* Pied de page à pois : un peu plus haut pour voir le motif */
 .footer.bg--dots{padding:60px var(--gutter)}
+/* Menu 7 entrées : plus serré pour tenir sur une ligne */
+.nav__links{gap:clamp(12px,1.3vw,22px);letter-spacing:.18em;font-size:clamp(9.5px,.78vw,11px)}
+.nav__links a{white-space:nowrap}
+.nav__cta{letter-spacing:.14em;padding:10px 16px!important}
+@media (max-width:1180px) and (min-width:761px){.nav{padding-left:16px}.nav__logo{font-size:28px}.nav__links{gap:10px;font-size:9px;letter-spacing:.1em;padding-right:4px}.nav__cta{padding:9px 12px!important;letter-spacing:.08em}}
+/* Menu burger dès 1000 px (tablette) : 7 entrées ne tiennent plus sur une ligne */
+@media (max-width:1000px){
+  .nav__burger{display:block}
+  .nav__lang{margin-left:auto;margin-right:4px}
+  .nav__links{position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px 0;border-radius:18px;background:#fbf6ef;box-shadow:0 14px 40px rgba(30,18,10,.25);font-size:12px;letter-spacing:.2em;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .3s,transform .3s}
+  .nav__links a{padding:14px 22px}
+  .nav__links a::after{display:none}
+  .nav.is-open .nav__links{opacity:1;transform:none;pointer-events:auto}
+  .nav__cta{margin:8px 14px 6px;text-align:center;padding:14px 18px!important;letter-spacing:.16em}
+}
+/* Fin de page : pas d'effet élastique qui montre un fond vide, et fond assorti au pied de page */
+html{overscroll-behavior-y:none;background:var(--cocoa)}
+body{background:var(--cocoa)}
+/* Bouton « remonter » visible aussi sur les fonds foncés */
+.totop{border:1px solid rgba(247,239,228,.45)}
