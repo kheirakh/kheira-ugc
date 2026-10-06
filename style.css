@@ -586,3 +586,19 @@ body{background:var(--cocoa)}
 .cl-lines{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:0 22px 20px}
 .cl-lines li{padding:12px 8px;border-radius:12px;background:var(--beige);text-align:center;font-size:14px;font-weight:600;color:var(--ink)}
 @media (max-width:760px){.cl-lines{grid-template-columns:1fr 1fr;padding:0 18px 18px}}
+/* Espace marques v4 */
+.cl-chips{flex-wrap:nowrap}
+.cl-chips a{white-space:nowrap;padding:9px 14px;font-size:10.5px;letter-spacing:.14em}
+.cl-gal .pgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cl-gal .title{margin-bottom:28px}
+.cl-cond .cl-infos{max-width:1120px}
+.cl-cond .faq__list{gap:10px}
+.cl-checks--in{padding:0 22px 20px;gap:8px}
+.cl-checks--in li{padding:12px 14px;background:var(--beige);border:0;font-size:14.5px}
+.cl-err{font-style:normal;font-size:12px;letter-spacing:0;text-transform:none;color:#b5523b;line-height:1.4}
+#fSite:invalid{border-color:#b5523b}
+@media (max-width:760px){
+  .cl-chips{overflow-x:auto;justify-content:flex-start!important;padding-bottom:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .cl-chips::-webkit-scrollbar{display:none}
+  .cl-gal .pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

@@ -35,8 +35,12 @@
       var v = get(c, el.getAttribute('data-ci'));
       if (v) el.src = String(v).replace(/^\/+/, ''); else el.closest('figure').hidden = true;
     });
-    var gal = list((c.galerie || {}).photos);
-    $('clGal').innerHTML = gal.map(function (g) { return '<figure><img src="' + esc(String(g).replace(/^\/+/, '')) + '" alt="" loading="lazy"></figure>'; }).join('');
+    var gal = list((c.galerie || {}).photos).map(function (g) { return typeof g === 'string' ? { image: g } : g; }).filter(function (g) { return g.image; });
+    $('clGal').innerHTML = gal.map(function (g) {
+      var pos = /^\d{1,3}(\.\d+)?% \d{1,3}(\.\d+)?%$/.test(String(g.cadrage || '').trim()) ? ' style="object-position:' + g.cadrage.trim() + '"' : '';
+      return '<figure' + (g.marque ? ' class="has-marque"' : '') + '><img src="' + esc(String(g.image).replace(/^\/+/, '')) + '" alt="' + esc(g.marque || '') + '" loading="lazy"' + pos + '>' +
+        (g.marque ? '<figcaption class="pgrid__marque">' + esc(g.marque) + '</figcaption>' : '') + '</figure>';
+    }).join('');
     if (!gal.length) $('clGal').closest('section').hidden = true;
     var s = c.stats || {};
     $('clStats').innerHTML = list(s.chiffres).filter(function (x) { return x.chiffre; }).map(function (x) {
@@ -50,18 +54,17 @@
     var t = c.tarifs || {};
     $('clInfluence').innerHTML = items((t.influence || {}).items);
     $('clUgc').innerHTML = items((t.ugc || {}).items);
-    $('clInfos').innerHTML = list(t.infos).filter(function (q) { return q.question; }).map(function (q) {
+    $('clInfos').innerHTML = list((c.savoir || {}).items).filter(function (q) { return q.question; }).map(function (q) {
       var lignes = list(q.lignes);
       return '<details class="qa"><summary>' + nbsp(q.question) + '<span class="qa__plus" aria-hidden="true"></span></summary>' +
         (q.reponse ? '<p>' + esc(q.reponse) + '</p>' : '') +
-        (lignes.length ? '<ul class="cl-lines">' + lignes.map(function (l) { return '<li>' + nbsp(l) + '</li>'; }).join('') + '</ul>' : '') + '</details>';
+        (lignes.length ? (lignes.every(function (l) { return String(l).length <= 24; })
+          ? '<ul class="cl-lines">' + lignes.map(function (l) { return '<li>' + nbsp(l) + '</li>'; }).join('') + '</ul>'
+          : '<ul class="cl-checks cl-checks--in">' + lignes.map(function (l) { return '<li>' + CHECK + '<span>' + nbsp(l) + '</span></li>'; }).join('') + '</ul>') : '') + '</details>';
     }).join('');
-    $('clCond').innerHTML = list((c.conditions || {}).liste).map(function (x) { return '<li>' + CHECK + '<span>' + nbsp(x) + '</span></li>'; }).join('');
 
     var b = c.brief || {};
     $('sType').innerHTML = opts(b.types);
-    $('sObjectif').innerHTML = opts(b.objectifs);
-    $('sDroits').innerHTML = opts(b.droits);
     // Formules classées : « Collab · Reel Instagram · 350 € », « UGC · Vidéo UGC · 180 € »
     function group(card) {
       card = card || {};
@@ -105,12 +108,24 @@
 
     // Envoi du brief (FormSubmit, même email que le formulaire du site)
     var form = $('clForm'), msg = $('clMsg'), btn = form.querySelector('button[type=submit]');
+    // Lien du site ou d'Instagram : uniquement une adresse web
+    var site = $('fSite'), siteErr = $('siteErr');
+    var URLRE = /^(https?:\/\/)?(www\.)?([a-z0-9-]+\.)+[a-z]{2,}(\/[^\s]*)?$/i;
+    function checkSite() {
+      var v = site.value.trim(), ok = !v || URLRE.test(v);
+      site.setCustomValidity(ok ? '' : 'lien');
+      siteErr.hidden = ok;
+      return ok;
+    }
+    site.addEventListener('input', function () { if (!siteErr.hidden) checkSite(); });
+    site.addEventListener('blur', checkSite);
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       msg.className = 'brief__msg';
+      checkSite();
       if (!form.checkValidity()) {
         form.classList.add('was-checked');
-        msg.textContent = 'Merci de remplir les champs marqués d’une étoile.';
+        msg.textContent = siteErr.hidden ? 'Merci de remplir les champs marqués d’une étoile.' : 'Le lien de ton site ou de ton Instagram n’est pas valide.';
         msg.classList.add('is-error');
         var bad = form.querySelector(':invalid'); if (bad) bad.focus();
         return;
@@ -119,9 +134,9 @@
       var d = new FormData(form);
       var data = {
         _subject: 'Nouveau brief (Espace marques) — ' + d.get('marque'), _template: 'table', _captcha: 'false', _replyto: d.get('email'),
-        'Marque': d.get('marque'), 'Nom': d.get('nom'), 'Email': d.get('email'), 'Site / Instagram': d.get('site'),
+        'Marque': d.get('marque'), 'Nom': d.get('nom'), 'Email': d.get('email'), 'Site / Instagram': (function (v) { v = String(v || '').trim(); return v && !/^https?:\/\//i.test(v) ? 'https://' + v : v; })(d.get('site')),
         'Type de collaboration': d.get('type'), 'Formule souhaitée': d.get('formule'), 'Produits': d.get('produits'),
-        'Objectif': d.get('objectif'), 'Droits d\'utilisation': d.get('droits'), 'Messages clés': d.get('messages'),
+        'Messages clés': d.get('messages'),
         'À éviter': d.get('eviter'), 'Exemples': d.get('exemples'),
         'Date de livraison / publication': frDate(d.get('date_publication')), 'Message': d.get('message')
       };

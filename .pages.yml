@@ -390,7 +390,14 @@ content:
         type: object
         fields:
           - { name: petit_titre, label: Petit titre, type: string }
-          - { name: photos, label: "Photos (6 conseillées)", type: image, list: true }
+          - name: photos
+            label: "Photos (4 par ligne, le nom de la marque s'affiche au survol)"
+            type: object
+            list: true
+            fields:
+              - { name: image, label: Photo, type: image }
+              - { name: marque, label: Nom de la marque, type: string }
+              - { name: cadrage, label: "Point focal (ex. 50% 30%)", type: string }
       - name: deroule
         label: Déroulé
         type: object
@@ -442,21 +449,20 @@ content:
                   - { name: prix, label: "Prix (ex. 180 €)", type: string }
                   - { name: texte, label: Description, type: text }
                   - { name: badge, label: "Badge (facultatif, ex. Meilleure formule)", type: string }
-          - name: infos
-            label: "Infos à dérouler (droits ads, stories, gifting…)"
+      - name: savoir
+        label: "Bon à savoir (conditions, droits ads, stories, gifting)"
+        type: object
+        fields:
+          - { name: petit_titre, label: Petit titre, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: items
+            label: Lignes à dérouler
             type: object
             list: true
             fields:
               - { name: question, label: Titre, type: string }
               - { name: reponse, label: Texte, type: text }
-              - { name: lignes, label: "Lignes de prix (ex. 1 mois : + 150 €)", type: string, list: true }
-      - name: conditions
-        label: Conditions
-        type: object
-        fields:
-          - { name: petit_titre, label: Petit titre, type: string }
-          - { name: titre, label: Titre, type: string }
-          - { name: liste, label: Conditions (une par ligne), type: text, list: true }
+              - { name: lignes, label: "Lignes (prix courts = cases, phrases = liste cochée)", type: text, list: true }
       - name: brief
         label: Formulaire de brief
         type: object
@@ -465,8 +471,6 @@ content:
           - { name: titre, label: Titre, type: string }
           - { name: texte, label: Texte, type: text }
           - { name: types, label: Choix « Type de collaboration », type: string, list: true }
-          - { name: objectifs, label: Choix « Objectif », type: string, list: true }
-          - { name: droits, label: Choix « Droits d'utilisation », type: string, list: true }
           - { name: bouton, label: Texte du bouton, type: string }
           - { name: merci, label: Message après l'envoi, type: text }
           - { name: photo, label: "Photo à côté du brief (ordinateur)", type: image }

@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#e8dccd">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/nxi0aao.css">
-<link rel="stylesheet" href="style.css?v=52">
+<link rel="stylesheet" href="style.css?v=53">
 <style>.is-loading [data-c],.is-loading [data-ci],.is-loading .cl-list{visibility:hidden}</style>
 <script>document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},3000);</script>
 </head>
@@ -25,7 +25,7 @@
     <a href="#chiffres">Chiffres</a>
     <a href="#deroule">Déroulé</a>
     <a href="#tarifs">Tarifs</a>
-    <a href="#conditions">Conditions</a>
+    <a href="#conditions">À savoir</a>
     <a href="#brief" class="nav__cta">Remplir le brief</a>
   </nav>
   <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -43,7 +43,7 @@
     <h1 class="title" data-c="intro.titre">Travaillons ensemble</h1>
     <p class="cl-lead" data-c="intro.texte"></p>
     <div class="cl-chips">
-      <a href="#chiffres">Chiffres</a><a href="#deroule">Déroulé</a><a href="#tarifs">Tarifs</a><a href="#conditions">Conditions</a><a href="#brief" class="is-main">Remplir le brief</a>
+      <a href="#chiffres">Chiffres</a><a href="#deroule">Déroulé</a><a href="#tarifs">Tarifs</a><a href="#conditions">À savoir</a><a href="#brief" class="is-main">Remplir le brief</a>
     </div>
     </div>
   </div>
@@ -65,11 +65,11 @@
   </div>
 </section>
 
-<!-- GALERIE — fond : beige -->
-<section class="cl-gal bg bg--beige">
+<!-- GALERIE — fond : pois, comme les Photos UGC -->
+<section class="photos bg bg--dots photos--ugc cl-gal">
   <div class="wrap">
-    <p class="eyebrow cl-gal__eyebrow" data-c="galerie.petit_titre">Mon univers</p>
-    <div class="cl-gal__grid cl-list" id="clGal"></div>
+    <h2 class="title title--light title--center" data-c="galerie.petit_titre">Mon univers</h2>
+    <div class="pgrid cl-list" id="clGal"></div>
   </div>
 </section>
 
@@ -95,18 +95,17 @@
       <article class="cl-card"><h3 data-c="tarifs.influence.titre"></h3><p class="cl-card__sub" data-c="tarifs.influence.sous_titre"></p><ul class="cl-items cl-list" id="clInfluence"></ul></article>
       <article class="cl-card cl-card--dark"><h3 data-c="tarifs.ugc.titre"></h3><p class="cl-card__sub" data-c="tarifs.ugc.sous_titre"></p><ul class="cl-items cl-list" id="clUgc"></ul></article>
     </div>
-    <div class="faq__list cl-infos cl-list" id="clInfos"></div>
   </div>
 </section>
 
-<!-- CONDITIONS — fond : beige -->
+<!-- À SAVOIR (conditions, droits, stories, gifting) — fond : beige -->
 <section class="cl-cond bg bg--beige" id="conditions">
-  <div class="wrap faq__wrap">
+  <div class="wrap">
     <div class="head">
-      <p class="eyebrow" data-c="conditions.petit_titre">À savoir</p>
-      <h2 class="title" data-c="conditions.titre">Mes conditions</h2>
+      <p class="eyebrow" data-c="savoir.petit_titre">À savoir</p>
+      <h2 class="title" data-c="savoir.titre">Bon à savoir</h2>
     </div>
-    <ul class="cl-checks cl-list" id="clCond"></ul>
+    <div class="faq__list cl-infos cl-list" id="clInfos"></div>
   </div>
 </section>
 
@@ -127,7 +126,7 @@
       </div>
       <div class="f2">
         <label><span>Email *</span><input name="email" type="email" required autocomplete="email"></label>
-        <label><span>Site ou Instagram</span><input name="site"></label>
+        <label><span>Lien site ou Instagram</span><input name="site" id="fSite" inputmode="url" autocomplete="url" placeholder="https://… ou instagram.com/tamarque"><em class="cl-err" id="siteErr" hidden>Colle un lien valide, par exemple instagram.com/tamarque ou https://tamarque.com</em></label>
       </div>
       <p class="cl-fs">2 · Le projet</p>
       <div class="f2">
@@ -135,14 +134,10 @@
         <label><span>Formule souhaitée</span><select name="formule" id="sFormule"></select></label>
       </div>
       <label><span>Produit(s) à mettre en avant * (noms exacts)</span><textarea name="produits" rows="3" required></textarea></label>
-      <div class="f2">
-        <label><span>Objectif</span><select name="objectif" id="sObjectif"></select></label>
-        <label><span>Droits d'utilisation</span><select name="droits" id="sDroits"></select></label>
-      </div>
       <label><span>Messages clés à faire passer</span><textarea name="messages" rows="3"></textarea></label>
       <div class="f2">
         <label><span>Ce qu'il faut éviter</span><input name="eviter"></label>
-        <label><span>Exemples de contenus que tu aimes (liens)</span><input name="exemples"></label>
+        <label><span>Exemples que tu aimes (liens)</span><input name="exemples"></label>
       </div>
       <p class="cl-fs">3 · Planning</p>
       <label><span>Date de livraison ou de publication souhaitée *</span><input name="date_publication" type="date" class="js-date" required></label>
@@ -162,6 +157,6 @@
 
 <a href="#haut" class="totop" id="toTop" aria-label="Remonter en haut"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 
-<script src="collab.js?v=3"></script>
+<script src="collab.js?v=4"></script>
 </body>
 </html>

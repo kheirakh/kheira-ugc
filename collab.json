@@ -42,12 +42,26 @@
   "galerie": {
     "petit_titre": "Mon univers",
     "photos": [
-      "assets/images/photos/photographie-quran-mon-amour.jpg",
-      "assets/images/photos/photographie-faraasha-porte.jpg",
-      "assets/images/photos/photographie-glam-by-majha-blush.jpg",
-      "assets/images/photos/photographie-alif-story-conteuse.jpg",
-      "assets/images/photos/photographie-atelier-beldii.jpg",
-      "assets/images/photos/photographie-livres-miracles-quran.jpg"
+      {
+        "image": "assets/images/photos/photographie-glam-by-majha-plateau.jpg",
+        "marque": "Glam by Majha",
+        "cadrage": "69% 23%"
+      },
+      {
+        "image": "assets/images/photos/photographie-gratitude-journal.jpg",
+        "marque": "Maison du planner",
+        "cadrage": "65% 66%"
+      },
+      {
+        "image": "assets/images/photos/photographie-faraasha-porte.jpg",
+        "marque": "Faraasha Collection",
+        "cadrage": "53% 31%"
+      },
+      {
+        "image": "assets/images/photos/photographie-skin1004-trousse.jpg",
+        "marque": "Skin 1004",
+        "cadrage": "48% 69%"
+      }
     ]
   },
   "deroule": {
@@ -55,8 +69,8 @@
     "titre": "Comment ça se passe",
     "etapes": [
       {
-        "titre": "Le brief",
-        "texte": "Tu choisis ta formule et tu remplis le brief en bas de cette page : ta marque, tes produits, tes objectifs et tes dates."
+        "titre": "Ta formule",
+        "texte": "Choisis ta formule dans mes tarifs et remplis le brief en bas de la page. Besoin d'aide pour choisir ? Écris-moi à helloookheira@gmail.com."
       },
       {
         "titre": "L'envoi du produit",
@@ -148,8 +162,23 @@
         }
       ],
       "prefixe": "UGC"
-    },
-    "infos": [
+    }
+  },
+  "savoir": {
+    "petit_titre": "À savoir",
+    "titre": "Bon à savoir",
+    "items": [
+      {
+        "question": "Mes conditions",
+        "reponse": "",
+        "lignes": [
+          "Collaboration d'influence : le contenu reste sur mes réseaux, sur mon feed et en story à la une.",
+          "UGC : la prestation comprend la création et la livraison du contenu. Les droits d'utilisation (ads, site, campagnes) sont en option.",
+          "Toute utilisation en dehors de ce qui a été validé fait l'objet d'un accord et d'une facturation à part.",
+          "Colis : je ne peux pas être tenue responsable d'un colis perdu, ouvert ou bloqué en douane. Le travail engagé en amont reste dû.",
+          "Je collabore uniquement avec des marques alignées avec mes valeurs : éthique, pudeur, qualité, intention."
+        ]
+      },
       {
         "question": "Droits d'utilisation publicitaire (ads)",
         "reponse": "En option sur les contenus UGC. Les droits sont strictement limités à la durée choisie, toute prolongation est facturée en supplément.",
@@ -172,17 +201,6 @@
       }
     ]
   },
-  "conditions": {
-    "petit_titre": "À savoir",
-    "titre": "Mes conditions",
-    "liste": [
-      "Collaboration d'influence : le contenu reste sur mes réseaux, sur mon feed et en story à la une.",
-      "UGC : la prestation comprend la création et la livraison du contenu. Les droits d'utilisation (ads, site, campagnes) sont en option.",
-      "Toute utilisation en dehors de ce qui a été validé fait l'objet d'un accord et d'une facturation à part.",
-      "Colis : je ne peux pas être tenue responsable d'un colis perdu, ouvert ou bloqué en douane. Le travail engagé en amont reste dû.",
-      "Je collabore uniquement avec des marques alignées avec mes valeurs : éthique, pudeur, qualité, intention."
-    ]
-  },
   "brief": {
     "petit_titre": "Brief",
     "titre": "Ton brief",
@@ -193,23 +211,8 @@
       "Influence + UGC",
       "Gifting"
     ],
-    "objectifs": [
-      "Ventes",
-      "Notoriété",
-      "Lancement d'un produit",
-      "Contenu pour mes publicités",
-      "Autre"
-    ],
-    "droits": [
-      "Aucun",
-      "Ads 1 mois",
-      "Ads 2 mois",
-      "Ads 3 mois",
-      "Ads 6 mois",
-      "Je ne sais pas encore"
-    ],
     "bouton": "Envoyer mon brief",
     "merci": "Merci ! Ton brief est bien envoyé. Je reviens vers toi très vite pour confirmer la collaboration et le planning.",
-    "photo": "assets/images/site/about.jpg"
+    "photo": "assets/images/photos/photographie-quran-mon-amour-bougie.jpg"
   }
 }
