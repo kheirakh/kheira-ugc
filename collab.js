@@ -25,9 +25,9 @@
     return '<option value="">' + esc(first || 'Choisir…') + '</option>' + list(arr).map(function (o) { return '<option>' + esc(o) + '</option>'; }).join('');
   }
 
-  // Une adresse email dans un texte devient un lien vers le formulaire du site
+  // Une adresse email dans un texte devient cliquable (ouvre la boîte mail)
   function mailLink(html) {
-    return html.replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g, function (m) { return '<a class="cl-mail" href="https://www.kheirakh.com/#travaillons-ensemble">' + m + '</a>'; });
+    return html.replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g, function (m) { return '<a class="cl-mail" href="mailto:' + m + '">' + m + '</a>'; });
   }
   function render(c) {
     C = c;
