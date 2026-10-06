@@ -453,6 +453,12 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Lien direct vers une section (ex. kheirakh.com/#travaillons-ensemble) : on y va une fois le contenu affiché
+    if (location.hash.length > 1) {
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (target) setTimeout(function () { target.scrollIntoView({ behavior: 'auto', block: 'start' }); }, 80);
+    }
+
     // Bouton « remonter en haut » : apparaît après un peu de scroll
     var top = document.getElementById('toTop');
     if (top) {
