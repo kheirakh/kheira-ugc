@@ -25,6 +25,10 @@
     return '<option value="">' + esc(first || 'Choisir…') + '</option>' + list(arr).map(function (o) { return '<option>' + esc(o) + '</option>'; }).join('');
   }
 
+  // Une adresse email dans un texte devient un lien vers le formulaire du site
+  function mailLink(html) {
+    return html.replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g, function (m) { return '<a class="cl-mail" href="https://www.kheirakh.com/#travaillons-ensemble">' + m + '</a>'; });
+  }
   function render(c) {
     C = c;
     document.querySelectorAll('[data-c]').forEach(function (el) {
@@ -49,7 +53,7 @@
     $('clAudience').innerHTML = list(s.audience).map(function (t) { return '<li>' + nbsp(t) + '</li>'; }).join('');
     $('clPerf').innerHTML = list(s.performances).map(function (t) { return '<li>' + nbsp(t) + '</li>'; }).join('');
     $('clSteps').innerHTML = list((c.deroule || {}).etapes).map(function (e, i) {
-      return '<li><span class="cl-step__n">' + ('0' + (i + 1)).slice(-2) + '</span><h3>' + esc(e.titre) + '</h3><p>' + esc(e.texte) + '</p></li>';
+      return '<li><span class="cl-step__n">' + ('0' + (i + 1)).slice(-2) + '</span><h3>' + esc(e.titre) + '</h3><p>' + mailLink(esc(e.texte)) + '</p></li>';
     }).join('');
     var t = c.tarifs || {};
     $('clInfluence').innerHTML = items((t.influence || {}).items);

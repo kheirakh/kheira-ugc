@@ -42,24 +42,24 @@
     "petit_titre": "Mon univers",
     "photos": [
       {
-        "image": "assets/images/photos/photographie-glam-by-majha-plateau.jpg",
+        "image": "assets/images/photos/photographie-atelier-beldii-2.jpg",
+        "marque": "Atelier Beldii",
+        "cadrage": "54% 47%"
+      },
+      {
+        "image": "assets/images/photos/photographie-quran-mon-amour-2.jpg",
+        "marque": "Quran mon amour",
+        "cadrage": "50% 89%"
+      },
+      {
+        "image": "assets/images/photos/photographie-alif-story-conteuse.jpg",
+        "marque": "Alif Story",
+        "cadrage": "31% 32%"
+      },
+      {
+        "image": "assets/images/photos/photographie-glam-by-majha-fleurs.jpg",
         "marque": "Glam by Majha",
-        "cadrage": "69% 23%"
-      },
-      {
-        "image": "assets/images/photos/photographie-gratitude-journal.jpg",
-        "marque": "Maison du planner",
-        "cadrage": "65% 66%"
-      },
-      {
-        "image": "assets/images/photos/photographie-faraasha-porte.jpg",
-        "marque": "Faraasha Collection",
-        "cadrage": "53% 31%"
-      },
-      {
-        "image": "assets/images/photos/photographie-skin1004-trousse.jpg",
-        "marque": "Skin 1004",
-        "cadrage": "48% 69%"
+        "cadrage": "73% 62%"
       }
     ]
   },
@@ -206,6 +206,6 @@
     ],
     "bouton": "Envoyer mon brief",
     "merci": "Merci ! Ton brief est bien envoyé. Je reviens vers toi très vite pour confirmer la collaboration et le planning.",
-    "photo": "assets/images/photos/photographie-atelier-beldii-2.jpg"
+    "photo": "assets/images/photos/photographie-faraasha-porte.jpg"
   }
 }

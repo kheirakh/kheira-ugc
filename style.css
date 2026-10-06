@@ -631,3 +631,5 @@ body{background:var(--cocoa)}
   .cl-brief__img{display:block;order:-1;margin:0 0 22px;max-width:none;aspect-ratio:4/5}
 }
 .collab-page .cl-hero__card,.collab-page .cl-cond .cl-infos,.collab-page .cl-two{max-width:1180px}
+.cl-mail{text-decoration:underline;text-underline-offset:3px;color:var(--brown);font-weight:500;word-break:break-all}
+.cl-mail:hover{color:var(--espresso)}
