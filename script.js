@@ -35,7 +35,7 @@
   var UI = {
     fr: {
       nav_accueil: 'Accueil', nav_apropos: 'À propos', nav_portfolio: 'Portfolio', nav_photographie: 'Photos', nav_materiel: 'Matériel',
-      nav_collaborations: 'Collaborations', nav_prestations: 'Prestations', nav_formation: 'Formation', nav_contact: 'Contact',
+      nav_collaborations: 'Collaborations', nav_prestations: 'Prestations', nav_formation: 'Formation', nav_contact: 'Contact', nav_faq: 'FAQ', nav_brief: 'Travaillons ensemble',
       droits: 'Tous droits réservés', modalites: 'Modalités', lang_btn: 'EN', lang_aria: 'Read in English',
       f_nom: 'Nom et prénom', f_marque: 'Marque', f_email: 'Email', f_site: 'Site ou Instagram de la marque', f_type: 'Type de contenu',
       f_budget: 'Budget', f_delai: 'Date de livraison souhaitée', f_message: 'Ton projet en quelques mots', f_choisir: 'Choisir…',
@@ -44,7 +44,7 @@
     },
     en: {
       nav_accueil: 'Home', nav_apropos: 'About', nav_portfolio: 'Portfolio', nav_photographie: 'Photos', nav_materiel: 'Gear',
-      nav_collaborations: 'Brands', nav_prestations: 'Services', nav_formation: 'Course', nav_contact: 'Contact',
+      nav_collaborations: 'Brands', nav_prestations: 'Services', nav_formation: 'Course', nav_contact: 'Contact', nav_faq: 'FAQ', nav_brief: 'Let’s work together',
       droits: 'All rights reserved', modalites: 'Terms', lang_btn: 'FR', lang_aria: 'Lire en français',
       f_nom: 'Full name', f_marque: 'Brand', f_email: 'Email', f_site: 'Brand website or Instagram', f_type: 'Type of content',
       f_budget: 'Budget', f_delai: 'Desired delivery date', f_message: 'Your project in a few words', f_choisir: 'Select…',
@@ -452,6 +452,15 @@
     }
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Bouton « remonter en haut » : apparaît après un peu de scroll
+    var top = document.getElementById('toTop');
+    if (top) {
+      var onScroll = function () { top.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.8); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      top.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
   }
 
   // Charge content.json ; si le fichier est introuvable (ouverture directe du fichier), le contenu écrit dans index.html reste affiché
