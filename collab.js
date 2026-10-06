@@ -90,6 +90,13 @@
       }
     } catch (e) {}
 
+    // FAQ : une seule question ouverte à la fois
+    document.addEventListener('toggle', function (e) {
+      var d = e.target;
+      if (!d.classList || !d.classList.contains('qa') || !d.open) return;
+      d.parentNode.querySelectorAll('.qa[open]').forEach(function (o) { if (o !== d) o.open = false; });
+    }, true);
+
     // Menu mobile
     var nav = $('nav'), burger = $('burger');
     function closeMenu() { nav.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); }

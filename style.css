@@ -612,3 +612,14 @@ body{background:var(--cocoa)}
     .cl-menu .cl-card--dark .cl-item{border-top-color:rgba(247,239,228,.16)}
   }
 }
+/* Brief : la photo occupe toute la hauteur du formulaire (ordinateur) */
+@media (min-width:761px){
+  .cl-brief{align-items:stretch}
+  .cl-brief .brief__intro{position:static;display:flex;flex-direction:column;align-self:stretch}
+  .cl-brief__img{flex:1;max-width:none;aspect-ratio:auto;min-height:320px;position:relative}
+  .cl-brief__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+}
+/* Bulles : marron au survol */
+.cl-lines li,.cl-checks--in li{transition:background .3s,color .3s;cursor:default}
+.cl-lines li:hover,.cl-checks--in li:hover{background:var(--espresso);color:var(--cream)}
+.cl-checks--in li:hover .check{background:var(--cream);stroke:var(--espresso)}

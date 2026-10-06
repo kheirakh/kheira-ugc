@@ -249,6 +249,13 @@
     document.querySelectorAll('#navLinks a').forEach(function (a) { a.addEventListener('click', closeMenu); });
     document.addEventListener('click', function (e) { if (!nav.contains(e.target)) closeMenu(); });
 
+    // FAQ : une seule question ouverte à la fois
+    document.addEventListener('toggle', function (e) {
+      var d = e.target;
+      if (!d.classList || !d.classList.contains('qa') || !d.open) return;
+      d.parentNode.querySelectorAll('.qa[open]').forEach(function (o) { if (o !== d) o.open = false; });
+    }, true);
+
     // Bouton de langue
     var lb = document.getElementById('langBtn');
     if (lb) lb.addEventListener('click', function () {
