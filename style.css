@@ -548,7 +548,7 @@ body{background:var(--cocoa)}
 /* Espace marques : plus de design */
 .cl-hero__card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:center;max-width:1120px;text-align:left}
 .cl-hero__img{border-radius:18px;overflow:hidden;aspect-ratio:4/5}
-.cl-hero__img img{object-position:50% 40%}
+.cl-hero__img img{object-position:45% 62%}
 .cl-hero__card .cl-lead{margin:0}
 .cl-hero__card .cl-chips{justify-content:flex-start}
 .cl-gal{padding-top:clamp(50px,6vw,80px);padding-bottom:clamp(50px,6vw,80px)}
@@ -571,7 +571,7 @@ body{background:var(--cocoa)}
 .cl-brief__img{margin-top:24px;border-radius:18px;overflow:hidden;aspect-ratio:4/5;max-width:340px}
 @media (max-width:760px){
   .cl-hero__card{grid-template-columns:1fr;text-align:center}
-  .cl-hero__img{aspect-ratio:1/1}
+  .cl-hero__img{aspect-ratio:4/5}
   .cl-hero__card .cl-chips{justify-content:center}
   .cl-gal__grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .cl-gal__grid figure:nth-child(even){transform:none}
