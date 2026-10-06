@@ -10,7 +10,6 @@
     "email": "helloookheira@gmail.com",
     "instagram": "kheira.kh__",
     "tiktok": "kheira.kh__",
-    "media_kit": "",
     "media_kit_texte": "Télécharger mon media kit"
   },
   "apropos": {
@@ -29,11 +28,11 @@
     "petit_titre": "En chiffres",
     "liste": [
       {
-        "chiffre": "",
+        "chiffre": "53k",
         "libelle": "Abonnés Instagram"
       },
       {
-        "chiffre": "",
+        "chiffre": "17k",
         "libelle": "Abonnés TikTok"
       },
       {
@@ -320,8 +319,7 @@
   },
   "avis": {
     "petit_titre": "Avis",
-    "titre": "Ce que disent les marques",
-    "liste": []
+    "titre": "Ce que disent les marques"
   },
   "prestations": {
     "petit_titre": "Prestations",
@@ -355,14 +353,12 @@
     "petit_titre": "Travaillons ensemble",
     "titre": "Parle-moi de ton projet",
     "texte": "Remplis ce petit formulaire : je reçois ta demande directement et je reviens vers toi avec une proposition adaptée à ta marque.",
-    "bouton": "Envoyer ma demande",
-    "merci": "Merci ! Ta demande est bien envoyée, je reviens vers toi très vite.",
     "types": [
       "Vidéo UGC",
       "Photos UGC",
       "Pack vidéos + photos",
       "Collaboration d'influence",
-      "Autre"
+      "Storys "
     ],
     "budgets": [
       "Moins de 300 €",
@@ -370,7 +366,9 @@
       "600 € à 1 000 €",
       "Plus de 1 000 €",
       "À définir ensemble"
-    ]
+    ],
+    "bouton": "Envoyer ma demande",
+    "merci": "Merci ! Ta demande est bien envoyée, je reviens vers toi très vite."
   },
   "faq": {
     "petit_titre": "FAQ",
