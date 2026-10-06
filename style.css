@@ -633,3 +633,13 @@ body{background:var(--cocoa)}
 .collab-page .cl-hero__card,.collab-page .cl-cond .cl-infos,.collab-page .cl-two{max-width:1180px}
 .cl-mail{text-decoration:underline;text-underline-offset:3px;color:var(--brown);font-weight:500;word-break:break-all}
 .cl-mail:hover{color:var(--espresso)}
+/* Brief : titre et texte au-dessus de la photo et du formulaire */
+.cl-brief__head{grid-column:1/-1;text-align:center;max-width:720px;margin:0 auto 6px}
+.cl-brief__head .brief__p{margin-top:4px}
+@media (min-width:761px){
+  .cl-brief{align-items:stretch}
+  .cl-brief .cl-brief__img{margin:0;align-self:stretch}
+}
+@media (max-width:760px){
+  .cl-brief .cl-brief__img{display:block;order:0;margin:0;max-width:none;aspect-ratio:4/5;position:relative}
+}
